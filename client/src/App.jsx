@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useUser } from './hooks/UseUser';
-import Header from './views/user/partials/Header';
-import Home from './views/user/Home';
-import AdminHome from './views/Admin/AdminHome';
+// import Header from './views/user/partials/Header';
+// import Home from './views/user/Home';
+// import AdminHome from './views/Admin/AdminHome';
 import Login from './views/auth/Login';
-import Products from './views/Admin/Products';
-import Details from './views/Admin/Details';
-import Footer from './views/user/partials/Footer';
+// import Products from './views/Admin/Products';
+// import Details from './views/Admin/Details';
+// import Footer from './views/user/partials/Footer';
+import AdminRouter from './router/AdminRouter';
+import UserRouter from './router/UserRouter';
+
 
 function App() {
   const {user, setUser }= useUser(); // Destructure user and setUser from context
@@ -39,29 +42,10 @@ function App() {
   }, [setUser]);
 
   if (user?.isAdmin) {
-    return (
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<AdminHome />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/details/:id" element={<Details />} />
-          <Route path="*" element={<p>NOT FOUND</p>} />
-        </Routes>
-      </Router>
-    );
+    return <AdminRouter />;
+    
   } else {
-    return (
-      <Router>
-       <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<p>NOT FOUND</p>} />
-        </Routes>
-        <Footer />
-      </Router>
-    );
+    return <UserRouter/>
   }
 }
 

@@ -7,18 +7,17 @@ import Footer from "../views/user/partials/Footer";
 
 function UserRouter(){
     return(
-        <>
+     
        <Router>
           <Header/>
           <Routes>
             <Route path="/" element ={<Home/>}/>
             <Route path="/login" element ={<Login/>}/>
             <Route path="*" element={<p>NOT FOUND</p>}/>
-  
           </Routes>
           <Footer/>
           </Router>
-        </>
+       
       );
 }
 
