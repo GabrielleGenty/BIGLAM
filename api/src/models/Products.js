@@ -27,6 +27,7 @@ class Products{
                quantityInStock, 
                categories_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, req.body);
     };
+    
     static async update(req){
       
         const { id }= req.params;

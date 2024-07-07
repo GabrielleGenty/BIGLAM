@@ -10,12 +10,16 @@ function Login() {
     const navigate =useNavigate();
 
     async function submitHandler(e){
+
         e.preventDefault();
         const form = e.target;
         const formData =new FormData(form);
         const data = Object.fromEntries(formData);
+
         try {
-            const response = await fetch('http://localhost:9000/api/v1/users/login', {
+            const response = await fetch(
+              "http://localhost:9000/api/v1/users/login",
+               {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -43,9 +47,21 @@ function Login() {
     <main id="auth">
         {error && <p>{error}</p>}
         <form  onSubmit={submitHandler}>
-            <input type="text"  id="email" name="email" placeholder="Enter your email"required />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required 
+            />
 
-            <input type="password" id="password" name="password" placeholder="Enter your password"required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+             />
             <button type="submit" disabled ={isLoading}>{isLoading ?'Chargement...': 'Login'}</button>
         </form>
         <p>

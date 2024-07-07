@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import {useEffect,useState} from "react";
+
 // import useMenu from "../../hooks/UseMenu";
 
 
 function AdminHome() {
-  const [dataState, setDatasState] = useState(null);
+
 
   //UseMeu();
 

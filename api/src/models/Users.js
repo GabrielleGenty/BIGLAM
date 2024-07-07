@@ -1,7 +1,14 @@
 import Query from "./Query.js";
-import bcrypt from "bcrypt";  
+
 
 class Users {
+
+    static async getAll(){
+ 
+        return await Query.run(`SELECT id, firstname, lastname, email,
+            createdDate FROM users ORDER BY id DESC LIMIT 50`);
+      
+   };
     static async getByEmail(email) {
         const query = `SELECT * FROM users WHERE email = ?`;
         try {
@@ -13,11 +20,16 @@ class Users {
         }
     }
 
-    static async add(firstname, lastname, email, isAdmin, password) {
+    static async add(req) {
         try {
-            const hashedPassword = await bcrypt.hash(password, 10);
-            const query = `INSERT INTO users (firstname, lastname, email,isAdmin, password) VALUES(?, ?, ?, ?, ?)`;
-            await Query.runWithParams(query, [firstname, lastname, email, isAdmin, hashedPassword]);
+            await Query.runWithParams(`INSERT INTO users 
+                ( firstname,
+                  lastname,
+                  email,
+                  isAdmin,
+                  password,
+                  CreatedDate) VALUES(?, ?, ?, ?,?,NOW())`, req.body);
+
         } catch (error) {
             console.error("Error adding new user:", error.message);
             throw new Error("Database insert error");
