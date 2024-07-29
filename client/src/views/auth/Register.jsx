@@ -13,7 +13,8 @@ function Register() {
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    console.log(data)
+    console.log(data);
+    
     try {
       const response = await fetch(
         "http://localhost:9000/api/v1/users/register",
@@ -46,6 +47,8 @@ function Register() {
 
   return (
     <main id="auth">
+      <section>
+        <h1>Créate Un Compte</h1>
       {error && <p>{error}</p>}
       <form onSubmit={submitHandler}>
         <input
@@ -85,6 +88,7 @@ function Register() {
         
         <button type="submit">Register</button>
       </form>
+      </section>
     </main>
   );
 }

@@ -45,7 +45,10 @@ function Login() {
     
     return (
     <main id="auth">
+      <section>
+      <h1>Connect a ton Compte</h1>
         {error && <p>{error}</p>}
+        
         <form  onSubmit={submitHandler}>
             <input
               type="text"
@@ -68,6 +71,7 @@ function Login() {
             Vous n&apos;avez pas de compte ?{" "}
 				<Link to="/register">Inscrivez-vous</Link>
 		</p>
+    </section>
     </main>
 
     );

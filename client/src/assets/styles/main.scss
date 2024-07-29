@@ -1,4 +1,9 @@
 @import "./variables.scss";
+@import "./mixin.scss";
+@import "./admin.scss";
+@import "./footer.scss";
+@import "./header.scss";
+
 
 /* RESET */
 *,
@@ -49,78 +54,19 @@ svg {
 	font-size: 2.4rem;
 }
 
-//  MAIN 
-// .active::after,
-//  header nav .bar-nav:hover::after,
-//  header button:hover::after {
-//      content: "";
-//    position: absolute;
-//   top: 28px;
-//  left: .5rem;
-//     width: calc(100% - .5rem * 2);
-//    height: 2px;
-//     background-color: $secondary-color;
-//  }
+ MAIN 
+.active::after,
+ header nav .bar-nav:hover::after,
+ header button:hover::after {
+     content: "";
+   position: absolute;
+  top: 28px;
+ left: .5rem;
+    width: calc(100% - .5rem * 2);
+   height: 2px;
+    background-color: $secondary-color;
+ }
 
-header {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	background-color: $light-color;
-
-	div {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-
-		button {
-			margin-left: 0.5rem;
-		}
-	}
-
-	nav {
-		display: flex;
-		gap: 1.5rem;
-		margin-right: 0.5rem;
-		text-transform: uppercase;
-
-		a {
-			padding: 0.5rem;
-		}
-
-		button {
-			position: relative;
-			padding: 0.5rem;
-			background-color: inherit;
-			border: 0;
-			text-transform: uppercase;
-			font-size: 1.6rem;
-			color: $dark-color;
-			cursor: pointer;
-		}
-	}
-
-	h1 {
-		line-height: normal;
-
-		img {
-			width: 120px;
-		}
-	}
-
-	form {
-		width: 100%;
-		text-align: right;
-		input {
-			text-align: left;
-			width: 200px;
-			border-left: 1px solid #ccc;
-			border-top-left-radius: 1rem;
-			border-bottom-left-radius: 1rem;
-			font-size: 1.7rem;
-		}
-	}
-}
 
 .burger-menu {
 	position: absolute;
@@ -150,9 +96,7 @@ header {
 		text-transform: initial;
 	}
 
-	// button {
-	// 	width: fit-content;
-	// }
+
 }
 
 .cart {
@@ -180,12 +124,12 @@ main {
 	padding: 2rem 0;
 }
 
-.banner {
-	background-image: url("../../../assets/images/banner.webp");
-	background-size: cover;
-	background-position: center;
-	height: 300px;
-}
+// .banner {
+// 	background-image: url("../../../assets/images/banner.webp");
+// 	background-size: cover;
+// 	background-position: center;
+// 	height: 300px;
+// }
 
 h2,
 h3 {
@@ -219,23 +163,18 @@ h3 {
 		p{
 			text-align: center;
 		}
-		button {
-			background-color: rgb(10, 139, 245);
-			width: 30%;
-
-		}
-
 	}
 }
 
 #auth {
+
 	form {
 		width: 50%;
-		margin: auto;
+		margin:  auto;
 
 		input,
 		button {
-			margin-bottom: 1rem;
+			margin-bottom: 1.5rem;
 			border: 1px solid #ccc;
 			border-radius: 1rem;
 		}
@@ -244,12 +183,15 @@ h3 {
 			background-color: $secondary-color;
 			color: $light-color;
 			font-size: 1.6rem;
-			padding: 0.5rem 1rem;
+		
 			width: 100%;
 			cursor: pointer;
 			text-transform: uppercase;
 			font-weight: bold;
+	
+		
 		}
+		
 	}
 
 	p {
@@ -346,31 +288,7 @@ input {
 	}
 }
 
-footer {
-	margin-top: auto;
-	padding: 2rem 0 1rem;
-	color: $primary-color;
-	background-color: $dark-color;
-	text-align: center;
 
-	a {
-		color: $primary-color;
-		margin: 0;
-		font-size: 1.4rem;
-	}
-
-	nav {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		justify-content: center;
-		margin: 1rem;
-	}
-
-	p {
-		margin: 2rem 0 0;
-	}
-}
 
 aside {
 	display: flex;
@@ -380,53 +298,4 @@ aside {
 }
 
 
-/******ADMIN******/
-
-img {
-    width: 50px;
-    height: auto;
-}
-
-td {
-    padding: .6rem;
-    text-align: center;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
- /***CAROUSEL******/
- .carousel {
-	position: relative;
-	width: 50%;
-	height: 50%;
-	overflow: hidden;
-	margin: auto;
-  }
-  
-  .carousel img {
-	width: 50%;
-	height: 50%;
-	object-fit: cover;
-  }
-  
-  .carousel button {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
-	border: none;
-	cursor: pointer;
-	padding: 10px;
-  }
-  
-  .carousel button:first-of-type {
-	left: 10px;
-  }
-  
-  .carousel button:last-of-type {
-	right: 10px;
-  }
 

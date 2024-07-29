@@ -93,10 +93,10 @@ function Products() {
 									<td>{product.price} €</td>
 									<td>{product.quantityInStock}</td>
 									<td>
-										<Link to={"details/" + products.id}>
+										<Link to={"details/" + product.id}>
 											Détail
 										</Link>
-										<Link to={"edit/" + products.id}>
+										<Link to={"edit/" + product.id}>
 											Modifier
 										</Link>
 										<button

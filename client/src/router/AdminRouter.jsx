@@ -3,6 +3,7 @@ import AdminHome from "../views/Admin/AdminHome";
 import Products from "../views/Admin/Products.jsx";
 import Details from "../views/Admin/Details.jsx";
 import Header from "../views/user/partials/Header.jsx";
+import AddProduct from "../views/Admin/AddProduct.jsx";
 
 
 
@@ -15,6 +16,7 @@ function AdminRouter(){
           <Routes>
             <Route path="/" element={<AdminHome/>}/>
             <Route path="products" element={<Products/>}/>
+            <Route path="products/add" element={<AddProduct/>}/>
             <Route path="products/details/:id" element={<Details />}/>
             <Route path="*" element={<p>NOT FOUND</p>}/>
           </Routes>
