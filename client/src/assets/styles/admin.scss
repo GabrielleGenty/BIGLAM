@@ -5,8 +5,8 @@ body{
 	main{
 		background-color:$background-color;
 		section{
+		
 			margin: 5%;
-
 					h1,
 					h2{
 						color: $dark-color;
@@ -26,15 +26,13 @@ body{
 				}
 				a:hover{
 					background-color:$secondary-color;
+					color: $primary-color;
 				}
 				}
 				img {
 					width: 50px;
 					height: auto;
 				}
-				
-		
-
 			
 			table {
 				color:$dark-color;
@@ -45,9 +43,13 @@ body{
 				border-collapse: collapse;
 				a{
 					color:$secondary-color ;
+					padding: 5px 20px;
+					
 				}
 				a:hover{
-					color: rgb(51, 76, 235);
+					background-color: $secondary-color;
+					color:$primary-color ;
+			
 				}
 				td {
 					padding: 1rem;
@@ -57,23 +59,19 @@ body{
 			}
 			#buttonSet{
 				display: flex;
-				width: 100%;
-				justify-content: center;
+				width: 80%;
+				gap: 20px;
+				justify-content: space-between;
 				margin: auto;
-				padding: 3%;
+				padding: 1% 0;
+			
+			}
+			button{
+				width: 50%;
 
 			}
-			#addButton{
-				margin-left: 5%;
-			}
-			#retourButton{
-				margin-right: 10%;	
-			}
+	
 		
-			svg{
-				color: white;
-				padding-left: 20px;
-			}
 			/*****Admin-Product-details****/
 .productDetails{
 	h1{
@@ -85,21 +83,22 @@ body{
   
 }
 /******Admin-ADD-PRODUCT****/
-	
+			
 				form {
 					width: 50%;
-					margin:  auto;
-
+					margin: auto;
 					textarea{
+					font-size: 1.8rem;
 					width:100%;
 					text-align:center;
+					border: 0px;
+					padding: 0.5rem;
 					
 					}
 					textarea,
 					input,
 					button {
-						margin-bottom: 1.5rem;
-						border: 1px solid #ccc;
+						margin-bottom: 0.5rem;
 						border-radius: 1rem;
 					}
 
@@ -107,27 +106,17 @@ body{
 						background-color: $secondary-color;
 						color: $light-color;
 						font-size: 1.6rem;
-						width: 50%;
+						width: 100%;
 						cursor: pointer;
 						text-transform: uppercase;
 						font-weight: bold;
-						
-						
-					
-				
+						text-align: center;
+						margin: 0.5rem 0;
 					
 					}
-					.Addform{
-						display:flex;
-				
-					}
-
-				
 					
-				}
+				}		
 
-
-			
 	    }
 		
     }

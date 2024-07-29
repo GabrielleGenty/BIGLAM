@@ -13,24 +13,19 @@ button {
     text-align: center;
     margin: auto;
 	width: auto;
-	padding: 0.7rem;
+	padding: 0.7rem ;
     text-align: center;
 	border-radius: 1rem;
 	margin: 10px;
 	box-shadow: 0px 4px 4px 0px rgb(174, 174, 174);
-	
-	
-
     
 }
 
-a,
-button {
-	:hover{
-		background-color: rgb(5, 24, 243);
-		color: rgb(248, 241, 241);
-	}
+button :hover{
+	color: $primary-color;
+	
 }
+
 
 
 /****CARD****/

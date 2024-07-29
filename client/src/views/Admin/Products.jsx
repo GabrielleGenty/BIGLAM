@@ -59,12 +59,12 @@ function Products() {
 	return (
 		<main >
 			<section>
-				<h2>Liste des Produits</h2>
+				<h1>Liste des Produits</h1>
 				<div id="buttonSet">
 				<button id="addButton"><Link to="/products/add">
 					<strong>Ajouter un produit</strong> <FontAwesomeIcon icon={faPlus} />
 				</Link></button>
-				<button id="retourButton"><Link to="/"><strong>Retour</strong></Link></button>
+				<button id="retourButton"><Link to="/"><strong>Retour To Home</strong></Link></button>
 				</div>
 		
 				<table>
