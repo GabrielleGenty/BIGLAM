@@ -52,9 +52,9 @@ function Details() {
     }
     return (
         <main>
-            <section className="productDetails">
+            <section >
             <h1>Product Details</h1>
-                <article>
+                <article className="productDetails">
 						{product.map((product) => {
 							return (
 								<div key={product.id}>
@@ -72,6 +72,7 @@ function Details() {
 						})}
 				
 				</article>
+                <div id="buttonSet">
                 <button><Link to={"edit/" + product.id}>
 											Modifier
 										</Link></button>
@@ -79,6 +80,8 @@ function Details() {
 					onClick={(e) =>
 					deleteHandler(e, product.id)}> Supprimer</button>
                 <button><Link to="/products">Retour</Link></button>
+                </div>
+     
             </section>
         </main>
     )

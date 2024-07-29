@@ -57,21 +57,27 @@ function Products() {
 
   
 	return (
-		<main>
+		<main >
 			<section>
 				<h2>Liste des Produits</h2>
-				<Link to="/products/add">
-					Ajouter un produit <FontAwesomeIcon icon={faPlus} />
-				</Link>
+				<div id="buttonSet">
+				<button id="addButton"><Link to="/products/add">
+					<strong>Ajouter un produit</strong> <FontAwesomeIcon icon={faPlus} />
+				</Link></button>
+				<button id="retourButton"><Link to="/"><strong>Retour</strong></Link></button>
+				</div>
+		
 				<table>
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Image</th>
-							<th>title</th>
-							<th>Prix</th>
-							<th>Quantity In Stock</th>
-							<th>Actions</th>
+						
+							<th><h3>Id</h3></th>
+							<th><h3>Image</h3></th>
+							<th><h3>title</h3></th>
+							<th><h3>Prix</h3></th>
+							<th><h3>Quantity In Stock</h3></th>
+							<th><h3>Actions</h3></th>
+						
 						</tr>
 					</thead>
 					<tbody>
@@ -94,24 +100,15 @@ function Products() {
 									<td>{product.quantityInStock}</td>
 									<td>
 										<Link to={"details/" + product.id}>
-											Détail
+											Détails
 										</Link>
-										<Link to={"edit/" + product.id}>
-											Modifier
-										</Link>
-										<button
-											onClick={(e) =>
-												deleteHandler(e, products.id)
-											}
-										>
-											Supprimer
-										</button>
 									</td>
 								</tr>
 							);
 						})}
 					</tbody>
 				</table>
+			
 			</section>
 		</main>
 	);

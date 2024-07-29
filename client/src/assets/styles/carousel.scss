@@ -1,0 +1,33 @@
+ /***CAROUSEL******/
+ .carousel {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	overflow: hidden;
+	margin: auto;
+  }
+  
+  .carousel img {
+	width: 50%;
+	height: 50%;
+	object-fit: cover;
+  }
+  
+  .carousel button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+  }
+  
+  .carousel button:first-of-type {
+	left: 10px;
+  }
+  
+  .carousel button:last-of-type {
+	right: 10px;
+  }

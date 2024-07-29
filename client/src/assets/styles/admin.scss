@@ -3,136 +3,137 @@
 /****HOOM*****/
 body{
 	main{
+		background-color:$background-color;
+		section{
+			margin: 5%;
 
-		h1{
-			color: $dark-color;
-			text-align: center;
-			margin-bottom: 2%;
-		}
-	}
-	
-	
-	nav{
-		background-color:$light-color;
-		align-items: center;
-		display: flex;
-		justify-content: space-around;
-	
-	  a{
-		background-color: aqua;
-		padding: 1%;
-	  }
-	}
-}
+					h1,
+					h2{
+						color: $dark-color;
+						text-align: center;
+						margin: 2%;
+					}
 
+				nav{
+					
+					align-items: center;
+					display: flex;
+					justify-content: space-around;
+				
+				a{  
+					padding: 2%;
+					font-size: large;
+				}
+				a:hover{
+					background-color:$secondary-color;
+				}
+				}
+				img {
+					width: 50px;
+					height: auto;
+				}
+				
+		
 
-img {
-    width: 50px;
-    height: auto;
-}
+			
+			table {
+				color:$dark-color;
+				font-size: large;
+				width: 80%;
+				padding: 5%;
+				margin: auto;
+				border-collapse: collapse;
+				a{
+					color:$secondary-color ;
+				}
+				a:hover{
+					color: rgb(51, 76, 235);
+				}
+				td {
+					padding: 1rem;
+					text-align: center;
+					margin: auto;
+				}
+			}
+			#buttonSet{
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				margin: auto;
+				padding: 3%;
 
-td {
-    padding: .6rem;
-    text-align: center;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
- /***CAROUSEL******/
- .carousel {
-	position: relative;
-	width: 50%;
-	height: 50%;
-	overflow: hidden;
-	margin: auto;
-  }
-  
-  .carousel img {
-	width: 50%;
-	height: 50%;
-	object-fit: cover;
-  }
-  
-  .carousel button {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
-	border: none;
-	cursor: pointer;
-	padding: 10px;
-  }
-  
-  .carousel button:first-of-type {
-	left: 10px;
-  }
-  
-  .carousel button:last-of-type {
-	right: 10px;
-  }
-
-/*****Admin-Product-details****/
+			}
+			#addButton{
+				margin-left: 5%;
+			}
+			#retourButton{
+				margin-right: 10%;	
+			}
+		
+			svg{
+				color: white;
+				padding-left: 20px;
+			}
+			/*****Admin-Product-details****/
 .productDetails{
 	h1{
 		color: $secondary-color;
 	}
-	margin: 5%;
+	margin: 2%;
 	text-align: center;
-	article{
-		padding: 2%;
-	}
+	
   
 }
 /******Admin-ADD-PRODUCT****/
-#addProduct{
-
-	form {
-		width: 50%;
-		margin:  auto;
-
-		textarea{
-           width:100%;
-		   text-align:center;
-		   
-		}
-		textarea,
-		input,
-		button {
-			margin-bottom: 1.5rem;
-			border: 1px solid #ccc;
-			border-radius: 1rem;
-		}
-
-		button {
-			background-color: $secondary-color;
-			color: $light-color;
-			font-size: 1.6rem;
-			width: 50%;
-			cursor: pointer;
-			text-transform: uppercase;
-			font-weight: bold;
-			margin-left: 35%;
-			
-		
 	
-		
-		}
-		.Addform{
-			display:flex;
-	
-			h3{
-				padding: 0.5rem;
-				width: 25%;
+				form {
+					width: 50%;
+					margin:  auto;
+
+					textarea{
+					width:100%;
+					text-align:center;
+					
+					}
+					textarea,
+					input,
+					button {
+						margin-bottom: 1.5rem;
+						border: 1px solid #ccc;
+						border-radius: 1rem;
+					}
+
+					button {
+						background-color: $secondary-color;
+						color: $light-color;
+						font-size: 1.6rem;
+						width: 50%;
+						cursor: pointer;
+						text-transform: uppercase;
+						font-weight: bold;
+						
+						
+					
+				
+					
+					}
+					.Addform{
+						display:flex;
+				
+					}
+
+				
 					
 				}
-		}
 
-	
+
+			
+	    }
 		
-	}
-
-
+    }
 }
+
+
+
+
+

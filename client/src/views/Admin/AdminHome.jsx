@@ -11,14 +11,15 @@ function AdminHome() {
 
   return (
     <main>
-    <h1>BACK OFFICE</h1>
-    <nav>
+      <section>
+      <h1>BACK OFFICE</h1>
+      <nav>
       <Link to="/users"> <strong>Utilisateurs</strong></Link>
       <Link to="/products"><strong>Produits</strong></Link>
       <Link to="/categories"><strong>Catégories</strong></Link>
       <Link to="/orders"><strong>Commandes</strong></Link>
     </nav>
-
+      </section>
     </main>
   )
 }

@@ -7,18 +7,6 @@ function AddProduct() {
   const [error , setError] = useState(null);
   const navigate = useNavigate(); // Assurez-vous d'importer et d'utiliser useNavigate si vous utilisez react-router-dom v6
 
-  // const [formData, setFormData] = useState({
-  //   title: '',
-  //   subTitle: '',
-  //   picture: '',
-  //   alt: '',
-  //   description: '',
-  //   price: '',
-  //   ref: '',
-  //   quantityInStock: '',
-  //   categories_id: ''
-  // });
-
   async function submitHandler(e){
     e.preventDefault();
         const form = e.target;
