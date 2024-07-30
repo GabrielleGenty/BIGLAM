@@ -19,7 +19,7 @@ function Card({ products }){
            />
            <h3>{products.title}</h3>
            <p><strong>Prix {products.price} €</strong></p>
-           <button onClick={() => addToCart(products)}>
+           <button id="addTopanier" onClick={() => addToCart(products)}>
              Ajouter au panier
            </button>
         </article>

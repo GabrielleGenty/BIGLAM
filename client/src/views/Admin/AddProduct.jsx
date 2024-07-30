@@ -12,12 +12,11 @@ function AddProduct() {
         const form = e.target;
         const formData =new FormData(form);
         const data = Object.fromEntries(formData);
-
+        console.log(data);
      // Envoyer les données au backend
 
      try{
-      const response = await fetch
-      ('http://localhost:9000/api/products/', {
+      const response = await fetch('http://localhost:9000/api/v1/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -31,8 +30,9 @@ function AddProduct() {
         console.log('Error response:', responseParsed); // Log the error response
         return;
       }
-      
+      console.log("Avant parse");
       const responseParsed = await response.json();
+      console.log(responseParsed);
       console.log('Success response:', responseParsed); // Log the success response
       form.reset();
       setUser(responseParsed.user);
@@ -78,7 +78,7 @@ function AddProduct() {
                     required
                 />
                 <input
-                    type="text"
+                    type="url"
                     id="productPicture"
                     name="picture"
                     placeholder=" Product Picture URL"
@@ -110,7 +110,7 @@ function AddProduct() {
                     type="text"
                     id="productRef"
                     name="ref"
-                    placeholder=" Product Reference"
+                    placeholder="Product Reference"
                     required
                 />
                 <input

@@ -54,10 +54,12 @@ function Details() {
         <main>
             <section >
             <h1>Product Details</h1>
+            
                 <article className="productDetails">
 						{product.map((product) => {
 							return (
-								<div key={product.id}>
+								<div className="productDetail" key={product.id}>
+                                    <div>
                                     <h2>Product ID : {product.id}</h2>
                                     <h3>Product Title : {product.title}</h3>
 								    <p>Product Subtitle :{product.subTitle}</p>
@@ -66,7 +68,9 @@ function Details() {
                                     <p>Product Référence :{product.ref}</p>
 									<p>Quantité En stock : {product.quantityInStock}</p>
                                     <p>Categories ID : {product.categories_id}</p>
-                                    <img src={"../../../images/new_collection/"+ product.picture } alt={product.title} />
+                                    </div>
+                                    <div> <img src={"../../../images/new_collection/"+ product.picture } alt={product.title} /></div>
+                                   
 								</div>
 							);
 						})}

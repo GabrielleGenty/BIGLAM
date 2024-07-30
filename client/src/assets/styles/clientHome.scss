@@ -1,0 +1,35 @@
+#home {
+	section {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		justify-content: center;
+
+		h2 {
+			width: 100%;
+			text-align: center;
+		}
+	}
+	article {
+		display: flex;
+		flex-direction: column;
+		background-color: #95f3f3;
+		width: 30%;
+
+		img {
+			display: block;
+			width: auto;
+			height: auto;
+
+		}
+		p{
+			text-align: center;
+		}
+	}
+}
+// aside {
+// 	display: flex;
+// 	justify-content: center;
+// 	gap: 3rem;
+// 	margin-bottom: 2rem;
+// }

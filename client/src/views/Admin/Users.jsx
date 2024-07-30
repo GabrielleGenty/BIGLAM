@@ -3,12 +3,12 @@ import {Link} from "react-router-dom";
 
 function Users() {
     const [users, setUsers] = useState(null);
-    const [refreshUsersList, setRefreshUsersList] = useState(false);
 
     useEffect(() => {
         document.title = "Back Office | Utilisateurs";
 
         async function fetchUsers() {
+            try{ 
             const response = await fetch(
                 "http://localhost:9000/api/v1/users",
                 {
@@ -24,11 +24,16 @@ function Users() {
             if (response.ok) {
                 const data = await response.json();
                 setUsers(data.response);
-            }
+            } else{
+                console.error("Failed to fetch users");
+            } 
+        } catch {
+          console.error("Error fetching users :",error)
         }
+    }
 
         fetchUsers();
-    }, [refreshUsersList]);
+    }, []);
 
     if (!users) {
         return (
@@ -39,36 +44,44 @@ function Users() {
     }
 
     return (
-        <main id="auth">
+        <main >
             <section>
-                <h2>Liste des Users</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>firstname</th>
-                            <th>lastname</th>
-                            <th>email</th>
-                            <th>createdDate</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map((user) => {
-                            return (
-                                <tr key={user.id}>
+                <h1>Liste des Users</h1>
+                <div id="buttonSet">
+                    <button>
+                        <Link to="/">Retour au Home </Link></button>
+                    </div>
+
+                    {users.length === 0 ? (
+                       <p>No users found</p>
+                     ) :(  
+                      <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>E-mail</th>
+                                <th>CreatedDate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           {users.map((user) => {
+                              return (
+                                <tr key={users.id}>
                                     <td>{user.id}</td>
                                     <td>{user.firstname}</td>
                                     <td>{user.lastname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.createdDate}</td>
                                 </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-                <div>
-                    <button><Link to="/">Retour au Home </Link></button></div>
-                
+                                );
+                              })}
+                            </tbody>
+                    
+                        </table>
+
+                    )}
             </section>
         </main>
     );

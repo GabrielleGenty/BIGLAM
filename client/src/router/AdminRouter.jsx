@@ -4,6 +4,9 @@ import Products from "../views/Admin/Products.jsx";
 import Details from "../views/Admin/Details.jsx";
 import Header from "../views/user/partials/Header.jsx";
 import AddProduct from "../views/Admin/AddProduct.jsx";
+import Categories from "../views/Admin/Categories.jsx";
+import AddCategory from "../views/Admin/AddCategory.jsx";
+import Users from "../views/Admin/Users.jsx";
 
 
 
@@ -18,6 +21,9 @@ function AdminRouter(){
             <Route path="products" element={<Products/>}/>
             <Route path="products/add" element={<AddProduct/>}/>
             <Route path="products/details/:id" element={<Details />}/>
+            <Route path="categories" element={<Categories/>}/>
+            <Route path="category/add" element={<AddCategory/>}/>
+            <Route path="users" element={<Users/>}/>
             <Route path="*" element={<p>NOT FOUND</p>}/>
           </Routes>
           </Router>
