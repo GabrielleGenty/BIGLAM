@@ -54,6 +54,11 @@ function Details() {
         <main>
             <section >
             <h1>Product Details</h1>
+            <div id="buttonSet">
+                
+                        <button><Link to="/products">Retour a la Page De Produits</Link></button>
+                    </div>
+
             
                 <article className="productDetails">
 						{product.map((product) => {
@@ -77,13 +82,9 @@ function Details() {
 				
 				</article>
                 <div id="buttonSet">
-                <button><Link to={"edit/" + product.id}>
-											Modifier
-										</Link></button>
-                <button
-					onClick={(e) =>
-					deleteHandler(e, product.id)}> Supprimer</button>
-                <button><Link to="/products">Retour</Link></button>
+                <button><Link to={"edit/" + product.id}>Modifier</Link></button>
+                <button onClick={(e) =>deleteHandler(e, product.id)}> Supprimer</button>
+               
                 </div>
      
             </section>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
 function Users() {
-    const [users, setUsers] = useState(null);
+    const [users, setUsers] = useState(0);
 
     useEffect(() => {
         document.title = "Back Office | Utilisateurs";
@@ -10,7 +10,7 @@ function Users() {
         async function fetchUsers() {
             try{ 
             const response = await fetch(
-                "http://localhost:9000/api/v1/users",
+                "http://localhost:9000/api/v1/users/getAll",
                 {
                     credentials: "include",
                 }
@@ -24,6 +24,7 @@ function Users() {
             if (response.ok) {
                 const data = await response.json();
                 setUsers(data.response);
+                console.log(data);
             } else{
                 console.error("Failed to fetch users");
             } 
@@ -48,8 +49,8 @@ function Users() {
             <section>
                 <h1>Liste des Users</h1>
                 <div id="buttonSet">
-                    <button>
-                        <Link to="/">Retour au Home </Link></button>
+                    <button><Link to="/">Retour au Home </Link></button>
+                    
                     </div>
 
                     {users.length === 0 ? (
@@ -68,7 +69,7 @@ function Users() {
                         <tbody>
                            {users.map((user) => {
                               return (
-                                <tr key={users.id}>
+                                <tr key={user.id}>
                                     <td>{user.id}</td>
                                     <td>{user.firstname}</td>
                                     <td>{user.lastname}</td>
