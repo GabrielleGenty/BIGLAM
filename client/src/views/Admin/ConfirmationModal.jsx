@@ -1,6 +1,6 @@
 import React from "react";
 
-function ConfirmationModal({ show, onClose, onConfirm }) {
+function ConfirmationModal({ show, onClose, onConfirm, message }) {
   if (!show) {
     return null;
   }
@@ -9,7 +9,7 @@ function ConfirmationModal({ show, onClose, onConfirm }) {
     <div className="modal-overlay">
       <div className="modal">
         <h2>Confirmation</h2>
-        <p>Are you sure you want to delete this category?</p>
+        <p>{message}</p>
         <button onClick={onConfirm}>Yes</button>
         <button onClick={onClose}>No</button>
       </div>
