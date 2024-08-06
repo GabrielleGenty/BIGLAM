@@ -11,6 +11,7 @@ function Categories() {
   const [categoryToDelete, setCategoryToDelete] = useState(null);
   const [editingCategory, setEditingCategory] = useState(null);
   const [editLabel, setEditLabel] = useState("");
+  const [deleteMessage, setDeleteMessage] = useState("");
 
   useEffect(() => {
     document.title = "Back Office | Categories";
@@ -76,8 +77,9 @@ function Categories() {
     }
   }
 
-  function openModal(id) {
+  function openModal(id, label) {
     setCategoryToDelete(id);
+    setDeleteMessage(`Are you sure you want to delete the category "${label}"?`);
     setShowModal(true);
   }
 
@@ -144,7 +146,7 @@ function Categories() {
                   ) : (
                     <>
                       <button onClick={() => startEditing(category)}>Modifier</button>
-                      <button onClick={() => openModal(category.id)}>Supprimer</button>
+                      <button onClick={() => openModal(category.id, category.label)}>Supprimer</button>
                     </>
                   )}
                 </td>
@@ -157,6 +159,7 @@ function Categories() {
         show={showModal}
         onClose={() => setShowModal(false)}
         onConfirm={deleteHandler}
+        message={deleteMessage}
       />
     </main>
   );
