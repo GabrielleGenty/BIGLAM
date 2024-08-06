@@ -33,20 +33,6 @@ function Products() {
 		fetchProducts();
 	}, [refreshProductList]);
  
-  
-	// async function deleteHandler(e, id) {
-	// 	e.preventDefault();
-	// 	const response = await fetch(
-	// 		"http://localhost:9000/api/v1/products/" + id,
-	// 		{
-	// 			method: "DELETE",
-	// 			credentials: "include",
-	// 		}
-	// 	);
-	// 	if (response.ok) {
-	// 		setProductList(!refreshProductList);
-	// 	}
-	// }
   if (!products) {
 		return (
 			<main>
