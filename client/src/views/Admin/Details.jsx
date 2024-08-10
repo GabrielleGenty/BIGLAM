@@ -8,6 +8,7 @@ function Details() {
     const [editProduct, setEditProduct] = useState({});
     const [showModal, setShowModal] = useState(false);
     const [deleteMessage, setDeleteMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -58,27 +59,46 @@ function Details() {
 
     async function updateProductHandler(e) {
         e.preventDefault();
+        console.log("Sending PATCH request with:", editProduct);
         try {
+            // Préparer les données à envoyer pour la requête PATCH
+            const updatedData = {
+                title: editProduct.title,
+                subTitle: editProduct.subTitle,
+                picture: editProduct.picture,
+                alt: editProduct.alt,
+                description: editProduct.description,
+                price: editProduct.price,
+                ref: editProduct.ref,
+                quantityInStock: editProduct.quantityInStock,
+                categories_id: editProduct.categories_id,
+            };
             const response = await fetch(`http://localhost:9000/api/v1/products/${id}`, {
                 method: "PATCH",
                 credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(editProduct),
+                body: JSON.stringify(updatedData), // Assurez-vous que le corps de la requête est correctement formaté
             });
             if (response.ok) {
                 const updatedProduct = await response.json();
+                console.log("Updated product data:", updatedProduct);
                 setProduct(updatedProduct); // Set the single product object directly
                 setIsEditing(false);
+                setSuccessMessage("Le produit a été modifié avec succès!"); // Afficher le message de succès
+                setTimeout(() => navigate("/products"), 3000); // Rediriger après 3 secondes pour permettre à l'utilisateur de voir le message
             } else {
                 console.error("Failed to update product:", response.statusText);
+                setSuccessMessage("Échec de la modification du produit. Veuillez réessayer."); // Afficher le message d'erreur
+            
             }
         } catch (error) {
             console.error("Error updating product:", error);
+            setSuccessMessage("Une erreur est survenue lors de la modification du produit."); // Afficher le message d'erreur
+            
         }
     }
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setEditProduct({
@@ -103,73 +123,115 @@ function Details() {
                     <button><Link to="/products">Retour à la Page De Produits</Link></button>
                 </div>
                 {isEditing ? (
-                    <form onSubmit={updateProductHandler}>
-                        <div>
+                    <div>
+                         {product.map((product) => {
+                            return(
+                       <form onSubmit={updateProductHandler} key={product.id} >
+                    
+                       
+                    
                             <label>Product Title: </label>
                             <input
                                 type="text"
                                 name="title"
                                 value={editProduct.title || ''}
                                 onChange={handleInputChange}
+                                placeholder={product.title}
+                               
                             />
-                        </div>
-                        <div>
+                    
                             <label>Product Subtitle: </label>
                             <input
                                 type="text"
                                 name="subTitle"
-                                value={editProduct.subTitle || ''}
+                                value={editProduct.subTitle ||''}
                                 onChange={handleInputChange}
+                                placeholder={product.subTitle}
+                               
                             />
-                        </div>
-                        <div>
+                             <label>Product Picture : </label>
+                              <input
+                                type="url"
+                                id="productPicture"
+                                name="picture"
+                                value={editProduct.picture || ''}
+                                onChange={handleInputChange}
+                                placeholder={product.subTitle}
+                            
+                            />
+                             <label>Product Picture Discription: </label>
+                                <input
+                                type="text"
+                                id="productPictureAlt"
+                                name="alt"
+                                value={editProduct.alt || ''}
+                                onChange={handleInputChange}
+                                placeholder={product.alt}
+                                
+                              
+                            />
+                   
                             <label>Product Description: </label>
                             <input
                                 type="text"
                                 name="description"
                                 value={editProduct.description || ''}
                                 onChange={handleInputChange}
+                                placeholder={product.description}
+                                
                             />
-                        </div>
-                        <div>
+                   
                             <label>Product Prix: </label>
                             <input
                                 type="number"
                                 name="price"
                                 value={editProduct.price || ''}
                                 onChange={handleInputChange}
+                                placeholder={product.price}
+                              
                             />
-                        </div>
-                        <div>
+                     
                             <label>Product Référence: </label>
                             <input
                                 type="text"
                                 name="ref"
                                 value={editProduct.ref || ''}
                                 onChange={handleInputChange}
+                                placeholder={product.ref}
+                             
                             />
-                        </div>
-                        <div>
+                       
                             <label>Quantité En stock: </label>
                             <input
                                 type="number"
                                 name="quantityInStock"
                                 value={editProduct.quantityInStock || ''}
                                 onChange={handleInputChange}
+                                placeholder={product.quantityInStock}
+                              
                             />
-                        </div>
-                        <div>
+                        
+                     
                             <label>Categories ID: </label>
                             <input
                                 type="number"
                                 name="categories_id"
                                 value={editProduct.categories_id || ''}
                                 onChange={handleInputChange}
+                                placeholder={product.categories_id}
+                               
                             />
-                        </div>
+                       
+                        
+                 
                         <button type="submit">Save</button>
-                        <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
+                        <button type="button" onClick={() => setIsEditing(true)}>Cancel</button>
+         
+                      
                     </form>
+                               );
+                            })}
+                    </div>
                 ) : (
                     <article className="productDetails">
                         {product.map((product) => {
@@ -193,8 +255,9 @@ function Details() {
 						})}
                     </article>
                 )}
+                 {successMessage && <div className="successMessage">{successMessage}</div>}
                 <div id="buttonSet">
-                    {!isEditing && (
+                    {!isEditing &&  (
                         <>
                             <button onClick={() => setIsEditing(true)}>Modifier</button>
                             <button onClick={() => {
