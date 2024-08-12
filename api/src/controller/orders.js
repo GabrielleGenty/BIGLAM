@@ -66,6 +66,19 @@ const add = async (req, res) => {
         connection.release();
     }
 };
+const update= async (req,res) =>{
+    
+    console.log("UPDATE",req.body)
+    try{
+
+        const response = await  Orders.update(req);
+
+        res.json({ msg: "Le Status de l'Order a été modifié avec succès" ,response });
+    } catch (error) {
+
+        res.status(500).json({ msg: "Erreur de serveur", error: error.message });
+    }
+};
 
 const deleteOrder = async (req, res) => {
     try {
@@ -77,4 +90,4 @@ const deleteOrder = async (req, res) => {
     }
 };
 
-export { getAll, getById, add, deleteOrder };
+export { getAll, getById, add, update,deleteOrder };

@@ -16,6 +16,16 @@ class Orders{
         users_id FROM orders WHERE orders.id = ?`, [id]);
         
     };
+    static async update(req){
+      
+        const { id }= req.params;
+       return await Query.runWithParams(
+        `UPDATE orders 
+        SET 
+            status = ? 
+        WHERE orders.id = ?`,{...req.body,id});
+   
+    };
     static async deleteOrder(id){
        
         return await Query.runWithParams(`DELETE FROM orders WHERE id = ?`, [id]);
