@@ -147,7 +147,7 @@ function Details() {
                             />
                              <label>Product Picture : </label>
                               <input
-                                type="url"
+                                type="text"
                                 id="productPicture"
                                 name="picture"
                                 value={editProduct.picture || product.picture}
