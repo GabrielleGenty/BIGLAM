@@ -51,7 +51,7 @@ function AddCategory() {
         <h1>Ajouter un Category</h1>
                   <div id="buttonSet">
                   
-                    <button><Link to="/products">Retour a la Page De Categories</Link></button>
+                    <button><Link to="/categories">Retour a la Page De Categories</Link></button>
                     </div>
             {error && <p>{error}</p>}
             <form onSubmit={submitHandler}>
