@@ -29,7 +29,8 @@ function Details() {
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data); // Log the fetched product data
-                    setProduct(data); // Set the single product object directly
+                    setProduct(data);
+                     // Set the single product object directly
                     setEditProduct(data); // Initialize editProduct with fetched product data
                 } else {
                     console.error("Failed to fetch product:", response.statusText);
@@ -63,15 +64,15 @@ function Details() {
         try {
             // Préparer les données à envoyer pour la requête PATCH
             const updatedData = {
-                title: editProduct.title,
-                subTitle: editProduct.subTitle,
-                picture: editProduct.picture,
-                alt: editProduct.alt,
-                description: editProduct.description,
-                price: editProduct.price,
-                ref: editProduct.ref,
-                quantityInStock: editProduct.quantityInStock,
-                categories_id: editProduct.categories_id,
+                title: editProduct.title || product.title, // Garder la valeur actuelle si le champ est vide
+                subTitle: editProduct.subTitle || product.subTitle,
+                picture: editProduct.picture || product.picture,
+                alt: editProduct.alt || product.alt,
+                description: editProduct.description || product.description,
+                price: editProduct.price || product.price,
+                ref: editProduct.ref || product.ref,
+                quantityInStock: editProduct.quantityInStock || product.quantityInStock,
+                categories_id: editProduct.categories_id || product.categories_id,
             };
             const response = await fetch(`http://localhost:9000/api/v1/products/${id}`, {
                 method: "PATCH",
@@ -87,7 +88,7 @@ function Details() {
                 setProduct(updatedProduct); // Set the single product object directly
                 setIsEditing(false);
                 setSuccessMessage("Le produit a été modifié avec succès!"); // Afficher le message de succès
-                setTimeout(() => navigate("/products"), 3000); // Rediriger après 3 secondes pour permettre à l'utilisateur de voir le message
+                setTimeout(() => navigate("/products"), 2000); // Rediriger après 3 secondes pour permettre à l'utilisateur de voir le message
             } else {
                 console.error("Failed to update product:", response.statusText);
                 setSuccessMessage("Échec de la modification du produit. Veuillez réessayer."); // Afficher le message d'erreur
@@ -159,15 +160,14 @@ function Details() {
                                 placeholder={product.subTitle}
                             
                             />
-                             <label>Product Picture Discription: </label>
+                             <label>Product Picture Discription (alt): </label>
                                 <input
-                                type="text"
-                                id="productPictureAlt"
-                                name="alt"
-                                value={editProduct.alt || ''}
-                                onChange={handleInputChange}
-                                placeholder={product.alt}
-                                
+                                  type="text"
+                                  id="productPictureAlt"
+                                  name="alt"
+                                  value={editProduct.alt || ''}
+                                  onChange={handleInputChange}
+                                  placeholder={product.alt}
                               
                             />
                    
@@ -225,7 +225,10 @@ function Details() {
                         
                  
                         <button type="submit">Save</button>
-                        <button type="button" onClick={() => setIsEditing(true)}>Cancel</button>
+                        <button type="button" onClick={() => {
+                            setEditProduct(product);
+                            setIsEditing(false);
+                        }}>Cancel</button>
          
                       
                     </form>
