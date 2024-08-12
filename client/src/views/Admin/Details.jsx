@@ -28,8 +28,10 @@ function Details() {
                 }
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data); // Log the fetched product data
+                    console.log("DATA:")
+                    console.log(data);
                     setProduct(data);
+                    
                      // Set the single product object directly
                     setEditProduct(data); // Initialize editProduct with fetched product data
                 } else {
@@ -60,20 +62,20 @@ function Details() {
 
     async function updateProductHandler(e) {
         e.preventDefault();
-        console.log("Sending PATCH request with:", editProduct);
+        console.log(product); // Log the fetched product data
+          // Define the updatedData object using editProduct values
+    const updatedData = {
+        title: editProduct.title || product.title,
+        subTitle: editProduct.subTitle || product.subTitle,
+        picture: editProduct.picture || product.picture,
+        alt: editProduct.alt || product.alt,
+        description: editProduct.description || product.description,
+        price: editProduct.price || product.price ,
+        ref: editProduct.ref || product.ref,
+        quantityInStock: editProduct.quantityInStock || product.quantityInStock,
+        categories_id: editProduct.categories_id || product.categories_id,
+    };
         try {
-            // Préparer les données à envoyer pour la requête PATCH
-            const updatedData = {
-                title: editProduct.title || product.title, // Garder la valeur actuelle si le champ est vide
-                subTitle: editProduct.subTitle || product.subTitle,
-                picture: editProduct.picture || product.picture,
-                alt: editProduct.alt || product.alt,
-                description: editProduct.description || product.description,
-                price: editProduct.price || product.price,
-                ref: editProduct.ref || product.ref,
-                quantityInStock: editProduct.quantityInStock || product.quantityInStock,
-                categories_id: editProduct.categories_id || product.categories_id,
-            };
             const response = await fetch(`http://localhost:9000/api/v1/products/${id}`, {
                 method: "PATCH",
                 credentials: "include",
@@ -88,7 +90,7 @@ function Details() {
                 setProduct(updatedProduct); // Set the single product object directly
                 setIsEditing(false);
                 setSuccessMessage("Le produit a été modifié avec succès!"); // Afficher le message de succès
-                setTimeout(() => navigate("/products"), 2000); // Rediriger après 3 secondes pour permettre à l'utilisateur de voir le message
+                setTimeout(() => navigate("/products"), 3000); // Rediriger après 3 secondes pour permettre à l'utilisateur de voir le message
             } else {
                 console.error("Failed to update product:", response.statusText);
                 setSuccessMessage("Échec de la modification du produit. Veuillez réessayer."); // Afficher le message d'erreur
@@ -124,122 +126,91 @@ function Details() {
                     <button><Link to="/products">Retour à la Page De Produits</Link></button>
                 </div>
                 {isEditing ? (
-                    <div>
-                         {product.map((product) => {
-                            return(
-                       <form onSubmit={updateProductHandler} key={product.id} >
                     
                        
-                    
+                       <form onSubmit={updateProductHandler} key={product.id} >
                             <label>Product Title: </label>
                             <input
                                 type="text"
                                 name="title"
-                                value={editProduct.title || ''}
+                                value={editProduct.title || product.title}
                                 onChange={handleInputChange}
-                                placeholder={product.title}
-                               
+                                
                             />
-                    
                             <label>Product Subtitle: </label>
                             <input
                                 type="text"
                                 name="subTitle"
-                                value={editProduct.subTitle ||''}
+                                value={editProduct.subTitle ||product.subTitle}
                                 onChange={handleInputChange}
-                                placeholder={product.subTitle}
-                               
+
                             />
                              <label>Product Picture : </label>
                               <input
                                 type="url"
                                 id="productPicture"
                                 name="picture"
-                                value={editProduct.picture || ''}
+                                value={editProduct.picture || product.picture}
                                 onChange={handleInputChange}
-                                placeholder={product.subTitle}
-                            
+                                
                             />
                              <label>Product Picture Discription (alt): </label>
                                 <input
                                   type="text"
                                   id="productPictureAlt"
                                   name="alt"
-                                  value={editProduct.alt || ''}
+                                  value={editProduct.alt || product.alt}
                                   onChange={handleInputChange}
-                                  placeholder={product.alt}
-                              
                             />
                    
                             <label>Product Description: </label>
                             <input
                                 type="text"
                                 name="description"
-                                value={editProduct.description || ''}
+                                value={editProduct.description || product.description}
                                 onChange={handleInputChange}
-                                placeholder={product.description}
-                                
                             />
-                   
                             <label>Product Prix: </label>
                             <input
                                 type="number"
                                 name="price"
-                                value={editProduct.price || ''}
+                                value={editProduct.price || product.price}
                                 onChange={handleInputChange}
-                                placeholder={product.price}
-                              
                             />
-                     
                             <label>Product Référence: </label>
                             <input
                                 type="text"
                                 name="ref"
-                                value={editProduct.ref || ''}
+                                value={editProduct.ref || product.ref}
                                 onChange={handleInputChange}
-                                placeholder={product.ref}
-                             
                             />
-                       
                             <label>Quantité En stock: </label>
                             <input
                                 type="number"
                                 name="quantityInStock"
-                                value={editProduct.quantityInStock || ''}
+                                value={editProduct.quantityInStock || product.quantityInStock}
                                 onChange={handleInputChange}
-                                placeholder={product.quantityInStock}
-                              
                             />
-                        
-                     
                             <label>Categories ID: </label>
                             <input
                                 type="number"
                                 name="categories_id"
-                                value={editProduct.categories_id || ''}
-                                onChange={handleInputChange}
-                                placeholder={product.categories_id}
-                               
+                                value={editProduct.categories_id || product.categories_id}
+                                onChange={handleInputChange}  
                             />
-                       
-                        
-                 
                         <button type="submit">Save</button>
                         <button type="button" onClick={() => {
                             setEditProduct(product);
                             setIsEditing(false);
                         }}>Cancel</button>
          
-                      
                     </form>
-                               );
-                            })}
-                    </div>
+                            
+                   
                 ) : (
                     <article className="productDetails">
-                        {product.map((product) => {
-                            return(
-                        <div className="productDetail" key={product.id}>
+                    
+                        <div className="productDetail" >
                             <div>
                                 <h2>Product ID: {product.id}</h2>
                                 <h3>Product Title: {product.title}</h3>
@@ -254,8 +225,7 @@ function Details() {
                                 <img src={`../../../images/new_collection/${product.picture}`} alt={product.title} />
                             </div>
                         </div>
-                        	);
-						})}
+                    
                     </article>
                 )}
                  {successMessage && <div className="successMessage">{successMessage}</div>}
