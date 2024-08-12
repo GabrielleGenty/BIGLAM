@@ -22,7 +22,7 @@ const getById =async (req,res)=>{
         const { id } = req.params;
         const response = await Products.getById(id);
         if(!response) return res.status(404).json({message: "Produit nontrouvé"});
-        res.json(response);
+        res.json(response[0]);
     }catch (error){
         res.status(500).json({ msg: "Erreur de serveur", error: error.message });
 
