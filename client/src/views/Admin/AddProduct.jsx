@@ -84,6 +84,7 @@ function AddProduct() {
         </div>
         {error && <p>{error}</p>}
         <form onSubmit={submitHandler}>
+          <label>Product Title</label>
           <input
             type="text"
             id="productTitle"
@@ -91,6 +92,7 @@ function AddProduct() {
             placeholder="Insérer Product Title"
             required
           />
+          <label>Product SubTitle</label>
           <input
             type="text"
             id="productSubTitle"
@@ -98,12 +100,14 @@ function AddProduct() {
             placeholder="Insérer Product SubTitle"
             required
           />
+          <label>Product Picture</label>
           <input
-            type="url"
+            type="text"
             id="productPicture"
             name="picture"
             placeholder="Product Picture URL"
           />
+          <label>Product Picture Alt</label>
           <input
             type="text"
             id="productPictureAlt"
@@ -117,6 +121,7 @@ function AddProduct() {
             placeholder="Product Description"
             required
           />
+          <label>Product Price</label>
           <input
             type="number"
             id="productPrice"
@@ -124,6 +129,7 @@ function AddProduct() {
             placeholder="Product Price"
             required
           />
+          <label>Product Ref</label>
           <input
             type="text"
             id="productRef"
@@ -131,6 +137,7 @@ function AddProduct() {
             placeholder="Product Reference"
             required
           />
+          <label>Product Quantity In Stock</label>
           <input
             type="number"
             id="productQuantityInStock"
