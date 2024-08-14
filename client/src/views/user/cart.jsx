@@ -12,7 +12,8 @@ function Cart(){
                  cart.map((item) => (
                     <article key={item.id}>
                         <p>identifiant : {item.id}</p>
-                        <p>label : {item.title}</p>
+                        <h3>label : {item.title}</h3>
+                        <p>Product Description :{item.description}</p>
                         <p>Quantité : {item.quantity}</p>
                     </article>
                  ))
