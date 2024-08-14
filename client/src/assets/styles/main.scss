@@ -31,6 +31,7 @@ body {
 	color: $dark-color;
 	h1{
 		font-size: 3rem;
+		padding: 1%;
 	}
 	h2{
 		font-size: 2.4rem;
@@ -76,8 +77,9 @@ svg {
 
  MAIN 
 .active::after,
- header nav .bar-nav:hover::after,
- header button:hover::after {
+ header nav .bar-nav:hover::after
+//  header button:hover::after
+ {
      content: "";
    position: absolute;
   top: 28px;
