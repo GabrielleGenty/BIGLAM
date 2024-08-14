@@ -6,9 +6,6 @@ import {faPowerOff} from '@fortawesome/free-solid-svg-icons';
 import { useUser } from "../../hooks/UseUser";
 
 
-// import useMenu from "../../hooks/UseMenu";
-
-
 function AdminHome() {
   const  {logout} = useUser();
   const { user, setUser } = useUser();
@@ -21,13 +18,9 @@ function AdminHome() {
       });
       if (response.ok){
           setUser(null);
-          // toggleMenu();
+         
       }
   } 
-
-
-  //UseMeu();
-
   return (
     <main>
        <header>
