@@ -2,7 +2,6 @@ import { Routes,Route} from "react-router-dom";
 import AdminHome from "../views/Admin/AdminHome";
 import Products from "../views/Admin/Products.jsx";
 import Details from "../views/Admin/Details.jsx";
-import Header from "../views/user/partials/Header.jsx";
 import AddProduct from "../views/Admin/AddProduct.jsx";
 import Categories from "../views/Admin/Categories.jsx";
 import AddCategory from "../views/Admin/AddCategory.jsx";
@@ -17,7 +16,6 @@ function AdminRouter(){
     return(
      
        <>
-        <Header/>
           <Routes>
             <Route path="/" element={<AdminHome/>}/>
             <Route path="products" element={<Products/>}/>
