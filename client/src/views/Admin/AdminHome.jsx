@@ -8,24 +8,24 @@ import { useUser } from "../../hooks/UseUser";
 
 function AdminHome() {
   const  {logout} = useUser();
-  const { user, setUser } = useUser();
-  async function logoutHandler(){
-      const response = await fetch(
-          "http://localhost:9000/api/v1/users/logout",
-          {
-            method: "GET",
-          credentials: "include",
-      });
-      if (response.ok){
-          setUser(null);
+  // const { user, setUser } = useUser();
+  // async function logoutHandler(){
+  //     const response = await fetch(
+  //         "http://localhost:9000/api/v1/users/logout",
+  //         {
+  //           method: "GET",
+  //         credentials: "include",
+  //     });
+  //     if (response.ok){
+  //         setUser(null);
          
-      }
-  } 
+  //     }
+  // } 
   return (
     <main>
        <header>
         <h1>BACK OFFICE</h1>
-        <button onClick={logoutHandler}><FontAwesomeIcon icon={faPowerOff} /></button>
+        <button onClick={logout}><FontAwesomeIcon icon={faPowerOff} /></button>
     </header>
       <section>
       <h2>ADMIN PANEL</h2>

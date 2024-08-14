@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import noPicture from "../../../../../api/public/images/no-picture.jpg";
 
 function Card({ products }){
-    const  addToCart  =useCart();
+    const  {addToCart } =useCart();
 
     return(
         <article key={products.id}>
@@ -12,7 +12,7 @@ function Card({ products }){
            <img 
            src={
              products.src_img
-             ?"http://localhost:9000/images/" + products.src_img
+             ?"http://localhost:9000/images/" + products.picture
              :noPicture
            }
            alt = {products.title}
@@ -26,7 +26,7 @@ function Card({ products }){
     );
 
 }
-Card.proptType ={
+Card.proptTypes ={
   products: PropTypes.object.isRequired,
 };
 

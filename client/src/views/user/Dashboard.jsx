@@ -1,9 +1,17 @@
-import React from 'react'
+import { UseCheckUser } from "../../hooks/UseCheckUser"
+import useMenu from "../../hooks/UseMenu";
 
-function dashboard() {
-  return (
-    <div>dashboard</div>
-  )
+
+function Dashboard() {
+    useMenu();
+    const [ user ] = useCheckAuth();
+
+    if(user.isLogged) {
+        return (
+          <div>Dashboard</div>
+        ) 
+    }
+
 }
 
-export default dashboard;
+export default Dashboard;

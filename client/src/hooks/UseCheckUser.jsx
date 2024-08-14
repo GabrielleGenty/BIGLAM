@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {useUser} from "./UseUser";
 
 function UseCheckUser() {
-    const { user,setUser } = useUser();
+    const { user,login } = useUser();
     const[isLoading, setIsLoading] = useState(true);
 
     useEffect (() =>{
@@ -27,7 +27,7 @@ function UseCheckUser() {
               if (response.ok) {
                 const data = await response.json();
                 login(data.user);
-                setUser(data.user);
+               
               } else {
                 console.log(`Server error: ${response.status}`);
               } 

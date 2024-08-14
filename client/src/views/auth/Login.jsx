@@ -4,7 +4,7 @@ import { useUser } from "../../hooks/UseUser";
 
 
 function Login() {
-    const{setUser}= useUser();
+    const{login}= useUser();
     const [error , setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const navigate =useNavigate();
@@ -33,7 +33,7 @@ function Login() {
             if (response.status === 401 || response.status === 500) {
               setError(responseParsed.message);
             } else {
-              setUser(responseParsed.user);
+             login(responseParsed.user);
               navigate('/');
             }
           } catch (err) {
