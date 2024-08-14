@@ -9,15 +9,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useUser } from "../../../hooks/UseUser";
-// import   useMenu   from "../../../hooks/UseMenu";
+import   useMenu   from "../../../hooks/UseMenu";
 import { useCart }from "../../../hooks/useCart";
 
 
 function Header() {
     const { user, setUser } = useUser();
-    // const { isMenuOpen, toggleMenu } = useMenu();
+    const { isMenuOpen, toggleMenu } = useMenu();
      
-    // const { cart } = useCart();
+    const { cart } = useCart();
     async function logoutHandler(){
         const response = await fetch(
             "http://localhost:9000/api/v1/users/logout",

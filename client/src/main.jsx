@@ -6,7 +6,7 @@ import App from './App.jsx';
 import "./assets/styles/main.scss";
 import { UserProvider } from "./store/user/Context.jsx";
 import { CartProvider } from './store/cart/Context.jsx';
-import { MenuProvider } from "./store/menu/Context.jsx"
+import { MenuProvider } from "./store/menu/Context.jsx";
 
 
 

@@ -1,23 +1,23 @@
-// import { createContext, useState } from "react";
-// import PropTypes from "prop-types";
+import { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
-// const Context = createContext();
+const Context = createContext();
 
-// function MenuProvider({children}){
-//     const[isMenuOpen, setIsMenuOpen] = useState(null);
+function MenuProvider({children}){
+    const[isMenuOpen, setIsMenuOpen] = useState(null);
 
-//     function toggleMenu(){
-//         setIsMenuOpen(!isMenuOpen);
-//     }
+    function toggleMenu(){
+        setIsMenuOpen(!isMenuOpen);
+    }
 
-//     return(
-//         <Context.Provider value ={{ isMenuOpen, toggleMenu }}>
-//             {children}
-//         </Context.Provider>
-//     )
-// }
-// MenuProvider.propType = {
-//     children: PropTypes.node.isRequired,
-// };
+    return(
+        <Context.Provider value ={{ isMenuOpen, toggleMenu }}>
+            {children}
+        </Context.Provider>
+    )
+}
+MenuProvider.propType = {
+    children: PropTypes.node.isRequired,
+};
 
-// export { Context, MenuProvider };
+export { Context, MenuProvider };
