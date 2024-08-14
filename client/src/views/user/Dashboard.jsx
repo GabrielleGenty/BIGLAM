@@ -4,7 +4,7 @@ import useMenu from "../../hooks/UseMenu";
 
 function Dashboard() {
     useMenu();
-    const [ user ] = useCheckAuth();
+    const [ user ] = UseCheckUser();
 
     if(user.isLogged) {
         return (

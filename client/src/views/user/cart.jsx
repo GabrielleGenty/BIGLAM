@@ -3,16 +3,17 @@ import { useCart } from "../../hooks/useCart";
 function Cart() {
     const { cart } = useCart();
 
-    if (!cart || !cart.length) {
+    // Vérifier si le panier est défini et a des articles
+    if (!cart || cart.length === 0) {
         return (
             <section>
-                <h2>Cart SOON</h2>
+                <h2>Mon Panier</h2>
                 <p>Panier vide</p>
             </section>
         );
     }
 
-    // Optionnel: Calculer le prix total
+    // Calculer le prix total
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
     return (
@@ -20,26 +21,28 @@ function Cart() {
             <h2>Mon Panier</h2>
             {cart.map((item) => (
                 <article key={item.id}>
-                    <p>Identifiant : {item.id}</p>
-                    <h3>Label : {item.title}</h3>
-                    <p>Description : {item.description}</p>
-                    <p>Quantité : {item.quantity}</p>
-                    <p>Prix Unitaire : {item.price} €</p>
-                    <p>Total : {item.price * item.quantity} €</p>
-                    {/* Ajout d'une image si nécessaire */}
-                    {item.src_img && (
+                    <p><strong>Identifiant :</strong> {item.id}</p>
+                    <h3><strong>Label :</strong> {item.title}</h3>
+                    <p><strong>Description :</strong> {item.description}</p>
+                    <p><strong>Quantité :</strong> {item.quantity}</p>
+                    <p><strong>Prix Unitaire :</strong> {item.price} €</p>
+                    <p><strong>Total :</strong> {item.price * item.quantity} €</p>
+                    {/* Afficher l'image si disponible */}
+                    {item.src_img ? (
                         <img
                             src={`http://localhost:9000/images/${item.src_img}`}
                             alt={item.title}
                             style={{ width: "100px", height: "100px" }}
                         />
+                    ) : (
+                        <p>Image non disponible</p>
                     )}
                     {/* Optionnel: Ajouter un bouton pour supprimer un article */}
                     {/* <button onClick={() => removeFromCart(item.id)}>Supprimer</button> */}
                 </article>
             ))}
             {/* Affichage du prix total */}
-            <h3>Prix Total : {totalPrice} €</h3>
+            <h3><strong>Prix Total :</strong> {totalPrice} €</h3>
         </section>
     );
 }
