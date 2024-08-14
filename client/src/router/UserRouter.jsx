@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes,Route} from "react-router-dom";
+import { Routes,Route} from "react-router-dom";
 
 import Header from "../views/user/partials/Header";
 import Home from "../views/user/Home";
@@ -9,7 +9,7 @@ import Footer from "../views/user/partials/Footer";
 function UserRouter(){
     return(
      
-       <Router>
+       <>
           <Header/>
           <Routes>
             <Route path="/" element ={<Home/>}/>
@@ -18,7 +18,7 @@ function UserRouter(){
             <Route path="*" element={<p>NOT FOUND</p>}/>
           </Routes>
           <Footer/>
-          </Router>
+          </>
        
       );
 }

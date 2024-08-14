@@ -1,4 +1,4 @@
-import { BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import { Routes,Route} from "react-router-dom";
 import AdminHome from "../views/Admin/AdminHome";
 import Products from "../views/Admin/Products.jsx";
 import Details from "../views/Admin/Details.jsx";
@@ -16,7 +16,7 @@ import OrderDetails from "../views/Admin/OrderDetails.jsx";
 function AdminRouter(){
     return(
      
-       <Router>
+       <>
         <Header/>
           <Routes>
             <Route path="/" element={<AdminHome/>}/>
@@ -30,7 +30,7 @@ function AdminRouter(){
             <Route path="orders/details/:id" element={<OrderDetails/>}/>
             <Route path="*" element={<p>NOT FOUND</p>}/>
           </Routes>
-          </Router>
+          </>
       
       );
 
