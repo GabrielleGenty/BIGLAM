@@ -11,17 +11,19 @@ function CartProvider ({children}){
         const productInCart = cart.find((item) => item.id ===product.id)
     
         if(productInCart){
-
+             //callback de la state 
             setCart((prevCart) =>
                 prevCart.map((item) =>
                   item.id === product.id 
-                    ?{...item, quantity: item.quantity +1 }
-                    : item
+                    ?{...item, quantity: item.quantity +1 } //on recupère l'état précidante 
+                    : item                                       //de la state et on augment la quantité
+                  
                 )
             );
             return;
         }
-        setCart((prevCart) => [...prevCart, {id: products.id, quantity:1}]);
+        //si le produit n'existe pas dans lepanier, on l'ajoute avec une quantité 1
+        setCart((prevCart) => [...prevCart, {id: product.id, quantity:1}]);
     }
 
     return (

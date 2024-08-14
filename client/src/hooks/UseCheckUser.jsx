@@ -42,7 +42,10 @@ function UseCheckUser() {
             }
       
           }
-           fetchUsers();
+          setTimeout(() =>{
+            fetchUsers();
+          },2000);
+          
 
 
     }, []);
