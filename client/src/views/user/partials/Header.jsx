@@ -8,7 +8,7 @@ import {
 	faUser,
 	faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import logo1 from "../../../assets/images/logo1.png"
+import logo4 from "../../../assets/images/logo4.png"
 
 import { useUser } from "../../../hooks/UseUser";
 import   useMenu   from "../../../hooks/UseMenu";
@@ -29,7 +29,7 @@ function Header() {
             <div>
 				<h1>
 					<Link to={"/"}>
-						<img src={logo1} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
+						<img src={logo4} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
 					</Link>
 				</h1>
 			</div>

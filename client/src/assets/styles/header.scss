@@ -4,7 +4,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	background-color: $light-color;
+	background-color:$light-color-secondary;
 	align-items: center;
 	gap: 1.5rem;
 	text-transform: uppercase;
@@ -14,10 +14,11 @@ header {
 
 	}
 
-		img,logo {
+		img {
 			width: 120px;
 			margin-left: 10%;
 		}
+
 	form {
 		width: 100%;
 		text-align: center;
@@ -61,7 +62,7 @@ header {
 		
 	}
 	a:hover{
-		color:$secondary-color;
+		color:$header-background-color;
 	}
 
 
@@ -70,6 +71,7 @@ header {
 svg {
 	font-size: 2.8rem;
      margin: 0 10px ;
+	 color: $header-background-color;
 }
 .cart {
     position: relative;
