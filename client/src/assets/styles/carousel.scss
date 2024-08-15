@@ -5,6 +5,7 @@
 	height: 40%;
 	overflow: hidden;
 	margin: auto;
+	
   }
   
   .carousel img {
@@ -17,8 +18,8 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
+	background-color:$header-background-color;
+	color: $dark-color2;
 	border: none;
 	cursor: pointer;
 	padding: 10px;

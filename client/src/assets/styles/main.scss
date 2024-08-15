@@ -32,9 +32,11 @@ body {
 	h1{
 		font-size: 3rem;
 		padding: 0.6%;
+		color: $dark-color2;
 	}
 	h2{
 		font-size: 2.4rem;
+		color: $dark-color2;
 	}
 	h3{
 		font-size: 1.8 rem;
@@ -47,6 +49,7 @@ body {
 		font-family: $title-font;
 		font-weight: 600; 
 	    text-align: center;
+	
     }
 
 	p {
@@ -68,7 +71,6 @@ hr {
 	margin: auto;
 	border-color: $secondary-color;
 }
-
 
 
  MAIN 

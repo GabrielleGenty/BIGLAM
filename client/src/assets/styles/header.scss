@@ -39,7 +39,7 @@ header {
 	right: 0;
 	display: flex;
 	flex-direction: column;
-	background-color: $light-color;
+	background-color:$light-color-secondary;
 	width: 40vw;
 	height: 80vh;
 	padding: 1rem;
@@ -58,11 +58,13 @@ header {
 		padding:  1rem;
 		text-align: left;
 		color: $dark-color;
+		
+	
 		// text-transform: initial;
 		
 	}
 	a:hover{
-		color:$header-background-color;
+		color:$secondary-color;
 	}
 
 
