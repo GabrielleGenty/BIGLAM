@@ -112,14 +112,14 @@ function Details() {
 
     if (!product) {
         return (
-            <main>
+            <main id="admin">
                 <h1>Loading...</h1>
             </main>
         );
     }
 
     return (
-        <main>
+        <main id="admin">
             <section>
                 <h1>Product Details</h1>
                 <div id="buttonSet">

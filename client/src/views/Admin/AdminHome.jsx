@@ -8,21 +8,9 @@ import { useUser } from "../../hooks/UseUser";
 
 function AdminHome() {
   const  {logout} = useUser();
-  // const { user, setUser } = useUser();
-  // async function logoutHandler(){
-  //     const response = await fetch(
-  //         "http://localhost:9000/api/v1/users/logout",
-  //         {
-  //           method: "GET",
-  //         credentials: "include",
-  //     });
-  //     if (response.ok){
-  //         setUser(null);
-         
-  //     }
-  // } 
+
   return (
-    <main>
+    <main id="admin">
        <header>
         <h1>BACK OFFICE</h1>
         <button onClick={logout}><FontAwesomeIcon icon={faPowerOff} /></button>

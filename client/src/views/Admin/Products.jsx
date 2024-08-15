@@ -35,7 +35,7 @@ function Products() {
  
   if (!products) {
 		return (
-			<main>
+			<main id="admin">
 				<h2>Loading...</h2>
 			</main>
 		);
@@ -43,7 +43,7 @@ function Products() {
 
   
 	return (
-		<main >
+		<main id="admin">
 			<section>
 				<h1>Liste des Produits</h1>
 				<div id="buttonSet">

@@ -46,7 +46,7 @@ function AddCategory() {
   };
 
   return (
-    <main id="addCategory">
+    <main id="admin">
       <section>
         <h1>Ajouter un Category</h1>
                   <div id="buttonSet">

@@ -97,7 +97,7 @@ function Categories() {
   }
 
   return (
-    <main>
+    <main id="admin">
       <section>
         <h1>Liste de Categories</h1>
         <div id="buttonSet">

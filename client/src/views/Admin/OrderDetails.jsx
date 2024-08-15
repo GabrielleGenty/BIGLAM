@@ -26,14 +26,14 @@ function OrderDetails() {
     console.log(orderDetails)
     if (!orderDetails) {
         return (
-            <main>
+            <main id="admin">
                 <h2>Loading...</h2>
             </main>
         );
     }
 
     return (
-        <main>
+        <main id="admin">
             <section>
                 <h1>Détails de la Commande {id}</h1>
                 <div id="buttonSet">

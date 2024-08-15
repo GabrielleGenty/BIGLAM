@@ -2,15 +2,17 @@
 
 /****HOOM*****/
 body{
-	main{
-		padding: 0;
-		margin: 0;
+	background-color:$background-color;
+	#admin{
+	
 		background-color:$background-color;
 		header{
 			margin: 0;
+			background-color: $background-color;
 		}
 		section{
-		
+			  background-color: $background-color;
+			  margin: 0;
 			
 					h1,
 					h2{
@@ -24,7 +26,8 @@ body{
 					align-items: center;
 					display: flex;
 					justify-content: space-around;
-					margin-bottom: 2%;
+					margin-bottom: 50%;
+					background-color: $background-color;
 				
 				a{  
 					padding: 2%;
@@ -92,6 +95,9 @@ body{
 			button{
 				width: 30%;
 
+			}
+			svg{
+				color: rgb(150, 10, 10);
 			}
 	
 		

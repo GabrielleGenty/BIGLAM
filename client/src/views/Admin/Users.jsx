@@ -38,14 +38,14 @@ function Users() {
 
     if (!users) {
         return (
-            <main>
+            <main id="admin">
                 <h2>Loading...</h2>
             </main>
         );
     }
 
     return (
-        <main >
+        <main id="admin">
             <section>
                 <h1>Liste des Users</h1>
                 <div id="buttonSet">

@@ -74,7 +74,7 @@ function AddProduct() {
   };
 
   return (
-    <main id="addProduct">
+    <main id="admin">
       <section>
         <h1>Ajouter un produit</h1>
         <div id="buttonSet">
