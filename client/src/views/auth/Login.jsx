@@ -45,7 +45,7 @@ function Login() {
     
     return (
     <main id="auth">
-      <section>
+      <section >
       <h1>Connect a ton Compte</h1>
         {error && <p>{error}</p>}
         

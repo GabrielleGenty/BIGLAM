@@ -8,25 +8,26 @@ import { faFacebookF,faTwitter,faInstagram} from "@fortawesome/free-brands-svg-i
 function Footer() {
   return (
     <footer>
-    <p>Footer</p>
-    <div>
+    <h3>Footer</h3>
+    <nav>
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebookF} /> 
-        </a> | 
+        </a> 
     
         <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faTwitter} />
-        </a> | 
+        </a> 
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faInstagram} />
         </a>
-       
-      </div>
-    <p >
-      <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>|{""}
-      <Link to="/conditions-d-utilisation">Condtions d&apos; utilisation </Link>
+        <p >
+          <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>|{""}
+          <Link to="/conditions-d-utilisation">Condtions d&apos; utilisation </Link>
     
-    </p>
+        </p>
+       
+      </nav>
+    
     </footer>
   )
 }

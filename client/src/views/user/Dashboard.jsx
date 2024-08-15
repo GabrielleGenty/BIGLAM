@@ -12,13 +12,13 @@ function Dashboard() {
         
           <h1>Welcome to Your Account</h1>
           
-          <section className="profile-info">
+          <section id="user" className="profile-info">
             <h2>Your Profile</h2>
             <p>Name: John Doe</p>
             <p>Email: john.doe@example.com</p>
           </section>
     
-          <section className="orders">
+          <section id="user" className="orders">
             <h2>Your Orders</h2>
             <ul>
               <li>Order #12345 - Status: Shipped</li>
@@ -27,7 +27,7 @@ function Dashboard() {
             </ul>
           </section>
     
-          <section className="settings">
+          <section id="user" className="settings">
             <h2>Account Settings</h2>
             <button>Change Password</button>
             <button>Update Email</button>

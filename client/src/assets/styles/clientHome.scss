@@ -1,7 +1,8 @@
 #userHome {
 	background-color: #ffffff;
 
-	section {
+	section{
+		background-color:$light-color;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;

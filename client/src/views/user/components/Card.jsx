@@ -7,6 +7,7 @@ function Card({ products }){
     const  {addToCart } =useCart();
 
     return(
+      
         <article key={products.id}>
            
            <img 
@@ -23,6 +24,7 @@ function Card({ products }){
              Ajouter au panier
            </button>
         </article>
+      
     );
 
 }

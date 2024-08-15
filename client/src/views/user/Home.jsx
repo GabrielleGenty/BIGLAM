@@ -58,14 +58,14 @@ function Home() {
         <Carousel images={images} />
       </div>
 
-      <section>
+      <section id="user">
         <h2>Nouvelle Collection</h2>
         {datas.response.map((data) => (
           <Card key={data.id} products={data} />
         ))}
       </section>
       <hr />
-      <section>
+      <section id="user">
         <h2>Autre Collection</h2>
         {datas.response.map((data) => (
           <Card key={data.id} products={data} />

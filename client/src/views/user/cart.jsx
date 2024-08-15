@@ -10,7 +10,7 @@ function Cart() {
     // Vérifier si le panier est défini et a des articles
     if (!cart || cart.length === 0) {
         return (
-            <section>
+            <section id="user">
                 <h2>Mon Panier</h2>
                 <p>Panier vide</p>
             </section>
