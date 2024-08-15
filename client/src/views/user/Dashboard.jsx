@@ -10,7 +10,7 @@ function Dashboard() {
         return (
           <main  className="dashboard">
         
-          <h1>Welcome to Your Dashboard</h1>
+          <h1>Welcome to Your Account</h1>
           
           <section className="profile-info">
             <h2>Your Profile</h2>

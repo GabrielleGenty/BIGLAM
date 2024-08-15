@@ -46,12 +46,11 @@ function Header() {
 
 					{user.isLogged && (
 						<>
-							<NavLink to={"Dashboard"} className={"bar-nav"}>
+							<NavLink to={"Dashboard"} >
 								Compte
 							</NavLink>
 							<button
 								onClick={logout}
-								className={"bar-nav"}
 							>
 								Déconnexion
 							</button>
