@@ -52,9 +52,9 @@ function Home() {
   }
 
   return (
-    <main id="home">
+    <main id="userHome">
       <div className="App">
-        <h1>Nouv</h1>
+        <h1>Nouvelle Collection</h1>
         <Carousel images={images} />
       </div>
 

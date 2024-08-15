@@ -1,4 +1,4 @@
-#home {
+#userHome {
 	section {
 		display: flex;
 		flex-wrap: wrap;
@@ -13,8 +13,10 @@
 	article {
 		display: flex;
 		flex-direction: column;
-		background-color: #95f3f3;
+		background-color:$light-color;
 		width: 30%;
+		padding: 2%;
+		border-radius: 10%;
 
 		img {
 			display: block;
@@ -25,11 +27,10 @@
 		p{
 			text-align: center;
 		}
+		button#addTopanier{
+			width:80%;
+			margin: auto;
+			
+		}
 	}
 }
-// aside {
-// 	display: flex;
-// 	justify-content: center;
-// 	gap: 3rem;
-// 	margin-bottom: 2rem;
-// }
