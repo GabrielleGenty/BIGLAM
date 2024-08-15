@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer>
     <p>Footer</p>
-    <p>
+    <div>
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebookF} /> 
         </a> | 
@@ -21,7 +21,7 @@ function Footer() {
         <FontAwesomeIcon icon={faInstagram} />
         </a>
        
-      </p>
+      </div>
     <p >
       <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>|{""}
       <Link to="/conditions-d-utilisation">Condtions d&apos; utilisation </Link>

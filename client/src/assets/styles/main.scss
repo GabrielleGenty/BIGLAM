@@ -24,7 +24,7 @@ html {
 }
 /***BODY**/
 body {
-	background-color: $background-color;
+	background-color:$light-color;
 	font-family: $body-font;
 	font-size: 1.6rem;
 	line-height: 1.6;
@@ -32,15 +32,15 @@ body {
 	h1{
 		font-size: 3rem;
 		padding: 0.6%;
-		color: $dark-color2;
+		color: $font-color;
 	}
 	h2{
 		font-size: 2.4rem;
-		color: $dark-color2;
+		color: $font-color;
 	}
 	h3{
 		font-size: 1.8 rem;
-		color: $dark-color2;
+		color: $font-color;
 	}
 
 	h1,
@@ -55,6 +55,10 @@ body {
 
 	p {
 		margin-bottom: 1rem;
+	}
+	section{
+		margin: 10%;
+		background-color:$light-color ;
 	}
 }
 

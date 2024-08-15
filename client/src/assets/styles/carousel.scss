@@ -1,8 +1,8 @@
  /***CAROUSEL******/
  .carousel {
 	position: relative;
-	width: 40%;
-	height: 40%;
+	width: 50%;
+	height: 50%;
 	overflow: hidden;
 	margin: auto;
 	
@@ -19,16 +19,16 @@
 	top: 50%;
 	transform: translateY(-50%);
 	background-color:$header-background-color;
-	color: $dark-color2;
+	color: $font-color;
 	border: none;
 	cursor: pointer;
-	padding: 10px;
+	padding: 15px;
   }
   
   .carousel button:first-of-type {
-	left: 10px;
+	left: 0px;
   }
   
   .carousel button:last-of-type {
-	right: 10px;
+	right: 0px;
   }
