@@ -1,7 +1,11 @@
 import { useCart } from "../../hooks/useCart";
+import { useUser } from "../../hooks/UseUser";
 
 function Cart() {
     const { cart } = useCart();
+    const { logout } = useUser();
+
+
 
     // Vérifier si le panier est défini et a des articles
     if (!cart || cart.length === 0) {
@@ -30,7 +34,7 @@ function Cart() {
                     {/* Afficher l'image si disponible */}
                     {item.src_img ? (
                         <img
-                            src={`http://localhost:9000/images/${item.src_img}`}
+                            src={`http://localhost:9000/images/${item.picture}`}
                             alt={item.title}
                             style={{ width: "100px", height: "100px" }}
                         />
@@ -43,6 +47,8 @@ function Cart() {
             ))}
             {/* Affichage du prix total */}
             <h3><strong>Prix Total :</strong> {totalPrice} €</h3>
+              {/* Bouton de déconnexion */}
+              <button onClick={logout} >Déconnexion</button>
         </section>
     );
 }

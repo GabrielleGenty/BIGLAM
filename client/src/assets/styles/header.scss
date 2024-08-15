@@ -1,61 +1,96 @@
 
-header {
+header ,nav{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	background-color: $light-color;
+	align-items: center;
+	gap: 1.5rem;
+	text-transform: uppercase;
+	
+
+		img,logo {
+			width: 120px;
+			margin-left: 10%;
+		}
+	form {
+		width: 100%;
+		text-align: center;
+		margin: 0.5%;
+		input {
+			width: 100%;
+			margin: auto;
+			text-align: center;
+			border-radius: 20px;
+			font-size: 1.8rem;
+		}
+	}
+}
+.burger-menu {
+	position: absolute;
+	
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: $light-color;
+	width: 40vw;
+	height: 80vh;
+	padding: 1rem;
+	z-index: 10000;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
+	border-bottom-right-radius: 1rem;
+
+	hr {
+		width: 50%;
+		margin: 0 auto;
+		border-color: $secondary-color;
+	}
+
+	a,
+	button {
+		padding: 0 1rem;
+		text-align: left;
+		color: $dark-color;
+		// text-transform: initial;
+	}
+
+
+
+}
+svg {
+	font-size: 2.8rem;
+	
+	
+}
+.cart {
+    position: relative;
+}
+
+.cart-length {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+	color: $danger-color;
+	
+}
+
+.overlayOn {
+	position: absolute;
+	top: 120;
+	left: 200;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.wrapper {
+	margin: 2rem auto 3rem;
+	padding: 0 1rem;
 
 	div {
 		display: flex;
-		align-items: center;
 		gap: 1rem;
-
-		button {
-			margin-left: 0.5rem;
-		}
+		overflow-x: auto;
 	}
 
-	nav {
-		display: flex;
-		gap: 1.5rem;
-		margin-right: 0.5rem;
-		text-transform: uppercase;
-
-		a {
-			padding: 0.5rem;
-		}
-
-		button {
-			position: relative;
-			padding: 0.5rem;
-			background-color: inherit;
-			border: 0;
-			text-transform: uppercase;
-			font-size: 1.6rem;
-			color: $dark-color;
-			cursor: pointer;
-		}
-	
-	}
-
-	h1 {
-		line-height: normal;
-
-		img {
-			width: 120px;
-		}
-	}
-
-	form {
-		width: 100%;
-		text-align: right;
-		input {
-			text-align: left;
-			width: 200px;
-			border-left: 1px solid #ccc;
-			border-top-left-radius: 1rem;
-			border-bottom-left-radius: 1rem;
-			font-size: 1.7rem;
-		}
-	}
 }

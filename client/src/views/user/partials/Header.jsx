@@ -22,25 +22,11 @@ function Header() {
     const { cart } = useCart();
     console.log(cart.length);
 
-    // async function logoutHandler(){
-    //     const response = await fetch(
-    //         "http://localhost:9000/api/v1/users/logout",
-    //         {
-    //         	method: "GET",
-    //         credentials: "include",
-    //     });
-    //     if (response.ok){
-    //         setUser(null);
-    //         // toggleMenu();
-    //     }
-    // } 
+
   return (
     <header>
-        	{isMenuOpen && <div className="overlayOn" onClick={toggleMenu} />}
+        	
             <div>
-				<button onClick={toggleMenu}>
-					<FontAwesomeIcon icon={faBars} />
-				</button>
 				<h1>
 					<Link to={"/"}>
 						<img src={logo1} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
@@ -53,12 +39,8 @@ function Header() {
 						<FontAwesomeIcon icon={faXmark} />
 					</button>
 					<Link to={"/"}>Page d&apos;accueil BIGLAM</Link>
-					<hr />
-
 					<Link to={"/"}>En promotion !</Link>
-
 					<Link to={"/"}>Nos meilleures ventes</Link>
-
 					<Link to={"/"}>Nos nouveautés</Link>
 					<Link to={"/"}>Nos Coup de coeur</Link>
 
@@ -75,8 +57,10 @@ function Header() {
 							</button>
 						</>
 					)}
+					{isMenuOpen && <div className="overlayOn" onClick={toggleMenu} />}
 				</nav>
 			)}
+			
             
             <nav>
 				{!user.isLogged && (
@@ -95,8 +79,11 @@ function Header() {
                     <span className="cart-length">{cart.length ? cart.length : null }</span>
 					<FontAwesomeIcon icon={faCartShopping} />
 				</NavLink>
+				<button onClick={toggleMenu}>
+					<FontAwesomeIcon icon={faBars} />
+				</button>
 			</nav>
-        <form>
+             <form>
 				<input type="search" name="" id="" placeholder="Rechercher un produit"/>
 			</form>
     </header>

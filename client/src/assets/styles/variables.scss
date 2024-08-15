@@ -1,10 +1,18 @@
+
 // variable scss
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap');
+
 $primary-color: #f4f4f4;
+$light-color: #f7f7f7;
 $secondary-color: #319ff9f5;
 $hovering-color: #1248faf5;
-$light-color: #f7f7f7;
-$dark-color: #4b4a48;
+$dark-color: #464646;
 $background-color: #d6d8da;
-$danger-color: #ff0d00;
+$background-color-dark: #666667;
+$danger-color: #f54c14;
 $shadow-color: rgba(0, 0, 0, 0.5);
 
+// Variables de police
+$title-font: 'Montserrat', sans-serif; // Police pour les titres
+$body-font: 'Roboto', sans-serif; // Police pour le texte général
