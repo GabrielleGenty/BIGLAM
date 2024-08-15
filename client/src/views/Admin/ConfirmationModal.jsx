@@ -9,7 +9,7 @@ function ConfirmationModal({ show, onClose, onConfirm, message }) {
     <div className="modal-overlay">
       <div className="modal">
         <h2>Confirmation</h2>
-        <p>{message}</p>
+        <p><strong>{message}</strong></p>
         <button onClick={onConfirm}>Yes</button>
         <button onClick={onClose}>No</button>
       </div>
