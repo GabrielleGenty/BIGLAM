@@ -1,5 +1,4 @@
-// Carousel.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,7 +10,16 @@ const Carousel = ({ images }) => {
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
-  
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => {
+      clearInterval(interval); // Clear the interval on component unmount
+    };
+  }, [currentIndex]); // Only re-run the effect when currentIndex changes
 
   return (
     <div className="carousel">

@@ -4,9 +4,17 @@ import Carousel from "../user/components/Carousel.jsx";
 
 function Home() {
   const images = [
-    '/images/new_collection_blue.jpg',
-    '/images/new_collection_multi_pierre.jpg',
-    '/images/collier_violet.jpg',
+    '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
+    '/images/new_collection/bague-argent-925-pierre-synthetique.jpeg',
+    '/images/new_collection/bague-or-375-jaune-pierres-fines.jpeg',
+    '/images/new_collection/bague-or-375-pierres-fines.jpeg',
+    '/images/new_collection/bracelet-acier-dore-aventurines-oranges-19-cm.jpeg',
+    '/images/new_collection/bracelet-or-375-jaune-pierres-fines.jpeg',
+    '/images/new_collection/boucles-d-oreille-or-375-jaune-pierres-precieuses-et-fines.jpeg',
+    '/images/new_collection/boucles-d-oreille-or-375-jaune-saphirs.jpeg',
+    '/images/new_collection/boucles-d-oreille-or-375-jaune-saphirs.jpeg',
+    '/images/new_collection/collier-or-375-jaune-pierres-fines-45cm.jpeg',
+    '/images/new_collection/collier-acier-dore-aventurine-verte-45-cm.jpeg',
   ];
 
   const [datas, setDatas] = useState(null);
