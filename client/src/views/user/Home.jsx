@@ -64,13 +64,7 @@ function Home() {
           <Card key={data.id} products={data} />
         ))}
       </section>
-      <hr />
-      <section id="user">
-        <h2>Autre Collection</h2>
-        {datas.response.map((data) => (
-          <Card key={data.id} products={data} />
-        ))}
-      </section>
+  
       <hr />
     </main>
   );

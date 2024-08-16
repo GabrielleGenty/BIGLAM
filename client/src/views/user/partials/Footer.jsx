@@ -21,8 +21,8 @@ function Footer() {
         <FontAwesomeIcon icon={faInstagram} />
         </a>
         <p >
-          <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>|{""}
-          <Link to="/conditions-d-utilisation">Condtions d&apos; utilisation </Link>
+          <Link to="/TermOfUse">Condtions d&apos; utilisation </Link>|{""}
+          <Link to="/PrivacyPolicy">Politique de confidentialité</Link>
     
         </p>
        

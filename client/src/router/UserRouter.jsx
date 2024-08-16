@@ -8,6 +8,8 @@ import Dashboard from "../views/user/Dashboard";
 import Cart from "../views/user/cart";
 import ProtectedRoute from "../hoc/ProtectedRoute";
 import Footer from "../views/user/partials/Footer";
+import  TermOfUse from "../views/user/TermOfUse";
+import PrivacyPolicy from "../views/user/PrivacyPolicy";
 
 function UserRouter(){
     return(
@@ -20,6 +22,8 @@ function UserRouter(){
             <Route path="/Register" element ={<Register/>}/>
             <Route path="dashboard" element={<ProtectedRoute component={Dashboard} /> } />
             <Route path="/cart" element ={< Cart/>}/>
+            <Route path="/termofuse" element ={< TermOfUse/>}/>
+            <Route path="/privacypolicy" element ={< PrivacyPolicy/>}/>
             <Route path="*" element={<p>NOT FOUND</p>}/>
           </Routes>
           <Footer/>
