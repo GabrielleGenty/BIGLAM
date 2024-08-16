@@ -73,12 +73,10 @@ function Products() {
 									<td>{product.id}</td>
 									<td>
 										<img
-											src={
-												product.src_img
-													? "http://localhost:9000/images/" + product.noPicture
-													: noPicture
-											}
-											alt={product.title}
+											
+											src={`http://localhost:9000/images/new_collection/${product.picture}`}
+													
+										
 										/>
 									</td>
 									<td>{product.title}</td>
