@@ -9,7 +9,6 @@ function CartProvider ({children}){
         //recherch d'un produit existant dans le panier pour augmenter la quantité
         //si le produit existe dans le panier,on augmente la quantité de 1
         const productInCart = cart.find((item) => item.id ===product.id)
-    
         if(productInCart){
              //callback de la state 
             setCart((prevCart) =>
@@ -23,7 +22,7 @@ function CartProvider ({children}){
             return;
         }
         //si le produit n'existe pas dans lepanier, on l'ajoute avec une quantité 1
-        setCart((prevCart) => [...prevCart, {id: product.id, quantity:1}]);
+        setCart((prevCart) => [...prevCart, {...product, quantity:1}]);
     }
 
     return (

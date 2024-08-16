@@ -1,6 +1,7 @@
 import { useCart } from "../../hooks/useCart";
 import { useUser } from "../../hooks/UseUser";
 
+
 function Cart() {
     const { cart } = useCart();
     const { logout } = useUser();
@@ -16,10 +17,9 @@ function Cart() {
             </section>
         );
     }
-
+    console.log(cart)
     // Calculer le prix total
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-
     return (
         <section>
             <h2>Mon Panier</h2>
@@ -32,11 +32,11 @@ function Cart() {
                     <p><strong>Prix Unitaire :</strong> {item.price} €</p>
                     <p><strong>Total :</strong> {item.price * item.quantity} €</p>
                     {/* Afficher l'image si disponible */}
-                    {item.src_img ? (
+                    {item.picture? (
                         <img
-                            src={`http://localhost:9000/images/${item.picture}`}
+                            src={`http://localhost:9000/images/new_collection/${item.picture}`}
                             alt={item.title}
-                            style={{ width: "100px", height: "100px" }}
+                            style={{ width: "150px", height: "100px" }}
                         />
                     ) : (
                         <p>Image non disponible</p>
