@@ -64,6 +64,7 @@ function Users() {
                                 <th>Lastname</th>
                                 <th>E-mail</th>
                                 <th>CreatedDate</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,6 +76,10 @@ function Users() {
                                     <td>{user.lastname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.createdDate}</td>
+                                    <td><Link to={"details/" }>
+                                        Détails
+                                    </Link>
+                                    </td>
                                 </tr>
                                 );
                               })}

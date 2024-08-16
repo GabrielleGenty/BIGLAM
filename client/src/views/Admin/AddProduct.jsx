@@ -7,7 +7,7 @@ function AddProduct() {
   const { setUser } = useUser();
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
-  const navigate = useNavigate(); // Assurez-vous d'importer et d'utiliser useNavigate si vous utilisez react-router-dom v6
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Back Office | Ajouter un produit";
@@ -44,7 +44,6 @@ function AddProduct() {
     const data = Object.fromEntries(formData);
     console.log(data);
 
-    // Envoyer les données au backend
     try {
       const response = await fetch('http://localhost:9000/api/v1/products', {
         method: 'POST',
@@ -57,7 +56,7 @@ function AddProduct() {
 
       if (!response.ok) {
         const responseParsed = await response.json();
-        setError(responseParsed.message);
+        setError(responseParsed.message || 'Failed to create product');
         console.log('Error response:', responseParsed);
         return;
       }
@@ -105,9 +104,9 @@ function AddProduct() {
             type="text"
             id="productPicture"
             name="picture"
-            placeholder="Product Picture URL"
+            placeholder="Product Picture "
           />
-          <label>Product Picture Alt</label>
+          <label>Product Picture Description Alt</label>
           <input
             type="text"
             id="productPictureAlt"
@@ -115,6 +114,7 @@ function AddProduct() {
             placeholder="Picture Description"
             required
           />
+          <label>Product Description</label>
           <textarea
             id="productDescription"
             name="description"
@@ -127,6 +127,7 @@ function AddProduct() {
             id="productPrice"
             name="price"
             placeholder="Product Price"
+            step="0.01" // Allows decimal values
             required
           />
           <label>Product Ref</label>
@@ -145,6 +146,7 @@ function AddProduct() {
             placeholder="Quantity In Stock"
             required
           />
+          <label>Product Category</label>
           <select id="CategoriesId" name="categories_id" required>
             <option value="">Select Category</option>
             {categories.map((category) => (

@@ -86,6 +86,7 @@ body{
 			#buttonSet{
 				display: flex;
 				width: 80%;
+				padding: 1%;
 				
 				justify-content: space-around;
 				margin:auto;
@@ -96,7 +97,7 @@ body{
 
 			}
 			svg{
-				color: rgb(150, 10, 10);
+				color: $dark-color;
 			}
 	
 		
@@ -128,19 +129,19 @@ body{
 					input,
 					button {
 						margin-bottom: 0.5rem;
-						border-radius: 1rem;
+						border-radius: 20px;
 					}
 				
 					button {
 						background-color: $secondary-color;
 						color: $light-color;
 						font-size: 1.6rem;
-						width: 40%;
+						width: 45%;
 						cursor: pointer;
 						text-transform: uppercase;
 						font-weight: bold;
 						text-align: center;
-						margin: 0.5rem 1.5rem;
+						margin:  1.5rem;
 					
 					}
 					

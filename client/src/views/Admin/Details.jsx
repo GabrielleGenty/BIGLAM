@@ -229,17 +229,19 @@ function Details() {
                     </article>
                 )}
                  {successMessage && <div className="successMessage">{successMessage}</div>}
-                <div id="buttonSet">
+               
                     {!isEditing &&  (
                         <>
+                         <div id="buttonSet">
                             <button onClick={() => setIsEditing(true)}>Modifier</button>
                             <button onClick={() => {
                                 setDeleteMessage("Are you sure you want to delete this product?");
                                 setShowModal(true);
                             }}>Supprimer</button>
+                            </div>
                         </>
                     )}
-                </div>
+                
             </section>
             <ConfirmationModal
                 show={showModal}
