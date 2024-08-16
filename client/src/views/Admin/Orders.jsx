@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Orders() {
     const [orders, setOrders] = useState(null);
     const [statuses] = useState(["","En Préparation","En Attente", "Prête à Être Expédiée", "Expédiée", "Livrée" , "Problème de Livraison",  "Retournée",  "Annulée"]);
+    const navigate = useNavigate(); // Added useNavigate for navigation after deletion
 
     useEffect(() => {
         document.title = "Back Office | Commandes";
@@ -22,6 +23,23 @@ function Orders() {
         }
         fetchOrders();
     }, []);
+
+    // Update the deleteHandler function to accept an orderId
+    async function deleteHandler(orderId) {
+        try {
+            const response = await fetch(`http://localhost:9000/api/v1/orders/${orderId}`, {
+                method: "DELETE",
+                credentials: "include",
+            });
+            if (response.ok) {
+                setOrders((prevOrders) => prevOrders.filter(order => order.id !== orderId)); // Update state after deletion
+            } else {
+                console.error("Failed to delete order:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error deleting order:", error);
+        }
+    }
 
     async function updateStatus(orderId, newStatus) {
         try {
@@ -97,6 +115,7 @@ function Orders() {
                                     <Link to={"details/" + order.id}>
                                         Détails
                                     </Link>
+                                    <button onClick={() => deleteHandler(order.id)}>Supprimer</button> {/* Corrected onClick */}
                                 </td>
                             </tr>
                         ))}

@@ -75,7 +75,7 @@ function Products() {
 										<img
 											src={
 												product.src_img
-													? "http://localhost:9000/images/" + product.src_img
+													? "http://localhost:9000/images/" + product.noPicture
 													: noPicture
 											}
 											alt={product.title}

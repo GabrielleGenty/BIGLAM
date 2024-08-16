@@ -5,7 +5,7 @@ import Home from "../views/user/Home";
 import Login from "../views/auth/Login";
 import Register from  "../views/auth/Register";
 import Dashboard from "../views/user/Dashboard";
-import Cart from "../views/user/Cart";
+import Cart from "../views/user/cart";
 import ProtectedRoute from "../hoc/ProtectedRoute";
 import Footer from "../views/user/partials/Footer";
 

@@ -8,7 +8,7 @@ class OrderDetails{
     }; 
     static async getById(req){
        const {id} = req.params;
-       const query =`SELECT id , quantity, priceEach, orders_id, products_id FROM order_details Where order_details.id =?`;
+       const query =`SELECT id , quantity, priceEach, orders_id, products_id FROM order_details Where orders_id =?`;
        const response =await Query.runWithParams(query,[id]);
        return response;
     };
