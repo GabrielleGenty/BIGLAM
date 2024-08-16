@@ -1,8 +1,8 @@
  /***CAROUSEL******/
  .carousel {
 	position: relative;
-	width: 50%;
-	height: 50%;
+	width: 40%;
+	height: 40%;
 	overflow: hidden;
 	margin: auto;
 	
@@ -10,7 +10,6 @@
   
   .carousel img {
 	width: 100%;
-
 	object-fit: cover;
   }
   
@@ -22,7 +21,7 @@
 	color: $font-color;
 	border: none;
 	cursor: pointer;
-	padding: 15px;
+	padding: 1.5rem;
   }
   
   .carousel button:first-of-type {
