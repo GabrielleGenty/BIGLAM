@@ -1,62 +1,73 @@
 
 header {
-	padding: 0 2% ;
+
 	display: flex;
+	padding: 2%;
 	justify-content: space-between;
-	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
 	background-color:$light-color-secondary;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 20px;
 	text-transform: uppercase;
-	nav{
-		gap: 1.5rem;
-		margin: 2%;
+	nav{	
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	
+		padding: 2%;
 
 	}
+
 
 		img {
-			width: 120px;
-			margin-left: 10%;
+			margin-top: 10% ;
+			width: 60px;
+		    height: auto;
+		
+		
+		}
+		.userIcon{
+			
+         margin-top: 12%;
+		}
+		span{
+			font-size: 1rem;
+		}
+		span ::before{
+			position: absolute;
+			left: 20;
+			bottom: -20;
+		
 		}
 
-	form {
-		width: 100%;
-		text-align: center;
-		margin: 0.5%;
-		input {
-			width: 100%;
-			margin: auto;
-			text-align: center;
-			border-radius: 20px;
-			font-size: 1.8rem;
-		}
-	}
+
 }
 .burger-menu {
+
 	position: absolute;
-	
 	top: 0;
 	right: 0;
 	display: flex;
 	flex-direction: column;
 	background-color:$light-color-secondary;
-	width: 40vw;
-	height: 80vh;
+	width: 100vw;
+	height: 100vh;
 	padding: 1rem;
 	z-index: 10000;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
 	border-bottom-right-radius: 1rem;
 
+
 	hr {
 		width: 50%;
 		margin: 0 auto;
-		border-color: $secondary-color;
+		border-color: $header-background-color;
 	}
 
 	a,
 	button {
-		padding:  1rem;
-		text-align: left;
+		padding:  0.5rem;
 		color: $dark-color;
 		
 	
@@ -71,7 +82,7 @@ header {
 
 }
 svg {
-	font-size: 2.8rem;
+	font-size: 1.8rem;
      margin: 0 10px ;
 	 color: $header-background-color;
 }

@@ -21,26 +21,29 @@ function Cart() {
     // Calculer le prix total
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
     return (
-        <section>
-            <h2>Mon Panier</h2>
+        <main>
+        <section >
+            <h1>Mon Panier</h1>
             {cart.map((item) => (
-                <article key={item.id}>
+                <article key={item.id} className="userCart">
+                          <div>{item.picture? (
+                        <img
+                            src={`http://localhost:9000/images/new_collection/${item.picture}`}
+                            alt={item.title}
+                        />
+                    ) : (
+                        <p>Image non disponible</p>
+                    )}</div>
+                    <div>
                     <p><strong>Identifiant :</strong> {item.id}</p>
-                    <h3><strong>Label :</strong> {item.title}</h3>
+                    <h3> <strong>Label :</strong> {item.title}</h3>
                     <p><strong>Description :</strong> {item.description}</p>
                     <p><strong>Quantité :</strong> {item.quantity}</p>
                     <p><strong>Prix Unitaire :</strong> {item.price} €</p>
                     <p><strong>Total :</strong> {item.price * item.quantity} €</p>
-                    {/* Afficher l'image si disponible */}
-                    {item.picture? (
-                        <img
-                            src={`http://localhost:9000/images/new_collection/${item.picture}`}
-                            alt={item.title}
-                            style={{ width: "150px", height: "100px" }}
-                        />
-                    ) : (
-                        <p>Image non disponible</p>
-                    )}
+                    
+                    </div>
+             
                     {/* Optionnel: Ajouter un bouton pour supprimer un article */}
                     {/* <button onClick={() => removeFromCart(item.id)}>Supprimer</button> */}
                 </article>
@@ -48,8 +51,9 @@ function Cart() {
             {/* Affichage du prix total */}
             <h3><strong>Prix Total :</strong> {totalPrice} €</h3>
               {/* Bouton de déconnexion */}
-              <button onClick={logout} >Déconnexion</button>
+              <button id="valider-button">valider</button>
         </section>
+        </main>
     );
 }
 

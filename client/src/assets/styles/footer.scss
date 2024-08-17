@@ -1,13 +1,13 @@
 footer {
-	margin-top: auto;
-	padding: 1rem ;
+	margin-top: 0px;
+	padding: 2rem 0 ;
 	color: $primary-color;
 	background-color: $light-color-secondary;
 	text-align: center;
 
 	a {
 		color: $font-color;
-		padding: 1%;
+		padding: 2%;
 	}
 	a:hover{
 		color:$secondary-color;
@@ -20,5 +20,9 @@ footer {
 	}
     svg{
 	    color:$header-background-color;
+
+	}
+	svg:hover{
+	color: $secondary-color;
 	}
 }

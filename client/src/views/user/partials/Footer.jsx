@@ -8,7 +8,7 @@ import { faFacebookF,faTwitter,faInstagram} from "@fortawesome/free-brands-svg-i
 function Footer() {
   return (
     <footer>
-    <h3>Footer</h3>
+  
     <nav>
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebookF} /> 

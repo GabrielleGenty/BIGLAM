@@ -6,7 +6,9 @@
 @import "./carousel.scss";
 @import "./clienthome.scss";
 @import "./auth.scss";
+@import "./userPanier.scss";
 
+/*Base style mobile first*/
 
 /* RESET */
 *,
@@ -19,6 +21,7 @@
 
 /* GLOBAL */
 html {
+	
 	font-size: 62.5%;
 
 }
@@ -30,23 +33,24 @@ body {
 	line-height: 1.6;
 	color: $dark-color;
 	h1{
-		font-size: 3rem;
-		padding: 0.6%;
-		color: $font-color;
+		font-size: 2.4rem;
+		padding: 0.5%;
+		
 	}
 	h2{
-		font-size: 2.4rem;
-		color: $font-color;
+		font-size: 2rem;
+	
 	}
 	h3{
-		font-size: 1.8 rem;
-		color: $font-color;
+		font-size: 1.4rem;
+	
 	}
 
 	h1,
 	h2,
     h3,
 	h4,button{
+		color: $font-color;
 		font-family: $title-font;
 		font-weight: 600; 
 	    text-align: center;
@@ -57,7 +61,7 @@ body {
 		margin-bottom: 1rem;
 	}
 	section{
-		margin: 10%;
+		margin: 5%;
 		background-color:$light-color ;
 	}
 }
@@ -68,13 +72,13 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: $dark-color;
-	font-size: 1.8rem;
+	font-size: 1.2rem;
 }
 
 hr {
-	width: 80%;
+	width: 50%;
 	margin: auto;
-	border-color: $secondary-color;
+	border-color:$header-background-color;
 }
 
 

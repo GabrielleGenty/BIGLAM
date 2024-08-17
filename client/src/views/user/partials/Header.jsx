@@ -27,12 +27,13 @@ function Header() {
     <header>
         	
             <div>
-				<h1>
+				
 					<Link to={"/"}>
 						<img src={logo4} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
 					</Link>
-				</h1>
 			</div>
+			<div>
+			
             {isMenuOpen && (
 				<nav className="burger-menu">
 					<button onClick={toggleMenu}>
@@ -70,7 +71,11 @@ function Header() {
 				{user.isLogged && (
 					<>
 						<NavLink to={"/dashboard"} className={"bar-nav"}>
-							{user.email} <FontAwesomeIcon icon={faUser} />
+						 <div >
+							<FontAwesomeIcon icon={faUser} className="userIcon"/>
+							<span>{user.email} </span>
+							</div>
+							
 						</NavLink>
 					</>
 				)}
@@ -82,9 +87,9 @@ function Header() {
 					<FontAwesomeIcon icon={faBars} />
 				</button>
 			</nav>
-             <form>
-				<input type="search" name="" id="" placeholder="Rechercher un produit"/>
-			</form>
+			</div>
+			
+		
     </header>
   )
 }

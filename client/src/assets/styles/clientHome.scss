@@ -1,39 +1,91 @@
 #userHome {
 	background-color: #ffffff;
-
-	section{
-		background-color:$light-color;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 2rem;
-		justify-content: center;
-
-		h2 {
-			width: 100%;
-			text-align: center;
-		}
+	padding: 2% 5%;
+  
+	form {
+	  width: 100%;
+	  text-align: center;
+  
+	  input {
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		border-radius: 20px;
+		font-size: 1.6rem;
+	  }
 	}
-	article {
-		display: flex;
-		flex-direction: column;
-		background-color:$light-color-secondary;
-		width: 30%;
+  
+	section {
+	  background-color: $light-color;
+	  margin: 5%;
+  
+	  h2 {
+		text-align: center;
+	  }
+	  h3{
+		margin: 2%;
 		padding: 2%;
-		border-radius: 10%;
 
+	  }
+  
+	  #categorysection {
+		display: flex; /* Align items horizontally */
+		flex-wrap: nowrap; /* Prevent wrapping */
+		overflow-x: auto; /* Allow horizontal scrolling */
+		scroll-snap-type: x mandatory; /* Optional: Adds snap effect */
+		padding: 0; /* Remove padding if necessary */
+  
+		/* Customize scrollbar appearance */
+		::-webkit-scrollbar {
+		  height: 8px; /* Height of horizontal scrollbar */
+		}
+  
+		::-webkit-scrollbar-thumb {
+		  background: #c88a36; /* Color of the scrollbar handle */
+		  border-radius: 10px; /* Rounds the corners of the scrollbar handle */
+		}
+  
+		::-webkit-scrollbar-track {
+		  background: transparent; /* Background of the scrollbar track */
+		}
+  
+		/* Ensure that the scrollbar does not overlap content */
+		scroll-padding-inline-end: 16px; /* Adjust the end padding to ensure content is not cut off */
+  
+		article {
+		  flex:  0 0 90%; /* Each article takes 100% of the container width */
+		  box-sizing: border-box; 
+		  background-color: $light-color-secondary;/* Includes padding and border in the element's total width and height */
+		  display: flex;
+		  margin: 10%;
+		  border: 1px solid #d3d3d3; 
+		  flex-direction: column;
+		  border-radius: 10px;
+		  align-items: center; /* Center-aligns the content */
+		  padding:10% 5% ; /* Adds vertical padding */
+		  scroll-snap-align: start; /* Optional: Adds snap effect */
+		}
+  
 		img {
-			display: block;
-			width: auto;
-			height: auto;
-
+		  width: 80%; /* Adjust width as needed */
+		  height: auto;
+		  max-width: 500px; /* Optional: Limits the maximum width of the images */
 		}
-		p{
-			text-align: center;
+  
+		p {
+		  text-align: center;
 		}
-		button#addTopanier{
-			width:80%;
-			margin: auto;
-			
+  
+		button#addTopanier {
+		  width: 100%;
+		  margin: auto;
+		  font-size: 1.4rem;
+		  background-color:$header-background-color;
 		}
+		#addTopanier:hover {
+			background-color:$secondary-color;
+		}
+	  }
 	}
-}
+  }
+  

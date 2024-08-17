@@ -7,7 +7,7 @@ function Card({ products }) {
   const { addToCart } = useCart();
 
   return (
-    <article key={products.id}>
+    <article key={products.id} id="product">
       <img 
         src={
           `http://localhost:9000/images/new_collection/${products.picture}`
