@@ -5,7 +5,7 @@ class Products{
     static async getAll(){
  
          return await Query.run(`SELECT id, title, subTitle, picture, alt, description, price ,
-        ref, quantityInStock FROM products ORDER BY id DESC LIMIT 50`);
+        ref, quantityInStock,categories_id FROM products ORDER BY id DESC LIMIT 50`);
        
     };
     static async getById(id){
@@ -14,6 +14,16 @@ class Products{
          ref, quantityInStock, categories_id FROM products WHERE id = ?`, [id]);
         
     };
+    static async getByCategoryId(id){
+
+        return await Query.runWithParams(
+            `SELECT id, title, subTitle, picture, alt, description, price, ref, quantityInStock, categories_id 
+            FROM products 
+            WHERE categories_id = ?`,
+            [id]
+          );
+    
+};
     static async add(req){
        
         return await Query.runWithParams(`INSERT INTO products 

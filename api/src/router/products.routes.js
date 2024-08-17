@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import {getAll,getById,add, update, deleteProduct} from "../controller/products.js";
+import {getAll,getById,getByCategoryId,add, update, deleteProduct} from "../controller/products.js";
 import isAdmin from "../middlewares/isAdmin.js";
 
 const router = Router();
@@ -11,6 +11,7 @@ const router = Router();
 
 router.get("/",getAll);
 router.get("/:id",getById);
+router.get("/category/:id",getByCategoryId);
 
 router.post("/",isAdmin,add);
 router.patch("/:id",isAdmin, update);

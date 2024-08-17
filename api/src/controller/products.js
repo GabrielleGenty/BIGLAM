@@ -28,6 +28,17 @@ const getById =async (req,res)=>{
 
     }
 };
+const getByCategoryId= async (req,res)=>{
+    try{
+        const { id:categoryId} = req.params;
+        const response = await Products.getByCategoryId(categoryId);
+        if(!response) return res.status(404).json({message: "Produit nontrouvé"});
+        res.json(response);
+    }catch (error){
+        res.status(500).json({ msg: "Erreur de serveur", error: error.message });
+
+    }
+};
 const add = async (req,res)=>{
     console.log("ADD",req.body);
     try{
@@ -61,4 +72,4 @@ const deleteProduct= async (req,res)=>{
         res.status(500).json({ msg: "Erreur de serveur", error: error.message });
     }
 };
-export { getAll, getById, add, update ,deleteProduct };
+export { getAll, getById,getByCategoryId, add, update ,deleteProduct };
