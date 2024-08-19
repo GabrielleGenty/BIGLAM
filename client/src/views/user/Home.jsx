@@ -123,6 +123,17 @@ function Home() {
         <Carousel images={images} />
       </section>
 
+      {searchInput && filteredProducts.length > 0 && (
+        <section>
+          <h2>Produits trouvés</h2>
+          <div id="categorysection">
+            {filteredProducts.map(product => (
+              <Card key={product.id} products={product} />
+            ))}
+          </div>
+        </section>
+      )}
+
       {categories.map((category) => {
         const categoryProducts = productsByCategory[category.id] || [];
         return categoryProducts.length > 0 ? (
