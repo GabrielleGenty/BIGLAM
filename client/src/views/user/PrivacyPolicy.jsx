@@ -3,6 +3,8 @@ import React from 'react'
 function PrivacyPolicy() {
   return (
     <main id="privacyPolicy">
+   
+    <section>
     <h2>Politique de Confidentialité</h2>
     <p>
         Nous respectons votre vie privée et nous nous engageons à la protéger. Cette politique de confidentialité explique comment nous recueillons, utilisons et protégeons vos informations personnelles.
@@ -42,7 +44,9 @@ function PrivacyPolicy() {
         <dt>Protection des informations :</dt>
         <p>Nous mettons en œuvre une variété de mesures de sécurité pour préserver la sécurité de vos informations personnelles.</p>
     </dl>
+    </section>
 </main>
+
 );
 }
 

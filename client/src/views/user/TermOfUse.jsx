@@ -3,6 +3,7 @@ import React from 'react'
 function TermOfUse() {
   return (
     <main id="termsOfUse">
+        <section>
     <h2>Conditions d&apos;Utilisation</h2>
     <p>
         En utilisant notre site web, vous acceptez les conditions
@@ -44,6 +45,7 @@ function TermOfUse() {
             l&apos;utilisation de ce site web.
         </dd>
     </dl>
+    </section>
 </main >
 );
 }

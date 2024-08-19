@@ -11,6 +11,11 @@
 /*Base style mobile first*/
 
 /* RESET */
+#root{
+	margin: 0;
+	padding: 0;
+	background-color: $light-color;
+}
 *,
 *::before,
 *::after {
@@ -89,14 +94,34 @@ hr {
  {
      content: "";
    position: absolute;
-  top: 28px;
- left: 0.5rem;
+  
+    left: 0.5rem;
     width: calc(100% - .5rem * 2);
-   height: 3px;
+   height: 2px;
     background-color: $secondary-color;
  }
 
+ /**privacyPolicy**/
+	#privacyPolicy{
 
+		section{
+			padding:2%;
+			font-size: small;
+			padding:1%;
+			h2{
+				margin: 2%;
+			}
+		}
+		
+	}
+	/**termsOfUse**/
+	#termsOfUse{
+		font-size: small;
+		padding:2%;
+		h2{
+			margin: 2%;
+		}
+	}
 
 
 

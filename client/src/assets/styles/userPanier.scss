@@ -1,27 +1,56 @@
 
-main{
-    background-color: #ffffff;
+#userCart{
+    
     margin: 0;
-    padding: 1%  0;
-   
+    padding:  0;
+    #emptyCart{
+        padding: 45% 5%;
+        h2{
+          text-align: center;
+          margin: 2%;
+        }
+        p{
+          text-align: center;
         
+      }
+ 
+    }
+  
     .userCart{
+      background-color: $light-color-secondary;
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: 5px;
         justify-content: center;
         text-align: center;
         align-items: center;
+        margin: 5%;
+        padding: 5%;
+        border-radius: 10%;
        
         
     }
     img{
-        width:150px;
-        height: 150px;
+        width:100%;
+        height: auto;
+        border-radius: 10%;
     }
-  #valider-button{
-    width: 100%;
-    margin: 5%0 ;
-   
+    button{
+      width:100%;
+      margin: auto;
+      font-size: 1.4rem;
+    }
+  #buttonset{
+    display: flex;
+    gap:20px;
+    width: 80%;
+    margin: auto;
+  }
+  #article{
+    text-align:left;
+    
+  }
+  h2{
+    margin: 5%;
   }
 }

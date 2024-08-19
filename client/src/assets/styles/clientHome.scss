@@ -29,38 +29,38 @@
 	  }
   
 	  #categorysection {
-		display: flex; /* Align items horizontally */
-		flex-wrap: nowrap; /* Prevent wrapping */
-		overflow-x: auto; /* Allow horizontal scrolling */
-		scroll-snap-type: x mandatory; /* Optional: Adds snap effect */
-		padding: 0; /* Remove padding if necessary */
+		display: flex; 
+		flex-wrap: nowrap; 
+		overflow-x: auto; 
+		scroll-snap-type: x mandatory; 
+		padding: 0; 
   
 		/* Customize scrollbar appearance */
 		::-webkit-scrollbar {
-		  height: 8px; /* Height of horizontal scrollbar */
+		  height: 8px; 
 		}
   
 		::-webkit-scrollbar-thumb {
-		  background: #c88a36; /* Color of the scrollbar handle */
-		  border-radius: 10px; /* Rounds the corners of the scrollbar handle */
+		  background: #c88a36; 
+		  border-radius: 10px; 
 		}
   
 		::-webkit-scrollbar-track {
-		  background: transparent; /* Background of the scrollbar track */
+		  background: transparent; 
 		}
   
 		/* Ensure that the scrollbar does not overlap content */
 		scroll-padding-inline-end: 16px; /* Adjust the end padding to ensure content is not cut off */
   
 		article {
-		  flex:  0 0 90%; /* Each article takes 100% of the container width */
+		  flex:  0 0 95%; /* Each article takes 100% of the container width */
 		  box-sizing: border-box; 
 		  background-color: $light-color-secondary;/* Includes padding and border in the element's total width and height */
 		  display: flex;
 		  margin: 10%;
 		  border: 1px solid #d3d3d3; 
 		  flex-direction: column;
-		  border-radius: 10px;
+		  border-radius: 20px;
 		  align-items: center; /* Center-aligns the content */
 		  padding:10% 5% ; /* Adds vertical padding */
 		  scroll-snap-align: start; /* Optional: Adds snap effect */
@@ -69,7 +69,12 @@
 		img {
 		  width: 80%; /* Adjust width as needed */
 		  height: auto;
-		  max-width: 500px; /* Optional: Limits the maximum width of the images */
+		  border-radius: 10%;
+		//   max-width: 500px; /* Optional: Limits the maximum width of the images */
+		}
+		img:hover {
+			transform: scale(1.1);
+			transition: transform 0.3s ease-in-out; /* Smooth transition */
 		}
   
 		p {
@@ -80,10 +85,10 @@
 		  width: 100%;
 		  margin: auto;
 		  font-size: 1.4rem;
-		  background-color:$header-background-color;
+		  background-color:$secondary-color;
 		}
 		#addTopanier:hover {
-			background-color:$secondary-color;
+			background-color:$header-background-color;
 		}
 	  }
 	}
