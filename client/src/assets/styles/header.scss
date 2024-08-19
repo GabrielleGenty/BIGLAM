@@ -14,7 +14,6 @@ header {
 		display: flex;
 		// justify-content: space-between;
 		align-items: center;
-	
 		padding: 2%;
 
 	}
@@ -58,16 +57,10 @@ header {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
 	border-bottom-right-radius: 1rem;
 
-
-	hr {
-		width: 50%;
-		margin: 0 auto;
-		border-color: $header-background-color;
-	}
 	a{
 		text-align: left;
 		font-size: 1.4rem;
-		padding: 2%;
+		padding: 1%;
 	
 	}
 	
@@ -75,8 +68,10 @@ header {
 		padding:  0.5rem;
 		color: $dark-color;
 		
+	}
+	button :hover{
+		color:$header-background-color;
 	
-		// text-transform: initial;
 		
 	}
 	a:hover{
@@ -90,6 +85,9 @@ svg {
 	font-size: 1.8rem;
      margin: 0 10px ;
 	 color: $header-background-color;
+}
+svg:hover{
+	color:$secondary-color;
 }
 .cart {
     position: relative;

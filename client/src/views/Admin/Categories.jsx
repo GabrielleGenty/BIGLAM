@@ -103,12 +103,12 @@ function Categories() {
         <div id="buttonSet">
           <button id="addButton">
             <Link to="/category/add">
-              <strong>Ajouter un Category</strong> <FontAwesomeIcon icon={faPlus} />
+           Ajouter un Category <FontAwesomeIcon icon={faPlus} />
             </Link>
           </button>
           <button id="retourButton">
             <Link to="/">
-              <strong>Retour To Home</strong>
+             Retour To Home
             </Link>
           </button>
         </div>
