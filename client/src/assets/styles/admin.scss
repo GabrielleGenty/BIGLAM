@@ -1,25 +1,44 @@
 /******ADMIN******/
 
 /****HOOM*****/
-body{
+html{
+	background-color: $background-color;
+}
+
 	
 	#admin{
 	
 		background-color:$background-color;
 		header{
-			margin: 0;
+			
 			background-color: $light-color-secondary;
 			h1{
 				font-size: 2.4rem;
+		
 			}
+			button{
+				padding:1.5rem;
+			}
+			svg{
+				color: $light-color;
+			}
+			
 		}
 		section{
-			background-color: $background-color;
+			margin: 0;
+			padding: 0;
+			background-color:$background-color;
+			h1{
+				font-size: 2.4rem;
+				margin: 2%;
+		
+			}
 					h2{
 						font-size: 2rem;
 						color: $font-color;
 						text-align: center;
-						margin: 2%;
+						padding: 2%;
+				
 					}
 					h3{
 						font-size: 1.6rem;
@@ -72,16 +91,17 @@ body{
 					border-collapse: collapse;
 					a{
 						color:$secondary-color;
-						padding: 5px 20px;
-						font-size: 1.6rem;
+						padding:10px 20px;
+						font-size: 1.8rem;
 						
 					}
 					button:hover{
 					
 						background-color:rgb(54, 71, 249);
+						color: $light-color;
 					}
 					a:hover{
-						background-color: $secondary-color;
+						background-color: $hovering-color;
 						color:$primary-color ;
 				
 					}
@@ -97,13 +117,10 @@ body{
 			    #buttonSet{
 					display: flex;
 					width: 80%;
-					padding: 1%;
-					
+					padding: 2%;
 					justify-content: space-around;
 					margin:auto;
-					button:hover{
-						background-color: $hovering-color;
-					}
+				
 				
 				}
 			    button{
@@ -111,11 +128,22 @@ body{
 					a{
 						font-size: 1.6rem;
 				    }
-
+					a:hover{
+						
+						color:$light-color;
+				    }
+					svg{
+						color: $dark-color;
+						padding: 0;
+					  }
+					  svg:hover{
+						color:$light-color;
+					  }
+				
 			    }
-			    svg{
-				  color: $dark-color;
-			    }
+				
+			
+			  
 	
 		
 		    /*****Admin-Product-details****/
@@ -143,6 +171,7 @@ body{
 			    }
 				button:hover{
 					background-color: $hovering-color;
+					color: $light-color;
 				}
 				
 
@@ -194,6 +223,7 @@ body{
 					button{
 						width: 100%;
 					}
+
 				 }	
 			
 
@@ -231,7 +261,7 @@ body{
 		color:$light-color;
 	}
 
-}
+
 
 
 
