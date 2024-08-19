@@ -17,11 +17,11 @@ function AdminHome() {
     </header>
       <section>
       <h2>ADMIN PANEL</h2>
-      <nav>
-      <Link to="/users"> <strong>Utilisateurs</strong></Link>
-      <Link to="/products"><strong>Produits</strong></Link>
-      <Link to="/categories"><strong>Catégories</strong></Link>
-      <Link to="/orders"><strong>Commandes</strong></Link>
+      <nav className='navBar'>
+      <Link to="/users"> Utilisateurs</Link>
+      <Link to="/products">Produits</Link>
+      <Link to="/categories">Catégories</Link>
+      <Link to="/orders">Commandes</Link>
     </nav>
       </section>
     </main>

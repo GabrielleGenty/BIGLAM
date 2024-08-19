@@ -223,8 +223,10 @@ function Details() {
                     </form>
                 ) : (
                     <article className="productDetails">
-                        <div>
-                            <img src={`../../../images/new_collection/${product.picture}`} alt={product.title} />
+                        <div className="container">
+                           <img src={`http://localhost:9000/images/new_collection/${product.picture}`}
+													
+							/>
                         </div>
                         <div>
                             <h2>Product ID: {product.id}</h2>

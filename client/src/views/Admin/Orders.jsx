@@ -101,7 +101,7 @@ function Orders() {
                             <th><h3>Total Price</h3></th>
                             <th><h3>Status</h3></th>
                             <th><h3>Users ID</h3></th>
-                            <th><h3>Actions</h3></th>
+                            <th colSpan="2"><h3>Actions</h3></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -127,6 +127,8 @@ function Orders() {
                                     <Link to={"details/" + order.id}>
                                         Détails
                                     </Link>
+                                    </td>
+                                    <td>
                                     <button onClick={() => openModal(order.id)}>Supprimer</button> {/* Trigger modal */}
                                 </td>
                             </tr>

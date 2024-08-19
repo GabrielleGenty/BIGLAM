@@ -48,9 +48,9 @@ function Products() {
 				<h1>Liste des Produits</h1>
 				<div id="buttonSet">
 				<button id="addButton"><Link to="/products/add">
-					<strong>Ajouter un produit</strong> <FontAwesomeIcon icon={faPlus} />
+					Ajouter un produit <FontAwesomeIcon icon={faPlus} />
 				</Link></button>
-				<button id="retourButton"><Link to="/"><strong>Retour To Home</strong></Link></button>
+				<button id="retourButton"><Link to="/">Retour To Home</Link></button>
 				</div>
 		
 				<table>

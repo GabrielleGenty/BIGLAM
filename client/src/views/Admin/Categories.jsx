@@ -116,9 +116,9 @@ function Categories() {
         <table>
           <thead>
             <tr>
-              <th><h3>Id</h3></th>
-              <th><h3>Label</h3></th>
-              <th><h3>Actions</h3></th>
+              <th><h2>Id</h2></th>
+              <th><h2>Label</h2></th>
+              <th ><h2>Actions</h2></th>
             </tr>
           </thead>
           <tbody>
@@ -133,8 +133,8 @@ function Categories() {
                         value={editLabel}
                         onChange={(e) => setEditLabel(e.target.value)}
                       />
-                      <button type="submit">Save</button>
-                      <button type="button" onClick={() => setEditingCategory(null)}>Cancel</button>
+                      <button className="categorybutton" type="submit">Save</button>
+                      <button className="categorybutton" type="button" onClick={() => setEditingCategory(null)}>Cancel</button>
                     </form>
                   ) : (
                     category.label
@@ -145,8 +145,8 @@ function Categories() {
                     <></>
                   ) : (
                     <>
-                      <button onClick={() => startEditing(category)}>Modifier</button>
-                      <button onClick={() => openModal(category.id, category.label)}>Supprimer</button>
+                      <button className="categorybutton" onClick={() => startEditing(category)}>Modifier</button>
+                      <button className="categorybutton" onClick={() => openModal(category.id, category.label)}>Supprimer</button>
                     </>
                   )}
                 </td>
