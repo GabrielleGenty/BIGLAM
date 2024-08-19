@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Carousel from "../user/components/Carousel.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
@@ -7,16 +7,7 @@ function Home() {
   const { addToCart } = useCart();
   const images = [
     '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
-    '/images/new_collection/bague-argent-925-pierre-synthetique.jpeg',
-    '/images/new_collection/bague-or-375-jaune-pierres-fines.jpeg',
-    '/images/new_collection/bague-or-375-pierres-fines.jpeg',
-    '/images/new_collection/bracelet-acier-dore-aventurines-oranges-19-cm.jpeg',
-    '/images/new_collection/bracelet-or-375-jaune-pierres-fines.jpeg',
-    '/images/new_collection/boucles-d-oreille-or-375-jaune-pierres-precieuses-et-fines.jpeg',
-    '/images/new_collection/boucles-d-oreille-or-375-jaune-saphirs.jpeg',
-    '/images/new_collection/boucles-d-oreille-or-375-jaune-saphirs.jpeg',
-    '/images/new_collection/collier-or-375-jaune-pierres-fines-45cm.jpeg',
-    '/images/new_collection/collier-acier-dore-aventurine-verte-45-cm.jpeg',
+    // ... other images
   ];
 
   const [products, setProducts] = useState([]);
@@ -24,6 +15,8 @@ function Home() {
   const [productsByCategory, setProductsByCategory] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -34,18 +27,7 @@ function Home() {
         }
         const data = await response.json();
         setProducts(data.response || []);
-        console.log('All Products:', data); // Debugging line
-
-        // Group products by category
-        const groupedByCategory = data.response.reduce((acc, product) => {
-          if (!acc[product.categories_id]) {
-            acc[product.categories_id] = [];
-          }
-          acc[product.categories_id].push(product);
-          return acc;
-        }, {});
-        setProductsByCategory(groupedByCategory);
-
+        setProductsByCategory(groupProductsByCategory(data.response));
       } catch (error) {
         setError(error.message);
       } finally {
@@ -55,13 +37,12 @@ function Home() {
 
     async function fetchCategories() {
       try {
-        const response = await fetch('http://localhost:9000/api/v1/categories'); // Ensure this endpoint exists
+        const response = await fetch('http://localhost:9000/api/v1/categories');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setCategories(data.response || []); // Ensure data.response exists
-        console.log('Categories:', data); // Debugging line
+        setCategories(data.response || []);
       } catch (error) {
         setError(error.message);
       }
@@ -70,6 +51,35 @@ function Home() {
     fetchProducts();
     fetchCategories();
   }, []);
+
+  function groupProductsByCategory(products) {
+    return products.reduce((acc, product) => {
+      if (!acc[product.categories_id]) {
+        acc[product.categories_id] = [];
+      }
+      acc[product.categories_id].push(product);
+      return acc;
+    }, {});
+  }
+
+  function handleSearchInputChange(e) {
+    const query = e.target.value;
+    setSearchInput(query);
+
+    if (query.trim() === "") {
+      setFilteredProducts([]);
+    } else {
+      const filtered = products.filter(product =>
+        product.title && product.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredProducts(filtered);
+    }
+  }
+
+  function handleProductClick(productName) {
+    setSearchInput(productName);
+    setFilteredProducts([]);
+  }
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -87,7 +97,24 @@ function Home() {
     <main id="userHome">
       <div>
         <form>
-          <input type="search" name="" id="" placeholder="Rechercher un produit" />
+          <input
+            type="search"
+            placeholder="Rechercher un produit"
+            value={searchInput}
+            onChange={handleSearchInputChange}
+          />
+          {filteredProducts.length > 0 && (
+            <ul className="suggestion-list">
+              {filteredProducts.map(product => (
+                <li
+                  key={product.id}
+                  onClick={() => handleProductClick(product.title)}
+                >
+                  {product.title}
+                </li>
+              ))}
+            </ul>
+          )}
         </form>
       </div>
 
@@ -99,7 +126,7 @@ function Home() {
       {categories.map((category) => {
         const categoryProducts = productsByCategory[category.id] || [];
         return categoryProducts.length > 0 ? (
-          <section key={category.id} id={`category-${category.id}`} >
+          <section key={category.id} id={`category-${category.id}`}>
             <h2>Notre Collection de {category.label}</h2>
             <div id="categorysection">
               {categoryProducts.map((product) => (
@@ -107,7 +134,7 @@ function Home() {
               ))}
             </div>
           </section>
-        ) : null; // Return null if no products in this category
+        ) : null;
       })}
 
       <hr />

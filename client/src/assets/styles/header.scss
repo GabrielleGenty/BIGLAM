@@ -64,8 +64,13 @@ header {
 		margin: 0 auto;
 		border-color: $header-background-color;
 	}
-
-	a,
+	a{
+		text-align: left;
+		font-size: 1.4rem;
+		padding: 2%;
+	
+	}
+	
 	button {
 		padding:  0.5rem;
 		color: $dark-color;

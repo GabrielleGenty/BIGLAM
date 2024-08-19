@@ -25,30 +25,26 @@ function Header() {
 
   return (
     <header>
-        	
             <div>
-				
 					<Link to={"/"}>
 						<img src={logo4} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
 					</Link>
 			</div>
 			<div>
-			
             {isMenuOpen && (
 				<nav className="burger-menu">
 					<button onClick={toggleMenu}>
 						<FontAwesomeIcon icon={faXmark} />
 					</button>
 					<Link to={"/"}>Page d&apos;accueil BIGLAM</Link>
-					<Link to={"/"}>En promotion !</Link>
-					<Link to={"/"}>Nos meilleures ventes</Link>
-					<Link to={"/"}>Nos nouveautés</Link>
-					<Link to={"/"}>Nos Coup de coeur</Link>
+					<Link to={"/aboutUs"}>About us</Link>
+					<Link to={"/enPromotion"}>En promotion !</Link>
+					<Link to={"/NouvelleCollection "}>Nouvelle collection</Link>
 
 					{user.isLogged && (
 						<>
 							<NavLink to={"Dashboard"} >
-								Compte
+								Mon Compte
 							</NavLink>
 							<button
 								onClick={logout}
@@ -59,22 +55,22 @@ function Header() {
 					)}
 					{isMenuOpen && <div className="overlayOn" onClick={toggleMenu} />}
 				</nav>
-			)}
-			
-            
+			)} 
             <nav>
 				{!user.isLogged && (
+					 <div >
 					<NavLink to={"login"} className={"bar-nav"}>
-						Connexion
+					Connexion
 					</NavLink>
+					</div>
 				)}
 				{user.isLogged && (
 					<>
 						<NavLink to={"/dashboard"} className={"bar-nav"}>
-						 <div >
+						
 							<FontAwesomeIcon icon={faUser} className="userIcon"/>
-							<span>{user.email} </span>
-							</div>
+							{user.email}
+							
 							
 						</NavLink>
 					</>
@@ -88,8 +84,6 @@ function Header() {
 				</button>
 			</nav>
 			</div>
-			
-		
     </header>
   )
 }
