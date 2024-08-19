@@ -7,9 +7,11 @@ const initialState = {
 function reducer(state, action){
     switch(action.type){
         case 'LOGIN':
-            const { email = '', isAdmin = false } = action.payload || {};
+            const {firstname ='',lastname='', email = '', isAdmin = false } = action.payload || {};
             return {
                 isLogged: true,
+                firstname :firstname,
+                lastname:lastname,
                 email:email,
                 isAdmin: isAdmin,
             };
