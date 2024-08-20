@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
- import Card from "./components/Card";
+import Card from "./components/Card";
 
-function Promotion() {
+function NewCollection() {
   const [products, setProducts] = useState([]);
-  const [promotionProducts, setPromotionProducts] = useState([]);
+  const [newCollectionProducts, setNewCollectionProducts] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -15,7 +15,7 @@ function Promotion() {
           throw new Error("Failed to fetch products");
         }
         const data = await response.json();
-        console.log(data);
+        console.log(data); // Vérifiez la structure des données dans la console
         setProducts(data.response || []);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -30,11 +30,11 @@ function Promotion() {
 
   useEffect(() => {
     if (products.length > 0) {
-      // Assurez-vous que la propriété est correcte
-      const filteredProducts = products.filter(product => 
-        product.status && product.status.toLowerCase() === 'promotion'
+      // Assurez-vous que 'new' est la valeur correcte pour les nouveaux produits
+      const filteredProducts = products.filter(product =>
+        product.status && product.status.toLowerCase() === 'new'
       );
-      setPromotionProducts(filteredProducts);
+      setNewCollectionProducts(filteredProducts);
     }
   }, [products]);
 
@@ -47,22 +47,21 @@ function Promotion() {
   }
 
   return (
-    <main id="promotion">
+    <main id="new-collection">
       <section>
-        <h1>Produits en Promotion</h1>
-        {promotionProducts.length > 0 ? (
-          <div className="promotion-products">
-            {promotionProducts.map(product => (
-              // <CardDetails key={product.id} product={product} />
-              <Card key={product.id} products={product} />
+        <h1>Nouvelle Collection</h1>
+        {newCollectionProducts.length > 0 ? (
+          <div className="new-collection-products">
+            {newCollectionProducts.map(product => (
+              <Card key={product.id} product={product} />
             ))}
           </div>
         ) : (
-          <p>Aucun produit en promotion disponible actuellement.</p>
+          <div>Aucun produit dans la nouvelle collection.</div>
         )}
       </section>
     </main>
   );
 }
 
-export default Promotion;
+export default NewCollection;

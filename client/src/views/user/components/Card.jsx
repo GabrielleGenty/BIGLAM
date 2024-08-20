@@ -26,7 +26,12 @@ function Card({ products }) {
 }
 
 Card.propTypes = {
-  products: PropTypes.object.isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    picture: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Card;

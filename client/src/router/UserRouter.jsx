@@ -13,7 +13,7 @@ import  TermOfUse from "../views/user/TermOfUse";
 import PrivacyPolicy from "../views/user/PrivacyPolicy";
 import Promotion from "../views/user/Promotion";
 import ProductDetails from "../views/user/ProductDetails"
-import NouvelleCollection from "../views/user/NouvelleCollection";
+import NewCollection from "../views/user/NewCollection";
 import Category from "../views/user/Category"
 
 function UserRouter(){
@@ -31,7 +31,7 @@ function UserRouter(){
             <Route path="/category/:id" element ={< Category/>}/>
             <Route path="/aboutUs" element ={< AboutUs/>}/>
             <Route path="/promotion" element ={< Promotion/>}/>
-            <Route path="/NouvelleCollection" element ={< NouvelleCollection/>}/>
+            <Route path="/newCollection" element ={< NewCollection/>}/>
             <Route path="/termofuse" element ={< TermOfUse/>}/>
             <Route path="/privacypolicy" element ={< PrivacyPolicy/>}/>
             <Route path="*" element={<p>NOT FOUND</p>}/>
