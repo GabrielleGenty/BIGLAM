@@ -14,6 +14,7 @@ import PrivacyPolicy from "../views/user/PrivacyPolicy";
 import EnPromotion from "../views/user/EnPromotion";
 import ProductDetails from "../views/user/ProductDetails"
 import NouvelleCollection from "../views/user/NouvelleCollection";
+import Category from "../views/user/Category"
 
 function UserRouter(){
     return(
@@ -27,6 +28,7 @@ function UserRouter(){
             <Route path="dashboard" element={<ProtectedRoute component={Dashboard} /> } />
             <Route path="/cart" element ={< Cart/>}/>
             <Route path="/product/:id" element ={< ProductDetails/>}/>
+            <Route path="/category/:id" element ={< Category/>}/>
             <Route path="/aboutUs" element ={< AboutUs/>}/>
             <Route path="/enPromotion" element ={< EnPromotion/>}/>
             <Route path="/NouvelleCollection" element ={< NouvelleCollection/>}/>

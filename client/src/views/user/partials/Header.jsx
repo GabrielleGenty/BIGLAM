@@ -1,8 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCartShopping, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import logo4 from "../../../assets/images/logo4.png";
-
 import { useUser } from "../../../hooks/UseUser";
 import useMenu from "../../../hooks/UseMenu";
 import { useCart } from "../../../hooks/useCart";
@@ -12,11 +12,41 @@ function Header() {
     const { isMenuOpen, toggleMenu } = useMenu();
     const { cart } = useCart();
 
-    // Fonction pour fermer le menu burger
+    const [categories, setCategories] = useState([]);
+    const [isCategoryMenuOpen, setCategoryMenuOpen] = useState(false);
+
+    useEffect(() => {
+        async function fetchCategories() {
+            try {
+                const response = await fetch('http://localhost:9000/api/v1/categories');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setCategories(data.response || []);
+            } catch (error) {
+                console.error('Failed to fetch categories:', error);
+            }
+        }
+
+        fetchCategories();
+    }, []);
+
     const handleLinkClick = () => {
         if (isMenuOpen) {
             toggleMenu();
         }
+    };
+
+    const handleCategoryScroll = (id) => {
+        const section = document.getElementById(`category-${id}`);
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+        handleLinkClick(); // Ferme le menu burger après le clic
     };
 
     return (
@@ -36,7 +66,20 @@ function Header() {
                         <Link to={"/aboutUs"} onClick={handleLinkClick}>About us</Link>
                         <Link to={"/enPromotion"} onClick={handleLinkClick}>En promotion !</Link>
                         <Link to={"/NouvelleCollection"} onClick={handleLinkClick}>Nouvelle collection</Link>
-                        <Link to={"/NouvelleCollection"} onClick={handleLinkClick}>Nouvelle collection</Link>
+                        <Link onClick={() => setCategoryMenuOpen(!isCategoryMenuOpen)}>
+                            Catégories
+                        </Link>
+                        {isCategoryMenuOpen && (
+                            <ul className="category-menu">
+                                {categories.map(category => (
+                                    <li key={category.id}>
+                                        <Link onClick={() => handleCategoryScroll(category.id)}>
+                                            {category.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                         {user.isLogged && (
                             <>
                                 <NavLink to={"Dashboard"} onClick={handleLinkClick}>
