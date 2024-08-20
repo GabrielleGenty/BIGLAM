@@ -12,6 +12,7 @@ import Footer from "../views/user/partials/Footer";
 import  TermOfUse from "../views/user/TermOfUse";
 import PrivacyPolicy from "../views/user/PrivacyPolicy";
 import EnPromotion from "../views/user/EnPromotion";
+import ProductDetails from "../views/user/ProductDetails"
 import NouvelleCollection from "../views/user/NouvelleCollection";
 
 function UserRouter(){
@@ -25,6 +26,7 @@ function UserRouter(){
             <Route path="/Register" element ={<Register/>}/>
             <Route path="dashboard" element={<ProtectedRoute component={Dashboard} /> } />
             <Route path="/cart" element ={< Cart/>}/>
+            <Route path="/product/:id" element ={< ProductDetails/>}/>
             <Route path="/aboutUs" element ={< AboutUs/>}/>
             <Route path="/enPromotion" element ={< EnPromotion/>}/>
             <Route path="/NouvelleCollection" element ={< NouvelleCollection/>}/>
