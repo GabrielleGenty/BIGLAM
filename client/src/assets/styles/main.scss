@@ -159,7 +159,11 @@ hr {
 	  .suggestion-list li {
 		padding: 2px;
 		cursor: pointer;
+		 li:hover{
+			background-color: $secondary-color;
+		  }
 	  }
+	
 	  
 	  .suggestion-list li:hover {
 		background-color: $light-color-secondary;

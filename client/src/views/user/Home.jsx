@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import Card from "./components/Card";
 import Carousel from "../user/components/Carousel.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
@@ -12,6 +13,8 @@ function Home() {
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const navigate = useNavigate(); // Hook pour la navigation
 
   useEffect(() => {
     async function fetchProducts() {
@@ -71,9 +74,8 @@ function Home() {
     }
   }
 
-  function handleProductClick(productName) {
-    setSearchInput(productName);
-    setFilteredProducts([]);
+  function handleProductClick(id) {
+    navigate(`/product/${id}`);
   }
 
   if (isLoading) {
@@ -91,7 +93,6 @@ function Home() {
   // Construct image URLs for the carousel
   const carouselImages = [
     '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
-    // Dynamically generate URLs for all images
     ...products.map(product => `http://localhost:9000/images/new_collection/${product.picture}`)
   ];
 
@@ -108,10 +109,7 @@ function Home() {
           {filteredProducts.length > 0 && (
             <ul className="suggestion-list">
               {filteredProducts.map(product => (
-                <li
-                  key={product.id}
-                  onClick={() => handleProductClick(product.title)}
-                >
+                <li key={product.id} onClick={() => handleProductClick(product.id)}>
                   {product.title}
                 </li>
               ))}
