@@ -81,6 +81,7 @@ function Details() {
         const updatedData = {
             title: editProduct.title || product.title,
             subTitle: editProduct.subTitle || product.subTitle,
+            status: editProduct.status || product.status,
             picture: editProduct.picture || product.picture,
             alt: editProduct.alt || product.alt,
             description: editProduct.description || product.description,
@@ -104,7 +105,7 @@ function Details() {
                 setProduct(updatedProduct);
                 setIsEditing(false);
                 setSuccessMessage("Le produit a été modifié avec succès!");
-                setTimeout(() => navigate("/products"), 3000);
+                setTimeout(() => navigate("/products"), 2000);
             } else {
                 console.error("Failed to update product:", response.statusText);
                 setSuccessMessage("Échec de la modification du produit. Veuillez réessayer.");
@@ -154,7 +155,7 @@ function Details() {
                             value={editProduct.subTitle || product.subTitle}
                             onChange={handleInputChange}
                         />
-                          <label>Product Status: </label>
+                        <label>Product Status: </label>
                         <input
                             type="text"
                             name="status"
@@ -231,9 +232,10 @@ function Details() {
                 ) : (
                     <article className="productDetails">
                         <div className="container">
-                           <img src={`http://localhost:9000/images/new_collection/${product.picture}`}
-													
-							/>
+                            <img 
+                                src={`http://localhost:9000/images/new_collection/${product.picture}`}
+                                alt={product.alt || 'Product image'} 
+                            />
                         </div>
                         <div>
                             <h2>Product ID: {product.id}</h2>
