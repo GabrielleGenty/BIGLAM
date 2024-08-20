@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images, productIds }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -19,12 +20,14 @@ const Carousel = ({ images }) => {
     return () => {
       clearInterval(interval); // Clear the interval on component unmount
     };
-  }, [currentIndex]); // Only re-run the effect when currentIndex changes
+  }, [currentIndex]);
 
   return (
     <div className="carousel">
       <button onClick={prevSlide}>&lt;</button>
-      <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      <Link to={`/product/${productIds[currentIndex]}`}>
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      </Link>
       <button onClick={nextSlide}>&gt;</button>
     </div>
   );

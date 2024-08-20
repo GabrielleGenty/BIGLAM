@@ -1,22 +1,25 @@
  /***CAROUSEL******/
  .carousel {
-	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	// position: relative;
 	width: 100%;
-	height: 100%;
+	height: auto;
 	overflow: hidden;
-	margin: 5%;
+	margin: 2%;
 	
   }
   
-  .carousel img {
+  .carousel a,img {
 	width: 100%;
 	object-fit: contain;
-	align-items:start;
+	align-items:end;
   }
   
   .carousel button {
-	position: absolute;
-	top: 50%;
+	// position: absolute;
+	top: 0%;
 	transform: translateY(-50%);
 	background-color:$header-background-color;
 	color: $font-color;
@@ -26,9 +29,9 @@
   }
   
   .carousel button:first-of-type {
-	left: 0px;
+	left:10%;
   }
   
   .carousel button:last-of-type {
-	right: 0px;
+	right: 2%;
   }

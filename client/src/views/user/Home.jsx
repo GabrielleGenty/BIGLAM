@@ -90,11 +90,13 @@ function Home() {
     return <div>Data format is incorrect.</div>;
   }
 
-  // Construct image URLs for the carousel
+  // Construct image URLs and IDs for the carousel
   const carouselImages = [
-    '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
+    // '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
     ...products.map(product => `http://localhost:9000/images/new_collection/${product.picture}`)
   ];
+
+  const productIds = products.map(product => product.id);
 
   return (
     <main id="userHome">
@@ -120,7 +122,7 @@ function Home() {
 
       <section>
         <h2>Nouvelle Collection</h2>
-        <Carousel images={carouselImages} />
+        <Carousel images={carouselImages} productIds={productIds} />
       </section>
 
       {searchInput && filteredProducts.length > 0 && (
