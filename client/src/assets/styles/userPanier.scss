@@ -1,13 +1,13 @@
 
 #userCart{
     
-    margin: 0;
-    padding:  0;
+    margin-bottom: 20%;
+    padding:  10% 2%;
     #emptyCart{
         padding: 45% 5%;
         h2{
           text-align: center;
-          margin: 2%;
+          margin: 5%;
         }
         p{
           text-align: center;
@@ -31,9 +31,9 @@
         
     }
     img{
-        width:100%;
+        width:60%;
         height: auto;
-        border-radius: 10%;
+    
     }
     button{
       width:100%;
