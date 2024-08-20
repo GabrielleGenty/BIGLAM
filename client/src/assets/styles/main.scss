@@ -29,16 +29,29 @@
 /* GLOBAL */
 html {
 	
+	height: 100%; /* Assure que le body prend toute la hauteur de la fenêtre */
+	margin: 0; /* Enlève les marges par défaut */
 	font-size: 62.5%;
-
 }
+
+
 /***BODY**/
 body {
-
+	position: relative;
+	// height: 100%; 
+	display: flex;
+	flex-direction: column; 
 	font-family: $body-font;
 	font-size: 1.6rem;
 	line-height: 1.6;
 	color: $dark-color;
+
+	main {
+		flex: 1; /* Assure que le contenu principal occupe tout l'espace disponible */
+		overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
+		margin-bottom: 3rem; /* Assure qu'il y a assez de place pour le footer */
+	  }
+	
 	h1{
 		font-size: 2.4rem;
 		padding: 0.5%;
@@ -68,7 +81,7 @@ body {
 		margin-bottom: 1rem;
 	}
 	section{
-		margin: 5%;
+		margin: 7% 0;
 		background-color:$light-color ;
 	}
 }

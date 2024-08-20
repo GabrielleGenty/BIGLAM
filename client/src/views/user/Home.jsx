@@ -94,7 +94,8 @@ function Home() {
   }
 
   return (
-    <main id="userHome">
+    <main id="userHome" >
+   
       <div>
         <form>
           <input
