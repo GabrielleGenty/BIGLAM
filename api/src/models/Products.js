@@ -4,20 +4,20 @@ import Query from "./Query.js";
 class Products{
     static async getAll(){
  
-         return await Query.run(`SELECT id, title, subTitle, picture, alt, description, price ,
+         return await Query.run(`SELECT id, title, subTitle, status, picture, alt, description, price ,
         ref, quantityInStock,categories_id FROM products ORDER BY id DESC LIMIT 50`);
        
     };
     static async getById(id){
 
-            return await Query.runWithParams(`SELECT id, title, subTitle, picture, alt, description, price,
+            return await Query.runWithParams(`SELECT id, title, subTitle, status, picture, alt, description, price,
          ref, quantityInStock, categories_id FROM products WHERE id = ?`, [id]);
         
     };
     static async getByCategoryId(id){
 
         return await Query.runWithParams(
-            `SELECT id, title, subTitle, picture, alt, description, price, ref, quantityInStock, categories_id 
+            `SELECT id, title, subTitle, status, picture, alt, description, price, ref, quantityInStock, categories_id 
             FROM products 
             WHERE categories_id = ?`,
             [id]
@@ -29,13 +29,14 @@ class Products{
         return await Query.runWithParams(`INSERT INTO products 
             (title,
              subTitle,
+             status,
              picture,
              alt,
               description, 
               price, 
               ref,
                quantityInStock, 
-               categories_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, req.body);
+               categories_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, req.body);
     };
     
     static async update(req){
@@ -45,6 +46,7 @@ class Products{
         `UPDATE products 
         SET title = ?, 
             subTitle = ?, 
+            status =?,
             picture =?,
             alt = ?,
             description = ?, 

@@ -12,7 +12,6 @@ const router = Router();
 router.get("/",getAll);
 router.get("/:id",getById);
 router.get("/category/:id",getByCategoryId);
-
 router.post("/",isAdmin,add);
 router.patch("/:id",isAdmin, update);
 router.delete("/:id",isAdmin, deleteProduct);

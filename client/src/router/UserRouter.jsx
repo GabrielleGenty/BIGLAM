@@ -11,7 +11,7 @@ import ProtectedRoute from "../hoc/ProtectedRoute";
 import Footer from "../views/user/partials/Footer";
 import  TermOfUse from "../views/user/TermOfUse";
 import PrivacyPolicy from "../views/user/PrivacyPolicy";
-import EnPromotion from "../views/user/EnPromotion";
+import Promotion from "../views/user/Promotion";
 import ProductDetails from "../views/user/ProductDetails"
 import NouvelleCollection from "../views/user/NouvelleCollection";
 import Category from "../views/user/Category"
@@ -30,7 +30,7 @@ function UserRouter(){
             <Route path="/product/:id" element ={< ProductDetails/>}/>
             <Route path="/category/:id" element ={< Category/>}/>
             <Route path="/aboutUs" element ={< AboutUs/>}/>
-            <Route path="/enPromotion" element ={< EnPromotion/>}/>
+            <Route path="/promotion" element ={< Promotion/>}/>
             <Route path="/NouvelleCollection" element ={< NouvelleCollection/>}/>
             <Route path="/termofuse" element ={< TermOfUse/>}/>
             <Route path="/privacypolicy" element ={< PrivacyPolicy/>}/>

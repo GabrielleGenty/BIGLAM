@@ -64,7 +64,7 @@ function Header() {
                         </button>
                         <Link to={"/"} onClick={handleLinkClick}>Page d&apos;accueil BIGLAM</Link>
                         <Link to={"/aboutUs"} onClick={handleLinkClick}>About us</Link>
-                        <Link to={"/enPromotion"} onClick={handleLinkClick}>En promotion !</Link>
+                        <Link to={"/promotion"} onClick={handleLinkClick}>En promotion !</Link>
                         <Link to={"/NouvelleCollection"} onClick={handleLinkClick}>Nouvelle collection</Link>
                         <Link onClick={() => setCategoryMenuOpen(!isCategoryMenuOpen)}>
                             Catégories
