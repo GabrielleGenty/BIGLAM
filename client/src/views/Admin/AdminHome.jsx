@@ -11,7 +11,7 @@ function AdminHome() {
 
   return (
     <main id="admin">
-       <header>
+       <header id="headerAdmin">
         <h1>BACK OFFICE</h1>
         <button onClick={logout}><FontAwesomeIcon icon={faPowerOff} /></button>
     </header>

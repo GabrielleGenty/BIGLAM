@@ -5,11 +5,6 @@ import { useCart } from "../../hooks/useCart.jsx";
 
 function Home() {
   const { addToCart } = useCart();
-  const images = [
-    '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
-    // ... other images
-  ];
-
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [productsByCategory, setProductsByCategory] = useState({});
@@ -93,9 +88,15 @@ function Home() {
     return <div>Data format is incorrect.</div>;
   }
 
+  // Construct image URLs for the carousel
+  const carouselImages = [
+    '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
+    // Dynamically generate URLs for all images
+    ...products.map(product => `http://localhost:9000/images/new_collection/${product.picture}`)
+  ];
+
   return (
-    <main id="userHome" >
-   
+    <main id="userHome">
       <div>
         <form>
           <input
@@ -121,7 +122,7 @@ function Home() {
 
       <section>
         <h2>Nouvelle Collection</h2>
-        <Carousel images={images} />
+        <Carousel images={carouselImages} />
       </section>
 
       {searchInput && filteredProducts.length > 0 && (
@@ -139,7 +140,7 @@ function Home() {
         const categoryProducts = productsByCategory[category.id] || [];
         return categoryProducts.length > 0 ? (
           <section key={category.id} id={`category-${category.id}`}>
-            <h2>Notre Collection de {category.label}</h2>
+            <h2>Notre Collection {category.label}</h2>
             <div id="categorysection">
               {categoryProducts.map((product) => (
                 <Card key={product.id} products={product} />

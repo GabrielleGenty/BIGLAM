@@ -49,7 +49,12 @@ body {
 		flex: 1; /* Assure que le contenu principal occupe tout l'espace disponible */
 		overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
 		margin-bottom: 3rem;
-		padding-bottom: 25%; /* Assure qu'il y a assez de place pour le footer */
+		padding: 20% 2%; /* Assure qu'il y a assez de place pour le footer */
+	  }
+	  /****admin main****/
+	  #admin{
+		margin-top: 0;
+		padding: 0;
 	  }
 	
 	h1{
