@@ -6,13 +6,14 @@ section{
     }
 
     article{
-        margin: 2% 2%;
+        margin: 20% 2%;
         padding: 2%;
+    
         #productDetails{
             display: flex;
             gap: 30px;
             flex-direction: column;
-            padding: 2%;
+            padding: 5%;
             .container {
                 display: flex;
                 margin: auto; 

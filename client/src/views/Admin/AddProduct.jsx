@@ -81,7 +81,6 @@ function AddProduct() {
             <Link to="/products">Retour à la Page De Produits</Link>
           </button>
         </div>
-        {error && <p>{error}</p>}
         <form onSubmit={submitHandler}>
           <label>Product Title</label>
           <input

@@ -3,7 +3,7 @@
 /****HOOM*****/
 	
 	#admin{
-		background-color:$background-color;
+	
 	
 		header{
 			
@@ -22,8 +22,8 @@
 		}
 		section{
 			
-			margin: 0;
-			padding: 0;
+			margin: 5% 0;
+			padding: 5% 2% 0 2%;
 			background-color:$background-color;
 			h1{
 				font-size: 2.4rem;
@@ -46,7 +46,7 @@
 					align-items: center;
 					display: flex;
 					justify-content: space-between;
-					// margin-bottom: 50%;
+				
 					
 				
 				a{  

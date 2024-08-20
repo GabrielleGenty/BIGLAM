@@ -118,11 +118,11 @@ hr {
 
  /**privacyPolicy**/
 	#privacyPolicy{
+		margin-top: 10%;
+		padding: 2% 5%;
 
 		section{
-			padding:2%;
-			font-size: small;
-			padding:1%;
+			padding: 5%;
 			h2{
 				margin: 2%;
 			}
@@ -131,6 +131,7 @@ hr {
 	}
 	/**termsOfUse**/
 	#termsOfUse{
+		margin-top: 15%;
 		font-size: small;
 		padding:2%;
 		h2{
