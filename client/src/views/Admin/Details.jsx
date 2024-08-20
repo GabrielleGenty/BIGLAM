@@ -154,6 +154,13 @@ function Details() {
                             value={editProduct.subTitle || product.subTitle}
                             onChange={handleInputChange}
                         />
+                          <label>Product Status: </label>
+                        <input
+                            type="text"
+                            name="status"
+                            value={editProduct.status || product.status}
+                            onChange={handleInputChange}
+                        />
                         <label>Product Picture : </label>
                         <input
                             type="text"
@@ -232,6 +239,7 @@ function Details() {
                             <h2>Product ID: {product.id}</h2>
                             <h3>Product Title: {product.title}</h3>
                             <p>Product Subtitle: {product.subTitle}</p>
+                            <p>Product Status: {product.status}</p>
                             <p>Product Description: {product.description}</p>
                             <p>Product Price: {product.price} €</p>
                             <p>Product Reference: {product.ref}</p>

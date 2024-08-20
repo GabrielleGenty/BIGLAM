@@ -98,6 +98,14 @@ function AddProduct() {
             placeholder="Insérer Product SubTitle"
             required
           />
+                <label>Product SubTitle</label>
+          <input
+            type="text"
+            id="productStatus"
+            name="status"
+            placeholder="Insérer Product Status"
+           
+          />
           <label>Product Picture</label>
           <input
             type="text"
