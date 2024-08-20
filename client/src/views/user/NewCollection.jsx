@@ -53,7 +53,7 @@ function NewCollection() {
         {newCollectionProducts.length > 0 ? (
           <div className="new-collection-products">
             {newCollectionProducts.map(product => (
-              <Card key={product.id} product={product} />
+              <Card key={product.id} products={product} />
             ))}
           </div>
         ) : (
