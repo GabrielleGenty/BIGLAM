@@ -105,7 +105,12 @@ function Details() {
                 setProduct(updatedProduct);
                 setIsEditing(false);
                 setSuccessMessage("Le produit a été modifié avec succès!");
-                setTimeout(() => navigate("/products"), 2000);
+
+                // Afficher le message de succès pendant quelques secondes
+                setTimeout(() => {
+                    setSuccessMessage("");
+                    navigate("/products"); // Redirect to products page after a short delay
+                }, 2000);
             } else {
                 console.error("Failed to update product:", response.statusText);
                 setSuccessMessage("Échec de la modification du produit. Veuillez réessayer.");

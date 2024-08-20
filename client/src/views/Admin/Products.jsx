@@ -61,6 +61,7 @@ function Products() {
 							<th><h3>Image</h3></th>
 							<th><h3>title</h3></th>
 							<th><h3>Prix</h3></th>
+							<th><h3>status</h3></th>
 							<th><h3>Quantity In Stock</h3></th>
 							<th><h3>Actions</h3></th>
 						
@@ -81,6 +82,7 @@ function Products() {
 									</td>
 									<td>{product.title}</td>
 									<td>{product.price} €</td>
+									<td>{product.status} </td>
 									<td>{product.quantityInStock}</td>
 									<td>
 										<Link to={"details/" + product.id}>

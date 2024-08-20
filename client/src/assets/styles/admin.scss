@@ -181,12 +181,15 @@
 					margin: auto;
 					select,
 					textarea{
-					font-size: 1.8rem;
+					font-size: 2rem;
 					width:100%;
 					text-align:center;
 					border: 0px;
 					padding: 0.5rem;
 					
+					}
+					input{
+						font-size: 2rem;
 					}
 					select,
 					textarea,
@@ -194,6 +197,7 @@
 					button {
 						margin-bottom: 0.5rem;
 						border-radius: 20px;
+					
 					}
 				
 					button {
