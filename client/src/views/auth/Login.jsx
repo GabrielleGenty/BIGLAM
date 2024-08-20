@@ -56,14 +56,18 @@ function Login() {
               name="email"
               placeholder="Enter your email"
               required 
+              aria-required="true"
+              aria-describedby="emailHelp"
             />
-
             <input
               type="password"
               id="password"
               name="password"
               placeholder="Enter your password"
               required
+              aria-required="true"
+              aria-describedby="passwordHelp"
+              
              />
             <button type="submit" disabled ={isLoading}>{isLoading ?'Chargement...': 'Login'}</button>
         </form>
