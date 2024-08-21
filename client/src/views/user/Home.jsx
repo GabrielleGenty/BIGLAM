@@ -11,8 +11,6 @@ function Home() {
   const [productsByCategory, setProductsByCategory] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [searchInput, setSearchInput] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const navigate = useNavigate(); // Hook pour la navigation
 
@@ -60,20 +58,6 @@ function Home() {
     }, {});
   }
 
-  function handleSearchInputChange(e) {
-    const query = e.target.value;
-    setSearchInput(query);
-
-    if (query.trim() === "") {
-      setFilteredProducts([]);
-    } else {
-      const filtered = products.filter(product =>
-        product.title && product.title.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredProducts(filtered);
-    }
-  }
-
   function handleProductClick(id) {
     navigate(`/product/${id}`);
   }
@@ -92,7 +76,6 @@ function Home() {
 
   // Construct image URLs and IDs for the carousel
   const carouselImages = [
-    // '/images/new_collection/bague-or-375-jaune-diamants-pierres-precieuses.jpeg',
     ...products.map(product => `http://localhost:9000/images/new_collection/${product.picture}`)
   ];
 
@@ -100,43 +83,10 @@ function Home() {
 
   return (
     <main id="userHome">
-      <div>
-        <form>
-          <input
-            type="search"
-            placeholder="Rechercher un produit"
-            aria-label="Rechercher un produit"
-            value={searchInput}
-            onChange={handleSearchInputChange}
-          />
-          {filteredProducts.length > 0 && (
-            <ul className="suggestion-list">
-              {filteredProducts.map(product => (
-                <li className="listItem" key={product.id} onClick={() => handleProductClick(product.id)}>
-                  {product.title}
-                </li>
-              ))}
-            </ul>
-          )}
-        </form>
-      </div>
-
-      <section>
-        <h2>Nouvelle Collection</h2>
+      <section id="carousel">
+        <h2>Notre Collection</h2>
         <Carousel images={carouselImages} productIds={productIds} />
       </section>
-
-      {searchInput && filteredProducts.length > 0 && (
-        <section>
-          <h2>Produits trouvés</h2>
-          <div id="categorysection">
-            {filteredProducts.map(product => (
-              <Card key={product.id} products={product} />
-            ))}
-          </div>
-        </section>
-      )}
-
       {categories.map((category) => {
         const categoryProducts = productsByCategory[category.id] || [];
         return categoryProducts.length > 0 ? (

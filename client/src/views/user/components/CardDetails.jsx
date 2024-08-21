@@ -19,9 +19,9 @@ function CardDetails({ product }) {
       <div id="details">
       {/* <p><strong>{product.status}</strong></p> */}
       <p><strong>Référence :</strong> {product.ref}</p>
-      <p><strong>title</strong>{product.subTitle}</p>
-      <p><strong>Description </strong> {product.description}</p>
-      <p><strong>Prix{product.price} €</strong></p>
+      <p><strong>title :</strong>{product.subTitle}</p>
+      <p><strong>Description :</strong> {product.description}</p>
+      <p><strong>Prix :{product.price} €</strong></p>
       <button role="button" aria-label="Ajouter au panier" id="addTopanier" onClick={() => addToCart(product)}>
         Ajouter au panier
       </button>

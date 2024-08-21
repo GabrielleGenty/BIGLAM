@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCartShopping, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import logo4 from "../../../assets/images/logo4.png";
 import { useUser } from "../../../hooks/UseUser";
 import useMenu from "../../../hooks/UseMenu";
 import { useCart } from "../../../hooks/useCart";
+import SearchInput from "../partials/SearchInput";
 
 function Header() {
     const { user, logout } = useUser();
     const { isMenuOpen, toggleMenu } = useMenu();
     const { cart } = useCart();
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const [categories, setCategories] = useState([]);
     const [isCategoryMenuOpen, setCategoryMenuOpen] = useState(false);
+    const [products, setProducts] = useState([]);
+    const [isSuggestionsOpen, setSuggestionsOpen] = useState(false);
 
     useEffect(() => {
         async function fetchCategories() {
@@ -29,7 +33,21 @@ function Header() {
             }
         }
 
+        async function fetchProducts() {
+            try {
+                const response = await fetch('http://localhost:9000/api/v1/products');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setProducts(data.response || []);
+            } catch (error) {
+                console.error('Failed to fetch products:', error);
+            }
+        }
+
         fetchCategories();
+        fetchProducts();
     }, []);
 
     const handleLinkClick = () => {
@@ -49,13 +67,24 @@ function Header() {
         handleLinkClick(); // Ferme le menu burger après le clic
     };
 
+    function handleProductClick(id) {
+        navigate(`/product/${id}`);
+        setSuggestionsOpen(false); // Close suggestions list
+    }
+
+    function handleCloseSuggestions() {
+        setSuggestionsOpen(false); // Close suggestions list
+    }
+
     return (
         <header>
-            <div>
+            <div id="headerNav">
+                <div className="container">
+                
                 <Link to={"/"}>
                     <img src={logo4} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
                 </Link>
-            </div>
+                </div>
             <div>
                 {isMenuOpen && (
                     <nav className="burger-menu">
@@ -105,7 +134,7 @@ function Header() {
                         <>
                             <NavLink to={"/dashboard"} className={"bar-nav"}>
                                 <FontAwesomeIcon icon={faUser} className="userIcon" />
-                                {user.email}
+                                <span>Hello<span style={{ marginLeft: '0.5rem' }}>{user.firstname}</span></span>
                             </NavLink>
                         </>
                     )}
@@ -117,6 +146,14 @@ function Header() {
                         <FontAwesomeIcon icon={faBars} />
                     </button>
                 </nav>
+            </div>
+            </div>
+            <div>
+                <SearchInput
+                    products={products}
+                    onProductClick={handleProductClick}
+                    onCloseSuggestions={handleCloseSuggestions} // Pass the callback function
+                />
             </div>
         </header>
     );

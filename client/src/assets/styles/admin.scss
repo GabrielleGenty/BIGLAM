@@ -21,9 +21,8 @@
 			
 		}
 		section{
-			
 			margin: 5% 0;
-			padding: 5% 2% 0 2%;
+			padding:  2% ;
 			background-color:$background-color;
 			h1{
 				font-size: 2.4rem;
@@ -78,7 +77,9 @@
 				
 				}
 				//General
-			
+				#filterSet{
+					margin:1% 10% ;
+				}
 			  table {
 					color:$dark-color;
 				
@@ -138,23 +139,22 @@
 					  }
 				
 			    }
-				
 			
-			  
-	
 		
 		    /*****Admin-Product-details****/
 			.productDetails{
 				display: flex;
 				justify-content: center;
-				gap: 70px;
-				
-				margin: 5%;
+				flex-direction: row;
+				gap: 50px;
+				margin: 2%;
+				padding: 2%;
 				text-align: center;
+				background-color: $background-color;
 				.container {
 					display: flex;
-					width: 400px; // Set width of the container
-					height: 400px; // Set height of the container
+					width: 300px; // Set width of the container
+					height: 300px; // Set height of the container
 					overflow: hidden; // Hide any overflow
 					align-items: center; // Center content vertically
 					justify-content: center;// Required for absolutely positioned child elements
@@ -163,8 +163,8 @@
 				.container img {
 					max-width: 100%;
 					max-height: 100%;
-					width: auto; // Ensure the width scales automatically
-					height: auto; // Ensure the height scales automatically
+					width: auto; 
+					height: auto; 
 			    }
 				button:hover{
 					background-color: $hovering-color;

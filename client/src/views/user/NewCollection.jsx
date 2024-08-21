@@ -51,7 +51,7 @@ function NewCollection() {
       <section>
         <h1>Nouvelle Collection</h1>
         {newCollectionProducts.length > 0 ? (
-          <div className="new-collection-products">
+          <div className="product-container">
             {newCollectionProducts.map(product => (
               <Card key={product.id} products={product} />
             ))}

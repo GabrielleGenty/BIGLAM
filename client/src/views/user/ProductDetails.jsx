@@ -51,8 +51,8 @@ function ProductDetails() {
   }
 
   return (
-    <main   id="productDetails">
-      <section id="productDetail">
+    <main  id="productDetail">
+      <section>
         <div className="details">
         <CardDetails product={product} />
         </div>
