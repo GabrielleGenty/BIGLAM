@@ -1,0 +1,39 @@
+main{
+
+
+        article {
+            flex:  0 0 95%; /* Each article takes 100% of the container width */
+            box-sizing: border-box; 
+            background-color: $light-color-secondary;/* Includes padding and border in the element's total width and height */
+            display: flex;
+            margin: 10%;
+            border: 1px solid #d3d3d3; 
+            flex-direction: column;
+            border-radius: 20px;
+            align-items: center; /* Center-aligns the content */
+            padding:10% 5% ; /* Adds vertical padding */
+            scroll-snap-align: start; /* Optional: Adds snap effect */
+          }
+    
+          img {
+            width: 100%; 
+            height: auto;
+            border-radius: 10%;
+          //   max-width: 500px; /* Optional: Limits the maximum width of the images */
+          }
+          
+		p {
+            text-align: center;
+          }
+    
+          button#addTopanier {
+            width: 60%;
+            margin: auto;
+            font-size: 1.4rem;
+            background-color:$secondary-color;
+          }
+          #addTopanier:hover {
+              background-color:$header-background-color;
+          }
+    
+}

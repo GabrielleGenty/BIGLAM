@@ -8,7 +8,7 @@ function Dashboard() {
 
     if (user.isLogged) {
         return (
-            <main className="dashboard">
+            <main id="dashboard" className="dashboard">
                 <h1>Welcome to Your Account</h1>
                 
                 <section id="user" className="profile-info">
@@ -18,8 +18,8 @@ function Dashboard() {
                     <p>Email: {user.email}</p>
                     <strong>Account Settings</strong>
                     <div id="buttonset">
-                        <button>Change Password</button>
-                        <button>Update Email</button>
+                        <button id="changePassword">Change Password</button>
+                        <button id="updateEmail">Update Email</button>
                     </div>
                 </section>
                 

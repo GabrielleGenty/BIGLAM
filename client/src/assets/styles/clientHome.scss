@@ -1,6 +1,6 @@
 html{
 	background-color: #ffffff;
-}
+
 #userHome {
 	// padding: 2% 5%;
 	// overflow-y: auto; 
@@ -38,16 +38,21 @@ html{
 		flex-wrap: nowrap; 
 		overflow-x: auto; 
 		scroll-snap-type: x mandatory; 
-		padding: 0; 
+	     margin-left: 2% ; 
+		background-color:$primary-color;
+		// scrollbar-width: thin; /* Change la largeur de la barre de défilement */
+		// scrollbar-color:$header-background-color transparent; 
+	  }
   
 		/* Customize scrollbar appearance */
 		::-webkit-scrollbar {
-		  height: 8px; 
+		  height: 10px;
+		
 		}
   
 		::-webkit-scrollbar-thumb {
-		  background: #c88a36; 
-		  border-radius: 10px; 
+	
+		  border-radius: 20px; 
 		}
   
 		::-webkit-scrollbar-track {
@@ -55,27 +60,37 @@ html{
 		}
   
 		/* Ensure that the scrollbar does not overlap content */
-		scroll-padding-inline-end: 16px; /* Adjust the end padding to ensure content is not cut off */
-  
+		scroll-padding-inline-end: 16px; 
 		article {
-		  flex:  0 0 95%; /* Each article takes 100% of the container width */
+		  flex:  0 0 96%; /* Each article takes 100% of the container width */
 		  box-sizing: border-box; 
-		  background-color: $light-color-secondary;/* Includes padding and border in the element's total width and height */
+		  background-color: $light-color-secondary;
 		  display: flex;
-		  margin: 10%;
+		  gap:10px;
+		  margin: 5% ;
 		  border: 1px solid #d3d3d3; 
 		  flex-direction: column;
 		  border-radius: 20px;
-		  align-items: center; /* Center-aligns the content */
-		  padding:10% 5% ; /* Adds vertical padding */
-		  scroll-snap-align: start; /* Optional: Adds snap effect */
+		  align-items: left; 
+		  padding: 5% ; 
+		  scroll-snap-align: start; 
 		}
-  
-		img {
-		  width: 100%; 
-		  height: auto;
-		  border-radius: 10%;
-		//   max-width: 500px; /* Optional: Limits the maximum width of the images */
+		.container {
+			display: flex;
+			margin: auto; 
+			width: 300px;
+			height: 300px; 
+			overflow: hidden; 
+			align-items: center; 
+			justify-content: center;
+		}
+
+		.container img {
+			max-width: 100%;
+			max-height: 100%;
+			text-align: center;
+			width: auto; 
+			height: auto; 
 		}
 		img:hover {
 			transform: scale(1.1);
@@ -83,19 +98,20 @@ html{
 		}
   
 		p {
-		  text-align: center;
+		  text-align:center;
 		}
   
 		button#addTopanier {
-		  width: 100%;
-		  margin: auto;
-		  font-size: 1.4rem;
+		 width: 100%;
+		  margin:0 auto;
+		  font-size: 1.2rem;
 		  background-color:$secondary-color;
+		  display: block;
 		}
 		#addTopanier:hover {
 			background-color:$header-background-color;
 		}
-	  }
+	  
 	}
   }
-  
+} 

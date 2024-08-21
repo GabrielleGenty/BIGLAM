@@ -105,6 +105,7 @@ function Home() {
           <input
             type="search"
             placeholder="Rechercher un produit"
+            aria-label="Rechercher un produit"
             value={searchInput}
             onChange={handleSearchInputChange}
           />

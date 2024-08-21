@@ -51,10 +51,11 @@ function ProductDetails() {
   }
 
   return (
-    <main>
-      <section>
-        {/* Utilisation de CardDetails */}
+    <main   id="productDetails">
+      <section id="productDetail">
+        <div className="details">
         <CardDetails product={product} />
+        </div>
       </section>
     </main>
   );

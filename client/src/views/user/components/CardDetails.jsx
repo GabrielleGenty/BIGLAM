@@ -6,7 +6,7 @@ function CardDetails({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <article id="product">
+    <article>
         <h2>{product.title}</h2>
         <div id="productDetails">
        <div className="container">
@@ -16,12 +16,13 @@ function CardDetails({ product }) {
                 onError={(e) => { e.target.src = noPicture; }} // Fallback to noPicture if image fails to load
             />
       </div>
-      <div>
-      <p><strong>Produit Référence : </strong> {product.ref}</p>
-      <p><strong>Produit artificile   :</strong>{product.subTitle}</p>
-      <p><strong>Produit Description : </strong> {product.description}</p>
-      <p><strong>Prix : {product.price} €</strong></p>
-      <button id="addTopanier" onClick={() => addToCart(product)}>
+      <div id="details">
+      {/* <p><strong>{product.status}</strong></p> */}
+      <p><strong>Référence :</strong> {product.ref}</p>
+      <p><strong>title</strong>{product.subTitle}</p>
+      <p><strong>Description </strong> {product.description}</p>
+      <p><strong>Prix{product.price} €</strong></p>
+      <button role="button" aria-label="Ajouter au panier" id="addTopanier" onClick={() => addToCart(product)}>
         Ajouter au panier
       </button>
       </div>

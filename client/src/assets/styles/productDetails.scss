@@ -1,23 +1,23 @@
 section{
     margin: 0;
     h2{
+        font-size: 1.8rem;
         margin: 2%;
    
     }
 
     article{
-   
-    
+
         #productDetails{
             display: flex;
             gap: 30px;
             flex-direction: column;
-            padding: 5%;
+        
             .container {
                 display: flex;
                 margin: auto; 
-                width: 300px;// Set width of the container
-                height: 300px; // Set height of the container
+                width: 250px;// Set width of the container
+                height: 250px; // Set height of the container
                 overflow: hidden; // Hide any overflow
                 align-items: center; // Center content vertically
                 justify-content: center;// Required for absolutely positioned child elements
@@ -30,9 +30,20 @@ section{
                 width: auto; // Ensure the width scales automatically
                 height: auto; // Ensure the height scales automatically
             }
-            button{
-                margin: 5% 0%;
-            }
+            // div #details{
+            //     // text-align: center;
+            //     // button#addTopanier {
+            //     //     width: 80%;
+            //     //     margin: 0 auto;
+            //     //     display: block;
+            //     //     font-size: 1.4rem;
+            //     //     background-color:$secondary-color;
+            //     //   }
+            // }
+            
+              #addTopanier:hover {
+                  background-color:$header-background-color;
+              }
         }
     }
 }
