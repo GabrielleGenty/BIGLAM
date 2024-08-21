@@ -4,21 +4,21 @@ import { useUser } from "../../hooks/UseUser";
 
 function Dashboard() {
     useMenu();
-    const { user, login } = useUser();
+    const { user } = useUser();
     const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchOrders = async () => {
-            if (!user.isLogged || !user.id) {
-                setError("User is not logged in or user ID is missing.");
+            if (!user.isLogged || !user.email) {
+                setError("User is not logged in or email is missing.");
                 setIsLoading(false);
                 return;
             }
 
             try {
-                const response = await fetch(`http://localhost:9000/api/v1/orders/user/${user.id}`, {
+                const response = await fetch(`http://localhost:9000/api/v1/orders/user/${user.email}`, {
                     credentials: 'include' // Inclure les cookies de session
                 });
                 if (!response.ok) {
@@ -34,7 +34,7 @@ function Dashboard() {
         };
 
         fetchOrders();
-    }, [user.id, user.isLogged]);
+    }, [user.email, user.isLogged]);
 
     const handleChangePassword = () => {
         // Implémentez la logique pour modifier le mot de passe
@@ -73,24 +73,43 @@ function Dashboard() {
                 ) : error ? (
                     <p>Error fetching orders: {error}</p>
                 ) : (
-                    <ul>
+                    <div>
                         {orders.length === 0 ? (
                             <p>No orders found.</p>
                         ) : (
                             orders.map(order => (
-                                <li key={order.id}>
-                                    Order #{order.id} - Status: {order.status}
-                                    <ul>
-                                        {order.details.map(detail => (
-                                            <li key={detail.product_id}>
-                                                Product: {detail.product_name}, Quantity: {detail.quantity}, Price Each: {detail.priceEach} €
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </li>
+                                <div key={order.id}>
+                                    <strong>Order{order.id} - Status: {order.status}</strong>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Image</th>
+                                                <th>Name</th>
+                                                <th>Quantity</th>
+                                                <th>Price Each</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {order.details.map(detail => (
+                                                <tr key={`${order.id}-${detail.product_id}`}>
+                                                    <td>
+                                                        <img 
+                                                            src={`http://localhost:9000/images/new_collection/${detail.product_img}`}
+                                                            alt={detail.product_name || 'Product Image'} 
+                                                            style={{ maxWidth: '60px', maxHeight: '60px' }}
+                                                        />
+                                                    </td>
+                                                    <td>{detail.product_name}</td>
+                                                    <td>{detail.quantity}</td>
+                                                    <td>{detail.priceEach} €</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             ))
                         )}
-                    </ul>
+                    </div>
                 )}
             </section>
         </main>

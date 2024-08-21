@@ -21,6 +21,20 @@ const getById = async (req, res) => {
         res.status(500).json({ message: "Erreur de serveur", error: error.message });
     }
 };
+const getUserOrders = async (req, res) => {
+    try {
+        const userEmail = req.params.email;
+        const orders = await Orders.getByUserEmail(userEmail);
+
+        if (!orders.length) {
+            return res.status(404).json({ message: "Aucune commande trouvée pour cet utilisateur." });
+        }
+
+        res.json({ orders });
+    } catch (error) {
+        res.status(500).json({ message: "Erreur de serveur", error: error.message });
+    }
+};
 
 const add = async (req, res) => {
     const connection = await pool.getConnection();
@@ -90,4 +104,4 @@ const deleteOrder = async (req, res) => {
     }
 };
 
-export { getAll, getById, add, update,deleteOrder };
+export { getAll, getById, getUserOrders , add, update,deleteOrder };
