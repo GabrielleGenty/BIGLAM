@@ -161,21 +161,21 @@ hr {
 		overflow-y: auto;
 		background:$light-color-secondary;
 		position: absolute;
-		z-index: 1000;
+		z-index: 10000;
 		width: calc(90% - 2px);
 		list-style-type: none;
 		padding-left: 0;
+		
 	  }
 	  
 	  .suggestion-list li {
 		padding: 2px;
 		cursor: pointer;
-		 li:hover{
-			background-color: $secondary-color;
-		  }
+
 	  }
 	  .suggestion-list li:hover {
-		background-color: $light-color-secondary;
+		color:$light-color; /* Change la couleur du texte au survol */
+		background-color:$secondary-color; /* Facultatif : ajoute un fond au survol pour une meilleure visibilité */
 	  }
 
 

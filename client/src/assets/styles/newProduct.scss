@@ -1,6 +1,4 @@
 main{
-
-
         article {
             flex:  0 0 95%; /* Each article takes 100% of the container width */
             box-sizing: border-box; 
@@ -27,8 +25,9 @@ main{
           }
     
           button#addTopanier {
-            width: 60%;
-            margin: auto;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
             font-size: 1.4rem;
             background-color:$secondary-color;
           }

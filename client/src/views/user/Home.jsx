@@ -112,7 +112,7 @@ function Home() {
           {filteredProducts.length > 0 && (
             <ul className="suggestion-list">
               {filteredProducts.map(product => (
-                <li key={product.id} onClick={() => handleProductClick(product.id)}>
+                <li className="listItem" key={product.id} onClick={() => handleProductClick(product.id)}>
                   {product.title}
                 </li>
               ))}

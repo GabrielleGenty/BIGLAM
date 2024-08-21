@@ -40,9 +40,9 @@ html{
 		scroll-snap-type: x mandatory; 
 	     margin-left: 2% ; 
 		background-color:$primary-color;
-		// scrollbar-width: thin; /* Change la largeur de la barre de défilement */
-		// scrollbar-color:$header-background-color transparent; 
-	  }
+		scrollbar-width:thin; /* Change la largeur de la barre de défilement */
+		scrollbar-color:$header-background-color transparent; 
+	  
   
 		/* Customize scrollbar appearance */
 		::-webkit-scrollbar {
@@ -111,7 +111,7 @@ html{
 		#addTopanier:hover {
 			background-color:$header-background-color;
 		}
-	  
+	}
 	}
   }
 } 

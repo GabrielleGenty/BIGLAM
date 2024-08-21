@@ -30,20 +30,20 @@ section{
                 width: auto; // Ensure the width scales automatically
                 height: auto; // Ensure the height scales automatically
             }
-            // div #details{
-            //     // text-align: center;
-            //     // button#addTopanier {
-            //     //     width: 80%;
-            //     //     margin: 0 auto;
-            //     //     display: block;
-            //     //     font-size: 1.4rem;
-            //     //     background-color:$secondary-color;
-            //     //   }
-            // }
+            div #details{
+                text-align: center;
+                // button#addTopanier {
+                //     width: 80%;
+                //     margin: 0 auto;
+                //     display: block;
+                //     font-size: 1.4rem;
+                //     background-color:$secondary-color;
+                //   }
+            }
             
-              #addTopanier:hover {
-                  background-color:$header-background-color;
-              }
+            //   #addTopanier:hover {
+            //       background-color:$header-background-color;
+            //   }
         }
     }
 }
