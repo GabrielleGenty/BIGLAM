@@ -65,6 +65,7 @@ function Dashboard() {
                 Gérer votre compt
                  </Link>
             </section>
+            <hr />
 
             <section id="userOrder">
                 <h2>vos commandes</h2>

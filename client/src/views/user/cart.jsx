@@ -73,7 +73,7 @@ function Cart() {
         );
     }
 
-    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
     return (
         <main id="userCart">
@@ -81,12 +81,12 @@ function Cart() {
                 <h1>Mon Panier</h1>
                 {cart.map((item) => (
                     <article key={item.id} className="userCart">
-                        <div>
+                        <div className="container">
                             {item.picture ? (
                                 <img
                                     src={`http://localhost:9000/images/new_collection/${item.picture}`}
                                     alt={item.title}
-                                    style={{ maxWidth: '100px', maxHeight: '100px' }}
+                                   
                                 />
                             ) : (
                                 <p>Image non disponible</p>

@@ -9,6 +9,7 @@
 @import "./userCart.scss";
 @import "./productDetails.scss";
 @import "./newProduct.scss";
+@import "./dashboard.scss";
 
 /* Media query pour les écrans d'au moins 320px de large */
 @media screen and (min-width: 320px) {
@@ -28,7 +29,7 @@
 
 	/* GLOBAL */
 	html {
-		background-color: #ffffff;
+		// background-color: #ffffff;
 		height: 100%;
 		margin: 0; 
 		font-size: 62.5%;
@@ -125,30 +126,6 @@
 	    height: 2px;
 		background-color: $secondary-color;
 	}
-	/**privacyPolicy**/
-		#privacyPolicy{
-		
-
-			// section{
-			// 	padding: 5%;
-			// 	h2{
-			// 		margin: 2%;
-			// 	}
-			// }
-			
-		}
-		/**termsOfUse**/
-		// #termsOfUse{
-			
-		// 	font-size: small;
-		// 	padding:2%;
-		// 	h2{
-		// 		margin: 2%;
-		// 		text-transform: uppercase;
-			
-		// 	}
-		// }
-	/**input search**/
 		.suggestion-list {
 			border: 1px solid #ccc;
 			max-height: 150px;

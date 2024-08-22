@@ -110,15 +110,15 @@
 			color:$light-color ;
 		}
 		.category-menu{
-			background-color:$light-color;
-			text-align: center;
+			background-color:$primary-color;
+			// text-align: center;
 			list-style: none;
 			
 		}
 
 	.category-menu li {
 		padding: 5px;
-		margin: 0;
+		margin: auto;
 		text-align: center;
 		border-bottom: 1px solid #f9f5f5; 
 	}

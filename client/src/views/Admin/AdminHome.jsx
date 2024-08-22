@@ -11,19 +11,22 @@ function AdminHome() {
 
   return (
     <main id="admin">
-       <header id="headerAdmin">
-        <h1>BACK OFFICE</h1>
+       <header >
+        <div id="headerAdmin">
+        <h1>ADMIN PANEL</h1>
         <button onClick={logout}><FontAwesomeIcon icon={faPowerOff} /></button>
-    </header>
-      <section>
-      <h2>ADMIN PANEL</h2>
-      <nav className='navBar'>
+        </div>
+        <nav className='navBar'>
       <Link to="/users"> Utilisateurs</Link>
       <Link to="/products">Produits</Link>
       <Link to="/categories">Catégories</Link>
       <Link to="/orders">Commandes</Link>
     </nav>
-      </section>
+    </header>
+      
+  
+   
+    
     </main>
   )
 }

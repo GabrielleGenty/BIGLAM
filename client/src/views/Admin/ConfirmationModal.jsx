@@ -10,8 +10,10 @@ function ConfirmationModal({ show, onClose, onConfirm, message }) {
       <div className="modal">
         <h2>Confirmation</h2>
         <p><strong>{message}</strong></p>
+        <div id="buttonSet">
         <button onClick={onConfirm}>Yes</button>
         <button onClick={onClose}>No</button>
+        </div>
       </div>
     </div>
   );

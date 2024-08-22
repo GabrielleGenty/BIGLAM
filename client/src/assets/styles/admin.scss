@@ -1,31 +1,55 @@
 /******ADMIN******/
 
 /****HOOM*****/
-	
+	html{
+		background-color: $background-color;
+	}
 	main#admin{
-	
-		
-			margin-top: 0;
-			padding: 0;
-		
+	    margin: 0;
+		padding: 0;
+		background-color:$background-color;
 		header{
+			margin: 0;
+			padding: 0;
+			background-color: $background-color;
+			#headerAdmin{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background-color: $background-color;
+				padding: 1%;
+				
+				button{
+					width:5%;
+					padding:1.5rem;
+				}
+				svg{
+					color: $light-color;
+				}
+			}
+			nav.navBar{
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				margin:  0;
+				background-color: $light-color-secondary;
+				
 			
-			background-color: $light-color-secondary;
-			h1{
-				font-size: 2.4rem;
-		
+			a{  
+				color:$font-color;
+				font-size: 1.8rem;
+				// padding: 1%;
 			}
-			button{
-				padding:1.5rem;
+			a:hover{
+				background-color:$secondary-color;
+				color: $primary-color;
 			}
-			svg{
-				color: $light-color;
-			}
-			
 		}
+		
+	  
 		section{
-			margin: 5% 0;
-			padding:  2% ;
+			margin: 0% 0;
+			padding:  5% 10% ;
 			background-color:$background-color;
 			h1{
 				font-size: 2.4rem;
@@ -43,25 +67,7 @@
 						font-size: 1.6rem;
 					}
 
-				nav.navBar{
-					
-					align-items: center;
-					display: flex;
-					justify-content: space-between;
-				
-					
-				
-				a{  
-					color:$font-color;
-					font-size: 1.8rem;
-					padding: 2%;
-				
-					
-				}
-				a:hover{
-					background-color:$secondary-color;
-					color: $primary-color;
-				}
+			
 				}
 				img {
 					width: 50px;
@@ -117,7 +123,7 @@
 				}
 			    #buttonSet{
 					display: flex;
-					width: 80%;
+					width: 100%;
 					padding: 2%;
 					justify-content: space-around;
 					margin:auto;
@@ -125,7 +131,7 @@
 				
 				}
 			    button{
-					width: 50%;
+					width: 40%;
 					a{
 						font-size: 1.6rem;
 				    }
@@ -207,7 +213,7 @@
 						background-color: $secondary-color;
 						color: $font-color;
 						font-size: 1.6rem;
-						width: 45%;
+						width: 30%;
 						cursor: pointer;
 						text-transform: uppercase;
 						font-weight: bold;
@@ -253,8 +259,14 @@
 		text-align: center;
 		color: $danger-color;
 	}
+	#buttonSet{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	  }
 	
 	.modal button {
+		width:40%;
 		margin: 10px;
 		padding: 10px 20px;
 		
