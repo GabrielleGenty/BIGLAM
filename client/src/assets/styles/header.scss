@@ -4,7 +4,8 @@
 		position: fixed;
 		width: 100%;
 		z-index: 10000;
-		padding: 2%;
+		height:120px;
+		padding: 1%;
 		border-bottom: 2px solid $background-color;
 		background-color:$light-color-secondary;
 		// text-transform: uppercase;
@@ -36,7 +37,7 @@
 			display: flex;
 			// justify-content: space-between;
 			align-items: center;
-			padding: 2%;
+			padding: 1%;
 		}
 		.container {
 			display: flex;
@@ -172,7 +173,7 @@
 	}
 }
 /* Media query pour tablettes en orientation portrait et paysage */
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 1024px) {
 	
 }
   

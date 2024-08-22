@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useMenu from "../../hooks/UseMenu";
 import { useUser } from "../../hooks/UseUser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import {faGear }from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
     useMenu();
@@ -51,23 +54,20 @@ function Dashboard() {
     }
 
     return (
-        <main id="dashboard" className="dashboard">
-            <h1>Welcome to Your Account</h1>
+        <main id="dashboard">
 
             <section id="user" className="profile-info">
-                <h2>Your Account</h2>
+                <h2>votre compte</h2>
                 <p><strong>Nom:</strong> {user.firstname}</p>
                 <p><strong>Prénom:</strong> {user.lastname}</p>
                 <p><strong>Email:</strong> {user.email}</p>
-                <strong>Account Settings</strong>
-                <div id="buttonset">
-                    <button id="changePassword" onClick={handleChangePassword}>Change Password</button>
-                    <button id="updateEmail" onClick={handleUpdateEmail}>Update Email</button>
-                </div>
+                <Link to="/"><FontAwesomeIcon icon={faGear} />
+                Gérer votre compt
+                 </Link>
             </section>
 
             <section id="userOrder">
-                <h2>Your Orders</h2>
+                <h2>vos commandes</h2>
                 {isLoading ? (
                     <p>Loading orders...</p>
                 ) : error ? (

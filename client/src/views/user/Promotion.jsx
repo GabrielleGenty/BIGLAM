@@ -51,9 +51,8 @@ function Promotion() {
       <section>
         <h1>Produits en Promotion</h1>
         {promotionProducts.length > 0 ? (
-          <div className="promotion-products">
+        <div className="product-container">
             {promotionProducts.map(product => (
-              // <CardDetails key={product.id} product={product} />
               <Card key={product.id} products={product} />
             ))}
           </div>

@@ -6,7 +6,7 @@
 @import "./carousel.scss";
 @import "./clienthome.scss";
 @import "./auth.scss";
-@import "./userPanier.scss";
+@import "./userCart.scss";
 @import "./productDetails.scss";
 @import "./newProduct.scss";
 
@@ -45,20 +45,18 @@
 		line-height: 1.6;
 		color: $dark-color;
 
+
 		main {
 			flex: 1; 
 			overflow-y: auto; 
 			margin-bottom: 3rem;
-			padding: 20% 2%;
+			padding-top:120px ;
+			padding-bottom: 100px;
 		}
-		/****admin main****/
-		#admin{
-			margin-top: 0;
-			padding: 0;
-		}
+	
 		
 		h1{
-			font-size: 2.4rem;
+			font-size: 2.2rem;
 			padding: 0.5%;
 			
 		}
@@ -79,6 +77,7 @@
 			font-family: $title-font;
 			font-weight: 600; 
 			text-align: center;
+			padding: 1rem;
 		}
 		h1::first-letter,
 		h2::first-letter,
@@ -93,7 +92,8 @@
 			margin-bottom: 1rem;
 		}
 		section{
-			margin: 7% 0;
+			margin: 2% ;
+			padding:5%;
 			background-color:$light-color ;
 		}
 	}
@@ -104,6 +104,7 @@
 		text-decoration: none;
 		color: $dark-color;
 		font-size: 1.2rem;
+		text-transform: uppercase;
 	}
 	hr {
 		width: 50%;
@@ -126,28 +127,27 @@
 	}
 	/**privacyPolicy**/
 		#privacyPolicy{
-			margin-top: 10%;
-			padding: 2% 5%;
+		
 
-			section{
-				padding: 5%;
-				h2{
-					margin: 2%;
-				}
-			}
+			// section{
+			// 	padding: 5%;
+			// 	h2{
+			// 		margin: 2%;
+			// 	}
+			// }
 			
 		}
 		/**termsOfUse**/
-		#termsOfUse{
-			margin-top: 15%;
-			font-size: small;
-			padding:2%;
-			h2{
-				margin: 2%;
-				text-transform: uppercase;
+		// #termsOfUse{
 			
-			}
-		}
+		// 	font-size: small;
+		// 	padding:2%;
+		// 	h2{
+		// 		margin: 2%;
+		// 		text-transform: uppercase;
+			
+		// 	}
+		// }
 	/**input search**/
 		.suggestion-list {
 			border: 1px solid #ccc;
@@ -171,6 +171,7 @@
 			color:$light-color; /* Change la couleur du texte au survol */
 			background-color:$secondary-color; /* Facultatif : ajoute un fond au survol pour une meilleure visibilité */
 		}
+		
 }
 
 

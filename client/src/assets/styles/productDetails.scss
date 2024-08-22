@@ -1,24 +1,25 @@
 @media screen and (min-width: 320px) {
     main#productDetail{
        h2{
-        font-size: 1.4rem;
-        padding: 2%;
+        // font-size: 1.4rem;
+        // padding: 2%;
        }
         section{
-            margin-top: 5%;
-            padding: 2%;
+            // // margin-top: 5%;
+            // padding: 2%;
          
             article{
                 #productDetails{
                     display: flex;
-                    gap: 30px;
+                    gap: 20px;
                     flex-direction: column;
+                    align-items: center;
                 
                     .container {
                         display: flex;
                         margin: auto; 
-                        width: 200px;
-                        height: 200px; 
+                        width: 300px;
+                        height: 300px; 
                         overflow: hidden; 
                         align-items: center; 
                         justify-content: center;
@@ -34,21 +35,22 @@
                        
                         
                     }
+                    button#addTopanier {
+                        width: 100%;
+                        margin: 10% auto;
+                        display: block;
+                        font-size: 1.2rem;
+                        background-color:$secondary-color;
+                      }
                  
-                    div #details{
-                        text-align: center;
-                        // button#addTopanier {
-                        //     width: 80%;
-                        //     margin: 0 auto;
-                        //     display: block;
-                        //     font-size: 1.4rem;
-                        //     background-color:$secondary-color;
-                        //   }
-                    }
+                    // div #details{
+                    //     text-align: center;
                     
-                    //   #addTopanier:hover {
-                    //       background-color:$header-background-color;
-                    //   }
+                    // }
+                    
+                      #addTopanier:hover {
+                          background-color:$header-background-color;
+                      }
                 }
             }
         }

@@ -134,7 +134,7 @@ function Header() {
                         <>
                             <NavLink to={"/dashboard"} className={"bar-nav"}>
                                 <FontAwesomeIcon icon={faUser} className="userIcon" />
-                                <span>Hello<span style={{ marginLeft: '0.5rem' }}>{user.firstname}</span></span>
+                                <span>Bonjour,{user.firstname}</span>
                             </NavLink>
                         </>
                     )}
