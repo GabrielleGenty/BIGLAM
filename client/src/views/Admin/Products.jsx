@@ -54,7 +54,7 @@ function Products() {
 
   return (
     <main id="admin">
-      <section>
+      <section id="products">
         <h1>Liste des Produits</h1>
         <div id="buttonSet">
           <button id="addButton">
@@ -96,11 +96,14 @@ function Products() {
               <tr key={product.id}>
                 <td>{product.id}</td>
                 <td>
+                  <div className="container">
                   <img
                     src={`http://localhost:9000/images/new_collection/${product.picture}`}
                     alt={product.title || 'Product Image'}
+                    style={{ maxWidth: '60px', maxHeight: '60px' }}
                     onError={(e) => e.target.src = noPicture} // Image par défaut en cas d'erreur
                   />
+                  </div>
                 </td>
                 <td>{product.title}</td>
                 <td>{product.price} €</td>

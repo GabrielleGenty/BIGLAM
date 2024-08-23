@@ -47,10 +47,7 @@ function AddProduct() {
     try {
       const response = await fetch('http://localhost:9000/api/v1/products', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
+        body: formData,
         credentials: "include",
       });
 
@@ -74,7 +71,7 @@ function AddProduct() {
 
   return (
     <main id="admin">
-      <section>
+      <section id="addProduct">
         <h1>Ajouter un produit</h1>
         <div id="buttonSet">
           <button>
@@ -82,73 +79,74 @@ function AddProduct() {
           </button>
         </div>
         <form onSubmit={submitHandler}>
-          <label>Product Title</label>
+          <label htmlFor="title">Product Title</label>
           <input
             type="text"
-            id="productTitle"
+            id="title"
             name="title"
             placeholder="Insérer Product Title"
             required
           />
-          <label>Product SubTitle</label>
+          <label  htmlFor="subTitle">Product SubTitle</label>
           <input
             type="text"
-            id="productSubTitle"
+            id="subTitle"
             name="subTitle"
             placeholder="Insérer Product SubTitle"
             required
           />
-                <label>Product Status</label>
+          <label  htmlFor="status">Product Status</label>
           <input
             type="text"
-            id="productStatus"
+            id="status"
             name="status"
             placeholder="Insérer Product Status"
            
           />
-          <label>Product Picture</label>
+          <label  htmlFor="image">Product Picture</label>
           <input
-            type="text"
-            id="productPicture"
+            type="file"
+            id="image"
             name="picture"
-            placeholder="Product Picture "
+         
           />
-          <label>Product Picture Description Alt</label>
+             {error && <p style={{color: "red"}}>{error}</p>}
+          <label htmlFor="alt">Product Picture Description Alt</label>
           <input
             type="text"
-            id="productPictureAlt"
+            id="alt"
             name="alt"
             placeholder="Picture Description"
             required
           />
-          <label>Product Description</label>
+          <label htmlFor="description">Product Description</label>
           <textarea
-            id="productDescription"
+            id="description"
             name="description"
             placeholder="Product Description"
             required
           />
-          <label>Product Price</label>
+          <label htmlFor="price">Product Price</label>
           <input
             type="number"
-            id="productPrice"
+            id="price"
             name="price"
             placeholder="Product Price"
             step="0.01" // Allows decimal values
             required
           />
-          <label>Product Ref</label>
+          <label  htmlFor="ref" >Product Ref</label>
           <input
             type="text"
-            id="productRef"
+            id="ref"
             name="ref"
             placeholder="Product Reference"
             required
           />
-          <label>Product Quantity In Stock</label>
+          <label  htmlFor="quantityInStock">Product Quantity In Stock</label>
           <input
             type="number"
-            id="productQuantityInStock"
+            id= "quantityInStock"
             name="quantityInStock"
             placeholder="Quantity In Stock"
             required

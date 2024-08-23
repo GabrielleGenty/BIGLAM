@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../hooks/UseUser";
 
 function Register() {
-  const { setUser } = useUser();
+  const { login,setUser } = useUser();
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -35,10 +35,9 @@ function Register() {
         setError(responseParsed.message || "An unexpected error occurred. Please try again later.");
         return;
       }
-
       const responseParsed = await response.json();
       form.reset();
-      setUser(responseParsed.user);
+     login(responseParsed.user);
       navigate("/");
     } catch (error) {
       // Log the error for debugging purposes

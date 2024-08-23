@@ -46,6 +46,7 @@
 			}
 		}
 		
+	}
 	  
 		section{
 			margin: 0% 0;
@@ -99,7 +100,7 @@
 					a{
 						color:$secondary-color;
 						padding:10px 20px;
-						font-size: 1.8rem;
+						font-size: 1.6rem;
 						
 					}
 					button:hover{
@@ -123,7 +124,7 @@
 				}
 			    #buttonSet{
 					display: flex;
-					width: 100%;
+					width: 80%;
 					padding: 2%;
 					justify-content: space-around;
 					margin:auto;
@@ -131,7 +132,7 @@
 				
 				}
 			    button{
-					width: 40%;
+					width: 80%;
 					a{
 						font-size: 1.6rem;
 				    }
@@ -209,6 +210,7 @@
 					
 					}
 				
+				
 					button {
 						background-color: $secondary-color;
 						color: $font-color;
@@ -237,7 +239,6 @@
 				 }	
 			
 
-	    }
 		
     }	 /****ConfiramtionModalDelete***/
 	.modal-overlay {
@@ -259,11 +260,11 @@
 		text-align: center;
 		color: $danger-color;
 	}
-	#buttonSet{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	  }
+	// #buttonSet{
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: space-between;
+	//   }
 	
 	.modal button {
 		width:40%;

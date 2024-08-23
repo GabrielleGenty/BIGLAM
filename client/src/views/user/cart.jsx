@@ -80,7 +80,9 @@ function Cart() {
             <section>
                 <h1>Mon Panier</h1>
                 {cart.map((item) => (
-                    <article key={item.id} className="userCart">
+                    <article key={item.id} >
+                          <h3>Nom: {item.title}</h3>
+                          <div className="userCart">
                         <div className="container">
                             {item.picture ? (
                                 <img
@@ -91,22 +93,21 @@ function Cart() {
                             ) : (
                                 <p>Image non disponible</p>
                             )}
-                        </div>
-                        <div id="article">
-                            <p><strong>Label :</strong> {item.title}</p>
+                           </div>
+                        <div id="articleDetail">
                             <p><strong>Quantité :</strong> {item.quantity}</p>
-                            <p><strong>Prix Unitaire :</strong> {item.price} €</p>
+                            <p><strong>Prix:</strong> {item.price} €</p>
                             <p><strong>Total :</strong> {item.price * item.quantity} €</p>
                             <button onClick={() => removeFromCart(item.id)}>Supprimer</button>
+                        </div>
                         </div>
                     </article>
                 ))}
                 <h2><strong>Prix Total :</strong> {totalPrice} €</h2>
                
                     <button id="valider-button" onClick={handleSubmitOrder} disabled={isSubmitting}>
-                        {isSubmitting ? 'Envoi en cours...' : 'Valider'}
+                        {isSubmitting ? 'Envoi en cours...' : 'Valider Mon Panier'}
                     </button>
-                    {/* <button onClick={handleLogout}>Déconnexion</button> */}
                 
                 {isModalOpen && (
                     <ConfirmationModal
