@@ -1,6 +1,7 @@
 /* Media query pour les écrans d'au moins 320px de large */
 @media screen and (min-width: 320px) {
 	header {
+
 		position: fixed;
 		width: 100%;
 		z-index: 10000;
@@ -73,9 +74,6 @@
 				left: 20;
 				bottom: -20;
 			}
-		
-
-
 	}
 	.burger-menu {
 
@@ -172,8 +170,112 @@
 
 	}
 }
-/* Media query pour tablettes en orientation portrait et paysage */
-@media screen and (min-width: 500px) and (max-width: 1024px) {
-	
+
+/* Media query pour les écrans entre 600px et 1024px */
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+    header {
+        height: 14%; /* Ajustez la hauteur selon vos besoins */
+        padding: 1rem;
+		 /* Ajustez le padding selon vos besoins */
+        
+        div#headerNav {
+            margin: 0.5rem ; /* Réduit la marge */
+			.container{
+				display: flex;
+				width: 80px;
+				height: 80px; 
+				overflow: hidden; 
+				align-items: center; 
+				justify-content: center;
+				 }
+				.container img {
+					max-width: 100%;
+					max-height: 100%;
+					text-align: center;
+					width: auto; 
+					height: auto;   /* Ajuste les dimensions de l'image */
+			
+				}
+				// img {
+				// 	margin-top: 10%; /* Ajuste la marge pour l'image */
+				// }
+        }
+
+        form {
+            input {
+                width: 100%; /* Ajuste la largeur pour mieux s'adapter aux écrans moyens */
+                font-size: 2rem; /* Ajuste la taille de police pour une tablette */
+            }
+        }
+
+        nav {
+            padding: 0.5rem; /* Ajuste le padding pour mieux s'adapter */
+        }
+
+
+        .userIcon {
+            margin-top: 10%; /* Ajuste la marge pour l'icône utilisateur */
+        }
+
+        span {
+            font-size: 0.9rem; /* Réduit la taille de police pour une tablette */
+        }
+    }
+
+    .burger-menu {
+		position: relative;
+		width: 100%;
+		top: 120;
+		right: 120;
+		left: 120;
+		display: flex;
+		flex-direction: row;
+		background-color:$light-color-secondary;
+		// width: 100vw;
+		height: auto;
+		padding: 1rem;
+		// z-index: 10000;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
+		border-bottom-right-radius: 1rem;
+		text-transform: uppercase;
+    }
+
+    .burger-menu a {
+        font-size: 1.2rem;
+		display: block;  /* Réduit la taille de police pour le menu burger */
+    }
+
+    .category-menu {
+        background-color: $primary-color; /* Assurez-vous que cette variable est définie */
+    }
+
+    .category-menu li {
+        padding: 4px; /* Réduit le padding pour les éléments du menu */
+        font-size: 1rem; /* Réduit la taille de la police pour les éléments de menu */
+    }
+
+    svg {
+        font-size: 1.5rem; /* Réduit la taille des icônes SVG */
+    }
+
+    .cart-length {
+        top: -15%; /* Ajuste la position du nombre d'articles dans le panier */
+        font-size: 0.9rem; /* Réduit la taille de police pour le nombre d'articles */
+    }
+
+    .overlayOn {
+        top: 100px; /* Ajuste la position de l'overlay */
+        left: 150px;
+    }
+
+    .wrapper {
+        margin: 1.5rem auto; /* Réduit les marges pour mieux s'adapter aux écrans moyens */
+        padding: 0 1rem;
+        
+        div {
+            gap: 0.5rem; /* Réduit l'écart entre les éléments */
+        }
+    }
 }
+
   

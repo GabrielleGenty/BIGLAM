@@ -57,12 +57,12 @@
 	
 		
 		h1{
-			font-size: 2.2rem;
+			font-size: 2rem;
 			padding: 0.5%;
 			
 		}
 		h2{
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 		
 		}
 		h3,p {
@@ -121,8 +121,8 @@
 		content: "";
 	   position: absolute;
 		bottom: 0;
-		left: -0.3rem;
-		width: calc(90% - .5rem * 2);
+		left: 0.3rem;
+		width: calc(100% - .5rem * 2);
 	    height: 2px;
 		background-color: $secondary-color;
 	}
@@ -149,6 +149,44 @@
 			background-color:$secondary-color; /* Facultatif : ajoute un fond au survol pour une meilleure visibilité */
 		}
 		
+}
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+	body {
+	main {
+		flex: 1; 
+		overflow-y: auto; 
+		margin-bottom: 3rem;
+		padding-top:120px ;
+		padding-bottom: 100px;
+	}
+
+	
+	h1{
+		font-size: 3rem;
+		padding: 0.5%;
+		
+	}
+	h2{
+		font-size: 2rem;
+	
+	}
+	h3,p {
+		font-size: 1.6rem;
+	
+	}
+}
+	MAIN 
+	.active::after,
+	header  .bar-nav:hover::after
+	{
+		content: "";
+	   position: absolute;
+		bottom: 0;
+		left: 0.2rem;
+		width: calc(100% - 0.2rem * 2);
+	    height: 2px;
+		background-color: $secondary-color;
+	}
 }
 
 

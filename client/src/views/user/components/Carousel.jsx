@@ -25,9 +25,11 @@ const Carousel = ({ images, productIds }) => {
   return (
     <div className="carousel">
       <button onClick={prevSlide}>&lt;</button>
+      <div className='container'>
       <Link to={`/product/${productIds[currentIndex]}`}>
         <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
       </Link>
+      </div>
       <button onClick={nextSlide}>&gt;</button>
     </div>
   );

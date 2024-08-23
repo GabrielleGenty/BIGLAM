@@ -3,10 +3,10 @@
 		position: fixed;
 		width: 100%;
 		border-bottom: 0;
-		margin-top: 0px;
+		margin-top: 2%;
 		left: 0;
 		bottom: 0;
-		padding:  0.5rem;
+		padding:  2% 1%;
 		color: $primary-color;
 		background-color: $light-color-secondary;
 		text-align: center;
@@ -15,7 +15,7 @@
 
 		a {
 			color: $font-color;
-			padding: 2%;
+			padding: 1%;
 			font-size: 1rem;
 		}
 		a:hover{
@@ -24,15 +24,48 @@
 
 
 		p {
-			margin: 2rem 0 0;
+			margin: 0.5rem 0 0;
 			color:$font-color;
 		}
 		svg{
 			color:$header-background-color;
+			font-size: 1.8rem;
 
 		}
 		svg:hover{
 		color: $secondary-color;
+		
 		}
 	}
+}
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+	footer {
+		position: fixed;
+		height: 10%;
+		width: 100%;
+		border-bottom: 0;
+		margin-top: 0px;
+		left: 0;
+		bottom: 0;
+		padding:  0.5rem;
+		color: $primary-color;
+		background-color: $light-color-secondary;
+		text-align: center;
+		border-top: 1px solid #ddd;
+		nav{
+			padding: 1%;
+			a {
+				font-size: 1.2rem;
+				padding: .5rem;
+			}
+			svg{
+				font-size: 2rem;
+			}
+		}
+	 
+	
+		
+	}
+	
+
 }
