@@ -85,68 +85,70 @@ function Header() {
                     <img src={logo4} alt="logo BIGLAM moitié d'une collier de perles entour le nom BIGLAM" />
                 </Link>
                 </div>
-            <div>
-                {isMenuOpen && (
-                    <nav className="burger-menu">
-                        <button onClick={toggleMenu}>
-                            <FontAwesomeIcon icon={faXmark} />
-                        </button>
-                        <Link to={"/"} onClick={handleLinkClick}>Page d&apos;accueil BIGLAM</Link>
-                        <Link to={"/aboutUs"} onClick={handleLinkClick}>About us</Link>
-                        <Link to={"/promotion"} onClick={handleLinkClick}>En promotion !</Link>
-                        <Link to={"/newCollection"} onClick={handleLinkClick}>Nouvelle collection</Link>
-                        <Link onClick={() => setCategoryMenuOpen(!isCategoryMenuOpen)}>
-                            Catégories
-                        </Link>
-                        {isCategoryMenuOpen && (
-                            <ul className="category-menu">
-                                {categories.map(category => (
-                                    <li key={category.id}>
-                                        <Link onClick={() => handleCategoryScroll(category.id)}>
-                                            {category.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                <div className='leftNav'>
+                    {isMenuOpen && (
+                        <nav className="burger-menu">
+                            <button onClick={toggleMenu}>
+                                <FontAwesomeIcon icon={faXmark} />
+                            </button>
+                            <Link to={"/"} onClick={handleLinkClick}>Page d&apos;accueil BIGLAM</Link>
+                            <Link to={"/aboutUs"} onClick={handleLinkClick}>About us</Link>
+                            <Link to={"/promotion"} onClick={handleLinkClick}>En promotion !</Link>
+                            <Link to={"/newCollection"} onClick={handleLinkClick}>Nouvelle collection</Link>
+                            <Link onClick={() => setCategoryMenuOpen(!isCategoryMenuOpen)}>
+                                Catégories
+                            </Link>
+                            {isCategoryMenuOpen && (
+                                <ul className="category-menu">
+                                    {categories.map(category => (
+                                        <li key={category.id}>
+                                            <Link onClick={() => handleCategoryScroll(category.id)}>
+                                                {category.label}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                            {user.isLogged && (
+                              <div className="account">
+                                    <NavLink to={"Dashboard"} onClick={handleLinkClick}>
+                                        Mon Compte
+                                    </NavLink>
+                                    <button onClick={() => { logout(); handleLinkClick(); }}>
+                                        Déconnexion
+                                    </button>
+                                </div>
+                            )}
+                            {isMenuOpen && <div className="overlayOn" onClick={toggleMenu} />}
+                        </nav>
+                    )}
+                    <nav className='iconNav'>
+                        {!user.isLogged && (
+                            <div>
+                                <NavLink to={"login"} className={"bar-nav"}>
+                                    Connexion
+                                </NavLink>
+                            </div>
                         )}
                         {user.isLogged && (
-                            <>
-                                <NavLink to={"Dashboard"} onClick={handleLinkClick}>
-                                    Mon Compte
+                            <div>
+                                <NavLink to={"/dashboard"} className={"bar-nav"}>
+                                    <FontAwesomeIcon icon={faUser} className="userIcon" />
+                                    <span>Bonjour,{user.firstname}</span>
                                 </NavLink>
-                                <button onClick={() => { logout(); handleLinkClick(); }}>
-                                    Déconnexion
-                                </button>
-                            </>
+                            </div>
                         )}
-                        {isMenuOpen && <div className="overlayOn" onClick={toggleMenu} />}
-                    </nav>
-                )}
-                <nav>
-                    {!user.isLogged && (
                         <div>
-                            <NavLink to={"login"} className={"bar-nav"}>
-                                Connexion
-                            </NavLink>
+                        <NavLink to={"cart"} className="cart">
+                            <span className="cart-length">{cart.length ? cart.length : null}</span>
+                            <FontAwesomeIcon icon={faCartShopping} />
+                        </NavLink>
                         </div>
-                    )}
-                    {user.isLogged && (
-                        <>
-                            <NavLink to={"/dashboard"} className={"bar-nav"}>
-                                <FontAwesomeIcon icon={faUser} className="userIcon" />
-                                <span>Bonjour,{user.firstname}</span>
-                            </NavLink>
-                        </>
-                    )}
-                    <NavLink to={"cart"} className="cart">
-                        <span className="cart-length">{cart.length ? cart.length : null}</span>
-                        <FontAwesomeIcon icon={faCartShopping} />
-                    </NavLink>
-                    <button onClick={toggleMenu}>
-                        <FontAwesomeIcon icon={faBars} />
-                    </button>
-                </nav>
-            </div>
+                        <button onClick={toggleMenu}>
+                            <FontAwesomeIcon icon={faBars} />
+                        </button>
+                    </nav>
+                 </div>
             </div>
             <div>
                 <SearchInput

@@ -87,3 +87,89 @@
 	}
 	
 }
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+	#userHome {
+		margin-bottom: 50px;
+	  
+		  section {
+  
+		  #categorysection {
+			  display: flex; 
+			  flex-wrap: nowrap; 
+			  overflow-x: auto; 
+			  scroll-snap-type: x mandatory; 
+			  gap: 0px;
+			  padding: 10px;
+			  margin-left: 4%; 
+			  background-color:$primary-color;
+  
+			  /* Customize scrollbar appearance */
+			  ::-webkit-scrollbar {
+			  height: 10px;
+			  
+			  }
+			  ::-webkit-scrollbar-thumb {
+		  
+			  border-radius: 20px; 
+			  }
+			  ::-webkit-scrollbar-track {
+			  background: transparent; 
+			  }
+			  /* Ensure that the scrollbar does not overlap content */
+			  scroll-padding-inline-end: 16px; 
+			  article {
+			  flex: 0 0 45%; /* Each article takes 100% of the container width */
+			  box-sizing: border-box; 
+			  background-color: $light-color-secondary;
+			  display: flex;
+			  gap:5px;
+			//   margin: 5% ;
+			  border: 1px solid #d3d3d3; 
+			  flex-direction: column;
+			  border-radius: 20px;
+			  align-items: left; 
+			  padding: 5% 1%; 
+			  scroll-snap-align: start; 
+			  }
+			  .container {
+				  display: flex;
+				  margin: auto; 
+				  width: 250px;
+				  height: 250px; 
+				  overflow: hidden; 
+				  align-items: center; 
+				  justify-content: center;
+		  
+			  }
+  
+			  .container img {
+				  max-width: 100%;
+				  max-height: 100%;
+				  text-align: center;
+				  width: auto; 
+				  height: auto; 
+				  margin: 5%;
+			  }
+			  img:hover {
+				  transform: scale(1.1);
+				  transition: transform 0.3s ease-in-out; /* Smooth transition */
+			  }
+	  
+			  p {
+			  text-align:center;
+			  }
+	  
+			  button#addTopanier {
+			  width: 60%;
+			  margin:0 auto;
+			  font-size: 1.2rem;
+			  background-color:$secondary-color;
+			  display: block;
+			  }
+			  #addTopanier:hover {
+				  background-color:$header-background-color;
+			  }
+		  }
+		  }
+	  }
+}

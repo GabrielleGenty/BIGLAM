@@ -61,13 +61,14 @@
 }
 @media screen and (min-width: 600px) and (max-width: 1025px) {
 	section#carousel{
-  
+     margin: 5%;
+	 padding: 2%;
 		.carousel {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			position: relative;
-			width: 60%;
+			width: 50%;
 			height: auto;
 			overflow: hidden;
 			// display: block;
@@ -78,11 +79,11 @@
 		  .container {
             display: flex;
             margin: auto; 
-            width: 100%;// Set width of the container
-            height: auto; // Set height of the container
-            overflow: hidden; // Hide any overflow
-            align-items: center; // Center content vertically
-            justify-content: center;// Required for absolutely positioned child elements
+            width: 100%;
+            height: auto; 
+            overflow: hidden; 
+            align-items: center; 
+            justify-content: center;
         }
 		  
 		 
@@ -90,8 +91,8 @@
             max-width: 100%;
             max-height: 100%;
             text-align: center;
-            width: auto; // Ensure the width scales automatically
-            height: auto; // Ensure the height scales automatically
+            width: auto; 
+            height: auto; 
         }
 		  
 		  .carousel button {

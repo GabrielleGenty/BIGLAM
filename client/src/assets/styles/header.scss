@@ -1,8 +1,10 @@
 /* Media query pour les écrans d'au moins 320px de large */
 @media screen and (min-width: 320px) {
 	header {
-
 		position: fixed;
+		display: flex;
+		flex-direction: column;
+		gap: 2%;
 		width: 100%;
 		z-index: 10000;
 		height:120px;
@@ -14,10 +16,72 @@
 		div#headerNav{
 		display: flex;
 		justify-content: space-between;
-		margin: 2%;
-		
-		
 
+		}
+		nav.burger-menu {
+
+			position: absolute;
+			display: flex;
+			align-items: center;
+			padding: 1%;
+			top: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			background-color:$light-color-secondary;
+			width: 100vw;
+			height: 100vh;
+			padding: 1rem;
+			z-index: 10000;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
+			border-bottom-right-radius: 1rem;
+			text-transform: uppercase;
+	
+			a{
+				text-align: center;
+				font-size: 1.4rem;
+				padding: 1%;
+			
+			}
+			div.account{
+				display: flex;
+				flex-direction: column;
+
+			}
+			
+			button {
+				padding:  0.5rem;
+				color: $dark-color;
+				
+			}
+			a:hover{
+				background-color:$secondary-color;
+				color:$light-color ;
+			}
+			.category-menu{
+				background-color:$primary-color;
+				// text-align: center;
+				list-style: none;
+				
+			}
+	
+		.category-menu li {
+			padding: 5px;
+			margin: auto;
+			text-align: center;
+			border-bottom: 1px solid #f9f5f5; 
+		}
+		.category-menu li a {
+			text-decoration: none;
+			color: inherit; 
+			display: block; 
+		}
+	
+		.category-menu li a:hover {
+			background-color:$secondary-color;
+			color:$light-color; 
+		}
+	
 		}
 		form {
 			width: 100%;
@@ -33,11 +97,10 @@
 					color:$background-color-dark;     /* Vous pouvez aussi modifier la couleur si nécessaire */
 				  }
 			}
-		
-		nav{	
+		nav.iconNav{	
 			display: flex;
-			// justify-content: space-between;
 			align-items: center;
+			justify-content: center;
 			padding: 1%;
 		}
 		.container {
@@ -75,63 +138,7 @@
 				bottom: -20;
 			}
 	}
-	.burger-menu {
-
-		position: absolute;
-		top: 0;
-		right: 0;
-		// display: flex;
-		flex-direction: column;
-		background-color:$light-color-secondary;
-		width: 100vw;
-		height: 100vh;
-		padding: 1rem;
-		z-index: 10000;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
-		border-bottom-right-radius: 1rem;
-		text-transform: uppercase;
-
-		a{
-			text-align: left;
-			font-size: 1.4rem;
-			padding: 1%;
-		
-		}
-		
-		button {
-			padding:  0.5rem;
-			color: $dark-color;
-			
-		}
-		a:hover{
-			background-color:$secondary-color;
-			color:$light-color ;
-		}
-		.category-menu{
-			background-color:$primary-color;
-			// text-align: center;
-			list-style: none;
-			
-		}
-
-	.category-menu li {
-		padding: 5px;
-		margin: auto;
-		text-align: center;
-		border-bottom: 1px solid #f9f5f5; 
-	}
-	.category-menu li a {
-		text-decoration: none;
-		color: inherit; 
-		display: block; 
-	}
-
-	.category-menu li a:hover {
-		background-color:$secondary-color;
-		color:$light-color; 
-	}
-
-	}
+	
 	svg {
 		font-size: 1.8rem;
 		margin: 0 10px ;
@@ -174,12 +181,87 @@
 /* Media query pour les écrans entre 600px et 1024px */
 @media screen and (min-width: 600px) and (max-width: 1025px) {
     header {
-        height: 14%; /* Ajustez la hauteur selon vos besoins */
-        padding: 1rem;
-		 /* Ajustez le padding selon vos besoins */
-        
+        height: 14%; 
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 5%;
+		padding: 2%;
+		nav.burger-menu {
+
+			position: absolute;
+			display: flex;
+			align-items: center;
+			padding: 1%;
+			top: 0;
+			right: 0;
+			flex-direction: column;
+			background-color:$light-color-secondary;
+			width: 40vw;
+			height: 100vh;
+			padding: 1rem;
+			z-index: 10000;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
+			border-bottom-right-radius: 1rem;
+			text-transform: uppercase;
+	
+			a{
+				text-align: center;
+				font-size: 1.4rem;
+				padding: 1%;
+			
+			}
+			div.account{
+				display: flex;
+				flex-direction: column;
+	
+			}
+			
+			button {
+				padding:  0.5rem;
+				color: $dark-color;
+				
+			}
+			a:hover{
+				background-color:$secondary-color;
+				color:$light-color ;
+			}
+			.category-menu{
+				background-color:$primary-color;
+				// text-align: center;
+				list-style: none;
+				
+			}
+	
+		.category-menu li {
+			padding: 5px;
+			margin: auto;
+			text-align: center;
+			border-bottom: 1px solid #f9f5f5; 
+		}
+		.category-menu li a {
+			text-decoration: none;
+			color: inherit; 
+			display: block; 
+		}
+	
+		.category-menu li a:hover {
+			background-color:$secondary-color;
+			color:$light-color; 
+		}
+	
+		}
+		nav.iconNav{
+			width: auto;
+			padding: 0;
+		}
+	}
         div#headerNav {
-            margin: 0.5rem ; /* Réduit la marge */
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin: 0px;
+    
 			.container{
 				display: flex;
 				width: 80px;
@@ -193,89 +275,57 @@
 					max-height: 100%;
 					text-align: center;
 					width: auto; 
-					height: auto;   /* Ajuste les dimensions de l'image */
+					height: auto;  
 			
 				}
-				// img {
-				// 	margin-top: 10%; /* Ajuste la marge pour l'image */
-				// }
+			
         }
 
         form {
             input {
-                width: 100%; /* Ajuste la largeur pour mieux s'adapter aux écrans moyens */
-                font-size: 2rem; /* Ajuste la taille de police pour une tablette */
+                width: 100%; 
+                font-size: 2rem; 
             }
         }
+     
 
-        nav {
-            padding: 0.5rem; /* Ajuste le padding pour mieux s'adapter */
-        }
+   
 
 
-        .userIcon {
-            margin-top: 10%; /* Ajuste la marge pour l'icône utilisateur */
-        }
 
-        span {
-            font-size: 0.9rem; /* Réduit la taille de police pour une tablette */
-        }
-    }
-
-    .burger-menu {
-		position: relative;
-		width: 100%;
-		top: 120;
-		right: 120;
-		left: 120;
-		display: flex;
-		flex-direction: row;
-		background-color:$light-color-secondary;
-		// width: 100vw;
-		height: auto;
-		padding: 1rem;
-		// z-index: 10000;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
-		border-bottom-right-radius: 1rem;
-		text-transform: uppercase;
-    }
 
     .burger-menu a {
         font-size: 1.2rem;
-		display: block;  /* Réduit la taille de police pour le menu burger */
+		display: inline-block;
+		
     }
+	// button {
+	// 	display: none;
+		
+	// }
+	// a:hover{
+	// 	background-color:$secondary-color;
+	// 	color:$light-color ;
+	// }
+	// .category-menu{
+	// 	background-color:$primary-color;
+	// 	// text-align: center;
+	// 	list-style: none;
+		
+	// }
 
-    .category-menu {
-        background-color: $primary-color; /* Assurez-vous que cette variable est définie */
-    }
+// .category-menu li {
+// 	padding: 5px;
+// 	margin: auto;
+// 	text-align: center;
+// 	border-bottom: 1px solid #f9f5f5; 
+// }
+// .category-menu li a {
+// 	text-decoration: none;
+// 	color: inherit; 
+// 	display: block; 
+// }
 
-    .category-menu li {
-        padding: 4px; /* Réduit le padding pour les éléments du menu */
-        font-size: 1rem; /* Réduit la taille de la police pour les éléments de menu */
-    }
-
-    svg {
-        font-size: 1.5rem; /* Réduit la taille des icônes SVG */
-    }
-
-    .cart-length {
-        top: -15%; /* Ajuste la position du nombre d'articles dans le panier */
-        font-size: 0.9rem; /* Réduit la taille de police pour le nombre d'articles */
-    }
-
-    .overlayOn {
-        top: 100px; /* Ajuste la position de l'overlay */
-        left: 150px;
-    }
-
-    .wrapper {
-        margin: 1.5rem auto; /* Réduit les marges pour mieux s'adapter aux écrans moyens */
-        padding: 0 1rem;
-        
-        div {
-            gap: 0.5rem; /* Réduit l'écart entre les éléments */
-        }
-    }
 }
 
   
