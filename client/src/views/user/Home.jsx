@@ -94,7 +94,7 @@ function Home() {
             <h2>Notre Collection {category.label}</h2>
             <div id="categorysection">
               {categoryProducts.map((product) => (
-                <Card key={product.id} products={product} />
+                <Card key={product.id} product={product} />
               ))}
             </div>
           </section>

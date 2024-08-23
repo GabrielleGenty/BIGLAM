@@ -53,7 +53,7 @@ function Promotion() {
         {promotionProducts.length > 0 ? (
         <div className="product-container">
             {promotionProducts.map(product => (
-              <Card key={product.id} products={product} />
+              <Card key={product.id} product={product} />
             ))}
           </div>
         ) : (

@@ -51,17 +51,18 @@
 			flex-direction: column;
 			border-radius: 20px;
 			align-items: left; 
-			padding: 5% ; 
+			padding: 7% 2%; 
 			scroll-snap-align: start; 
 			}
 			.container {
 				display: flex;
 				margin: auto; 
-				width: 250px;
-				height: 250px; 
+				width: 200px;
+				height: 200px; 
 				overflow: hidden; 
 				align-items: center; 
 				justify-content: center;
+		
 			}
 
 			.container img {
@@ -70,6 +71,7 @@
 				text-align: center;
 				width: auto; 
 				height: auto; 
+				margin: 5%;
 			}
 			img:hover {
 				transform: scale(1.1);
