@@ -1,47 +1,61 @@
 main#userCart{
 
   section{
-    padding-bottom: 120%;
-  }
-  article.userCart{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap:20px;
-    padding: 5%;
-    margin: 2%;
-    background-color: $light-color-secondary;
-    p{
-      padding: 0;
+      padding-bottom: 120%;
       margin: 0;
+  
+    article{
+      background-color: $light-color-secondary;
+      margin: 5% 0;
+      div.userCart{
+          display: flex;
+          flex-direction:row;
+          align-items: center;
+          gap:10px;
+          padding:  0 2% 2% 2%;
+          background-color: $light-color-secondary;
+          p{
+            padding: 2%;
+            margin: 0;
+          }
+        }
+        .container {
+          display: flex;
+          margin: 5%; 
+          width: 150px;
+          height: 150px; 
+          overflow: hidden; 
+          align-items: center; 
+          justify-content: center;
+        }
+
+      .container img {
+        max-width: 100%;
+        max-height: 100%;
+        text-align: center;
+        width: auto; 
+        height: auto; 
+      }
+      button{
+        width: 100%;
+        margin: 10% auto;
+        display: block;
+      }
+      p{text-align: center;
+      }
+      div#articleDetail{
+       
+        margin:   2% ;
+        padding:  2% ;
+      }
+    }
+    button#valider-button{
+      width: 60%;
+      display: block;
+      margin: 5% auto;
     }
   }
-	.container {
-    display: flex;
-    margin: auto; 
-    width: 150px;
-    height: 150px; 
-    overflow: hidden; 
-    align-items: center; 
-    justify-content: center;
-  }
-
-  .container img {
-    max-width: 100%;
-    max-height: 100%;
-    text-align: center;
-    width: auto; 
-    height: auto; 
-  }
-  button{
-    width: 60%;
-    margin: 0 auto;
-    display: block;
-  }
-  p{text-align: center;
-  }
 }
-
   .modal-overlay {
     position: fixed;
     top: 0;

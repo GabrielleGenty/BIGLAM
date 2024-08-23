@@ -1,4 +1,6 @@
 import Products from "../models/Products.js";
+import Query from "../models/Query.js";
+import upload from "../config/multer.js";  // Importez multer
 
 // on passe la callback en async pour pouvoir utiliser await, approche moderne. 
 // (sinon on aurait pu utiliser .then() et .catch())
@@ -40,10 +42,47 @@ const getByCategoryId= async (req,res)=>{
     }
 };
 const add = async (req,res)=>{
+    console.log("<<<<<<<<<<<<<<< Dans Add")
     console.log("ADD",req.body);
-    try{
-        const response = await Products.add(req);
-        res.json({ msg: "Les données ont bien été insérées !", response });
+    try {
+		upload(req, res, async function (error) {
+			if (error) {
+				return res.status(400).json({ message: error });
+			}
+			if (!req.file) {
+				return res
+					.status(400)
+					.json({
+						message:
+							"Veuillez sélectionner une image au format webp",
+					});
+			}
+
+			const product = {
+				...req.body,
+				picture: req.file.originalname,
+			};
+            console.log(product)
+			const query = `INSERT INTO products 
+            (title,
+             subTitle,
+             status,
+             alt,
+              description, 
+              price, 
+              ref,
+               quantityInStock, 
+               categories_id,
+             picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+			const response = await Query.runWithParams(query, product);
+
+			if (response) {
+				res.json({
+					msg: "Les données ont bien été insérées !",
+					response,
+				});
+			}
+		});
 	} catch (error) {
         res.status(500).json({ msg: "Erreur de serveur", error: error.message });
 	}

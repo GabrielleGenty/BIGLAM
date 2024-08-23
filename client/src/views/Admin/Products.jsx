@@ -98,7 +98,7 @@ function Products() {
                 <td>
                   <div className="container">
                   <img
-                    src={`http://localhost:9000/images/new_collection/${product.picture}`}
+                    src={`http://localhost:9000/images/${product.picture}`}
                     alt={product.title || 'Product Image'}
                     style={{ maxWidth: '60px', maxHeight: '60px' }}
                     onError={(e) => e.target.src = noPicture} // Image par défaut en cas d'erreur

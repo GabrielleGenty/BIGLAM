@@ -86,7 +86,7 @@ function Cart() {
                         <div className="container">
                             {item.picture ? (
                                 <img
-                                    src={`http://localhost:9000/images/new_collection/${item.picture}`}
+                                    src={`http://localhost:9000/images/${item.picture}`}
                                     alt={item.title}
                                    
                                 />

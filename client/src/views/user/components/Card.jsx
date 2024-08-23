@@ -12,7 +12,7 @@ function Card({ products }) {
       <div className="container">
         <Link to={`/product/${products.id}`}><img 
           src={
-            `http://localhost:9000/images/new_collection/${products.picture}`
+            `http://localhost:9000/images/${products.picture}`
           }
           alt={products.title}
           onError={(e) => { e.target.src = noPicture; }} // Fallback to noPicture if image fails to load

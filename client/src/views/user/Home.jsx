@@ -76,7 +76,7 @@ function Home() {
 
   // Construct image URLs and IDs for the carousel
   const carouselImages = [
-    ...products.map(product => `http://localhost:9000/images/new_collection/${product.picture}`)
+    ...products.map(product => `http://localhost:9000/images/${product.picture}`)
   ];
 
   const productIds = products.map(product => product.id);

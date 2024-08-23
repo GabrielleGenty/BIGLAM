@@ -38,31 +38,34 @@ function AddProduct() {
   }, []);
 
   async function submitHandler(e) {
+   
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    console.log(data);
-
+  
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+   
     try {
-      const response = await fetch('http://localhost:9000/api/v1/products', {
+      const response = await fetch('http://localhost:9000/api/v1/products',
+        {
         method: 'POST',
         body: formData,
         credentials: "include",
       });
-
-      if (!response.ok) {
+        if(response.status === 400) {
+          response.json().then(data => { 
+              console.log(data.message);
+              setError(data.message);
+          })
+        }
+        //success
+        setUser(responseParsed.user);
         const responseParsed = await response.json();
-        setError(responseParsed.message || 'Failed to create product');
-        console.log('Error response:', responseParsed);
-        return;
-      }
-
-      const responseParsed = await response.json();
-      console.log('Success response:', responseParsed);
-      form.reset();
-      setUser(responseParsed.user);
-      navigate("/");
+        form.reset();
+        navigate("/products");
+       
     } catch (error) {
       setError("An unexpected error occurred. Please try again later.");
       console.log('Fetch error:', error);

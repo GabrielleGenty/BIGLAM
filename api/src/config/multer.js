@@ -36,6 +36,6 @@ const upload = multer({
             cb("Image au format webp ou jpg uniquement", false);
         }
     },
-}).single("image");
+}).single("picture");
 
 export default upload;

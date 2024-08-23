@@ -95,7 +95,7 @@ function Dashboard() {
                                                 <tr key={`${order.id}-${detail.product_id}`}>
                                                     <td>
                                                         <img 
-                                                            src={`http://localhost:9000/images/new_collection/${detail.product_img}`}
+                                                            src={`http://localhost:9000/images/${detail.product_img}`}
                                                             alt={detail.product_name || 'Product Image'} 
                                                             style={{ maxWidth: '60px', maxHeight: '60px' }}
                                                         />

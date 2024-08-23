@@ -11,7 +11,7 @@ function CardDetails({ product }) {
         <div id="productDetails">
        <div className="container">
             <img 
-                src={`http://localhost:9000/images/new_collection/${product.picture}`}
+                src={`http://localhost:9000/images/${product.picture}`}
                 alt={product.title}
                 onError={(e) => { e.target.src = noPicture; }} // Fallback to noPicture if image fails to load
             />

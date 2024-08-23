@@ -3,6 +3,7 @@ import { Router } from "express";
 import {getAll,getById,getByCategoryId,add, update, deleteProduct} from "../controller/products.js";
 import isAdmin from "../middlewares/isAdmin.js";
 
+
 const router = Router();
 
 
