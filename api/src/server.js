@@ -9,7 +9,7 @@ import newSession from "./config/session.js"
 const app = express();
 
 const corsOptions = cors({
-	origin: "http://localhost:5173",
+	origin: process.env.HOST,
 	credentials: true,
 });
 
@@ -21,6 +21,6 @@ app.use(express.static("public"));
 app.use(router);
 
  app.listen(process.env.LOCAL_PORT,()=>{
-	console.log("server is running on http://localhost:"+process.env.LOCAL_PORT);
+	console.log("server is running on " + process.env.HOST +process.env.LOCAL_PORT);
 
  });
