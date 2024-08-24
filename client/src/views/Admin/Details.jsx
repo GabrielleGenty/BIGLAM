@@ -238,7 +238,7 @@ function Details() {
                     <article className="productDetails">
                         <div className="container">
                             <img 
-                                src={`http://localhost:9000/images/new_collection/${product.picture}`}
+                                src={`http://localhost:9000/images/${product.picture}`}
                                 alt={product.alt || 'Product image'} 
                             />
                         </div>

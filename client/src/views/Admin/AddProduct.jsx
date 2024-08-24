@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function AddProduct() {
-  const { setUser } = useUser();
+  // const { setUser } = useUser();
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ function AddProduct() {
           })
         }
         //success
-        setUser(responseParsed.user);
+        // setUser(responseParsed.user);
         const responseParsed = await response.json();
         form.reset();
         navigate("/products");

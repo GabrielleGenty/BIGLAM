@@ -21,6 +21,7 @@ function Card({ product }) {
       </div>
       <div>
         <h3>{product.title}</h3>
+        <strong >{product.status}</strong>
         <p><strong>Prix :{product.price} €</strong></p>
         <button role="button"  aria-label="Ajouter au panier" id="addTopanier" onClick={() => addToCart(product)}>
           Ajouter au panier
