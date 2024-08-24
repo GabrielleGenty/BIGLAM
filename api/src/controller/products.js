@@ -42,7 +42,7 @@ const getByCategoryId= async (req,res)=>{
     }
 };
 const add = async (req,res)=>{
-    console.log("<<<<<<<<<<<<<<< Dans Add")
+   
     console.log("ADD",req.body);
     try {
 		upload(req, res, async function (error) {
