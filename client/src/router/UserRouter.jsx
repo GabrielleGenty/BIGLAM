@@ -14,7 +14,8 @@ import PrivacyPolicy from "../views/user/PrivacyPolicy";
 import Promotion from "../views/user/Promotion";
 import ProductDetails from "../views/user/ProductDetails"
 import NewCollection from "../views/user/NewCollection";
-import Category from "../views/user/Category"
+import Category from "../views/user/Category";
+import TableauDeTailles from "../views/user/TableauDeTailles";
 
 function UserRouter(){
     return(
@@ -30,6 +31,7 @@ function UserRouter(){
             <Route path="/product/:id" element ={< ProductDetails/>}/>
             <Route path="/category/:id" element ={< Category/>}/>
             <Route path="/aboutUs" element ={< AboutUs/>}/>
+            <Route path="/tableauDeTailles" element ={<TableauDeTailles/>}/>
             <Route path="/promotion" element ={< Promotion/>}/>
             <Route path="/newCollection" element ={< NewCollection/>}/>
             <Route path="/termofuse" element ={< TermOfUse/>}/>

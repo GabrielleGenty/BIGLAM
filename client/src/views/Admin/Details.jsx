@@ -110,7 +110,7 @@ function Details() {
                 setTimeout(() => {
                     setSuccessMessage("");
                     navigate("/products"); // Redirect to products page after a short delay
-                }, 2000);
+                }, 5000);
             } else {
                 console.error("Failed to update product:", response.statusText);
                 setSuccessMessage("Échec de la modification du produit. Veuillez réessayer.");

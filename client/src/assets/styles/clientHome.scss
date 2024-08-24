@@ -87,7 +87,7 @@
 	}
 	
 }
-@media screen and (min-width: 600px) and (max-width: 1025px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
 	#userHome {
 		margin-bottom: 50px;
 	  
@@ -161,6 +161,89 @@
 	  
 			  button#addTopanier {
 			  width: 60%;
+			  margin:0 auto;
+			  font-size: 1.2rem;
+			  background-color:$secondary-color;
+			  display: block;
+			  }
+			  #addTopanier:hover {
+				  background-color:$header-background-color;
+			  }
+		  }
+		  }
+	  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1800px) {
+	#userHome {
+
+		  section {
+  
+		  #categorysection {
+			  display: flex; 
+			  flex-wrap: nowrap; 
+			  overflow-x: auto; 
+			  scroll-snap-type: x mandatory; 
+			  gap: 0px;
+			  padding: 0px;
+			  margin-left: 1%; 
+			  background-color:$primary-color;
+  
+			  /* Customize scrollbar appearance */
+			  ::-webkit-scrollbar {
+			  height: 10px;
+			  
+			  }
+			  ::-webkit-scrollbar-thumb {
+		  
+			  border-radius: 20px; 
+			  }
+			  ::-webkit-scrollbar-track {
+			  background: transparent; 
+			  }
+			  /* Ensure that the scrollbar does not overlap content */
+			  scroll-padding-inline-end: 16px; 
+			  article {
+			  flex: 10%; /* Each article takes 100% of the container width */
+			  box-sizing: border-box; 
+			  background-color: $light-color-secondary;
+			  border: 1px solid #d3d3d3; 
+			  flex-direction: column;
+			  border-radius: 20px;
+			  align-items: left; 
+			  scroll-snap-align: start;
+			  padding: 2%; 
+			  margin:  2% ;
+			  }
+			  .container {
+				  display: flex;
+				  margin: auto; 
+				  width: 250px;
+				  height: 250px; 
+				  overflow: hidden; 
+				  align-items: center; 
+				  justify-content: center;
+		  
+			  }
+  
+			  .container img {
+				  max-width: 100%;
+				  max-height: 100%;
+				  text-align: center;
+				  width: auto; 
+				  height: auto; 
+				  margin: 0%;
+			  }
+			  img:hover {
+				  transform: scale(1.1);
+				  transition: transform 0.3s ease-in-out; /* Smooth transition */
+			  }
+	  
+			  p {
+			  text-align:center;
+			  }
+	  
+			  button#addTopanier {
+			  width: 80%;
 			  margin:0 auto;
 			  font-size: 1.2rem;
 			  background-color:$secondary-color;

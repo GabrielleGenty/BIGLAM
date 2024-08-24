@@ -71,10 +71,12 @@ function Login() {
              />
             <button type="submit" disabled ={isLoading}>{isLoading ?'Chargement...': 'Login'}</button>
         </form>
+        <div className="createAccount">
         <p>
             Vous n&apos;avez pas de compte ?{" "}
 				<Link to="/register">Inscrivez-vous</Link>
-		</p>
+		    </p>
+    </div>
     </section>
     </main>
 

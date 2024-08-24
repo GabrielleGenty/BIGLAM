@@ -10,6 +10,7 @@
 @import "./productDetails.scss";
 @import "./newProduct.scss";
 @import "./dashboard.scss";
+@import "./taille.scss";
 
 /* Media query pour les écrans d'au moins 320px de large */
 @media screen and (min-width: 320px) {
@@ -49,7 +50,7 @@
 			overflow-y: auto; 
 			margin-bottom: 3rem;
 			padding-top:120px ;
-			padding-bottom: 100px;
+	
 		}
 		h1{
 			font-size: 2rem;
@@ -143,9 +144,12 @@
 			color:$light-color; /* Change la couleur du texte au survol */
 			background-color:$secondary-color; /* Facultatif : ajoute un fond au survol pour une meilleure visibilité */
 		}
+		table{
+			background-color: $light-color-secondary;
+		}
 		
 }
-@media screen and (min-width: 600px) and (max-width: 1025px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
 	body {
 	main {
 	    display: block;
@@ -184,6 +188,49 @@
 		bottom: 0;
 		left: 0.2rem;
 		width: calc(100% - 0.2rem * 2);
+	    height: 2px;
+		background-color: $secondary-color;
+	}
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+	body {
+	main {
+	    display: block;
+		overflow-y: auto; 
+		margin-bottom: 3rem;
+		padding-top:120px ;
+		padding-bottom: 100px;
+		section{
+			display: block;
+			padding:  2%;
+			margin: 0px;
+		}
+	}
+
+	
+	h1{
+		font-size: 3rem;
+		padding: 0.5%;
+		
+	}
+	h2{
+		font-size: 2rem;
+	
+	}
+	h3,p {
+		font-size: 1.6rem;
+	
+	}
+}
+	MAIN 
+	.active::after,
+	header  .bar-nav:hover::after
+	{
+		content: "";
+	   position: absolute;
+		bottom: 0;
+		left: -0.5rem;
+		width: calc(100% - 1rem * 2);
 	    height: 2px;
 		background-color: $secondary-color;
 	}

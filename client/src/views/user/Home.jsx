@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Card from "./components/Card";
 import Carousel from "../user/components/Carousel.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
+import TableauDeTailles from "../user/TableauDeTailles.jsx";
 
 function Home() {
   const { addToCart } = useCart();
@@ -87,6 +88,7 @@ function Home() {
         <h2>Notre Collection</h2>
         <Carousel images={carouselImages} productIds={productIds} />
       </section>
+      <hr />
       {categories.map((category) => {
         const categoryProducts = productsByCategory[category.id] || [];
         return categoryProducts.length > 0 ? (
@@ -100,6 +102,10 @@ function Home() {
           </section>
         ) : null;
       })}
+        <section id="taille">
+        <h2>Tableau de tailles des Bagues</h2>
+       <TableauDeTailles/>
+      </section>
 
       <hr />
     </main>

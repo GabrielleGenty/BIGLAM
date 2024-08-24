@@ -1,25 +1,22 @@
 @media screen and (min-width: 320px) {
     main#productDetail{
-       h2{
-        // font-size: 1.4rem;
-        // padding: 2%;
-       }
+     
         section{
-            // // margin-top: 5%;
-            // padding: 2%;
          
             article{
+                background-color: $light-color-secondary;
                 #productDetails{
                     display: flex;
                     gap: 20px;
                     flex-direction: column;
                     align-items: center;
+                    padding: 5%;
                 
                     .container {
                         display: flex;
                         margin: auto; 
-                        width: 300px;
-                        height: 300px; 
+                        width: 250px;
+                        height: 250px; 
                         overflow: hidden; 
                         align-items: center; 
                         justify-content: center;
@@ -36,17 +33,12 @@
                         
                     }
                     button#addTopanier {
-                        width: 100%;
+                        width: 60%;
                         margin: 10% auto;
                         display: block;
                         font-size: 1.2rem;
                         background-color:$secondary-color;
                       }
-                 
-                    // div #details{
-                    //     text-align: center;
-                    
-                    // }
                     
                       #addTopanier:hover {
                           background-color:$header-background-color;
@@ -55,4 +47,105 @@
             }
         }
     }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px){
+    main#productDetail{
+    section{
+         
+        article{
+            background-color: $light-color-secondary;
+            padding: 2%;
+            #productDetails{
+                display: flex;
+                gap: 20px;
+                flex-direction: row;
+                align-items: center;
+                padding:  2% ;
+            
+                .container {
+                    display: flex;
+                    margin: auto; 
+                    width: 400px;
+                    height: 400px; 
+                    overflow: hidden; 
+                    align-items: center; 
+                    justify-content: center;
+                }
+
+                .container img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    text-align: center;
+                    width: auto; 
+                    height: auto; 
+                    border-radius: 20px; 
+                   
+                    
+                }
+                button#addTopanier {
+                    width: 60%;
+                    margin: 10% auto;
+                    display: block;
+                    font-size: 1.2rem;
+                    background-color:$secondary-color;
+                  }
+                
+                  #addTopanier:hover {
+                      background-color:$header-background-color;
+                  }
+            }
+        }
+    }
+}
+}
+@media screen and (min-width: 1024px) and (max-width: 1600px){
+    main#productDetail{
+    section{
+        padding: 10%;
+         
+        article{
+            background-color: $light-color-secondary;
+            padding: 2%;
+            #productDetails{
+                display: flex;
+                gap: 20px;
+                flex-direction: row;
+                align-items: center;
+                padding:  1% ;
+            
+                .container {
+                    display: flex;
+                    margin: auto; 
+                    width: 400px;
+                    height: 400px; 
+                    overflow: hidden; 
+                    align-items: center; 
+                    justify-content: center;
+                }
+
+                .container img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    text-align: center;
+                    width: auto; 
+                    height: auto; 
+                    border-radius: 20px; 
+                   
+                    
+                }
+                button#addTopanier {
+                    width: 60%;
+                    margin: 10% auto;
+                    display: block;
+                    font-size: 1.2rem;
+                    background-color:$secondary-color;
+                  }
+                
+                  #addTopanier:hover {
+                      background-color:$header-background-color;
+                  }
+            }
+        }
+    }
+}
 }

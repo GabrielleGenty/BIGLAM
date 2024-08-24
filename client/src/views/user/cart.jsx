@@ -95,9 +95,10 @@ function Cart() {
                             )}
                            </div>
                         <div id="articleDetail">
-                            <p><strong>Quantité :</strong> {item.quantity}</p>
-                            <p><strong>Prix:</strong> {item.price} €</p>
-                            <p><strong>Total :</strong> {item.price * item.quantity} €</p>
+                            
+                            <p>Description : {item.description}</p>
+                            <p>Quantité : {item.quantity}</p>
+                            <p>Total : {item.price * item.quantity}€</p>
                             <button onClick={() => removeFromCart(item.id)}>Supprimer</button>
                         </div>
                         </div>

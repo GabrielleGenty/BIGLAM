@@ -13,16 +13,16 @@ main#userCart{
           flex-direction:row;
           align-items: center;
           gap:10px;
-          padding:  0 2% 2% 2%;
+          padding: 0 3% ;
           background-color: $light-color-secondary;
           p{
-            padding: 2%;
+            padding: 0;
             margin: 0;
           }
         }
         .container {
           display: flex;
-          margin: 5%; 
+         
           width: 150px;
           height: 150px; 
           overflow: hidden; 
@@ -38,8 +38,8 @@ main#userCart{
         height: auto; 
       }
       button{
-        width: 100%;
-        margin: 10% auto;
+        width: 60%;
+        margin: 2% auto;
         display: block;
       }
       p{text-align: center;
@@ -94,35 +94,44 @@ main#userCart{
     margin: 0 10px;
     }
   }
-  @media screen and (min-width: 600px) and (max-width: 1025px) {
-    section{
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    main#userCart{
+     section{
      
-      padding: 0;
-      margin: 0;
+      padding: 2%;
+      margin: 5%;
   
     article{
       background-color: $light-color-secondary;
-      margin: 5% 0;
+      margin: 2%;
+      padding: 2%;
       div.userCart{
           display: flex;
           flex-direction:row;
-          align-items: center;
+          justify-content: center;
+          align-items:center;
           gap:10px;
-          padding:  0 2% 2% 2%;
           background-color: $light-color-secondary;
-          p{
-            padding: 2%;
-            margin: 0;
+          div#articleDetail{
+            margin: 0 ;
+            padding: 0;
+          
+            p{
+             text-align: center;
+             
+            }
           }
+  
         }
         .container {
-          display: flex;
-          margin: 5%; 
-          width: 150px;
-          height: 150px; 
+          display: flex; 
+          width: 250px;
+          height: 250px; 
           overflow: hidden; 
           align-items: center; 
           justify-content: center;
+          margin: 0;
+          padding: 0;
         }
 
       .container img {
@@ -133,23 +142,83 @@ main#userCart{
         height: auto; 
       }
       button{
-        width: 100%;
+        width: 60%;
         margin: 10% auto;
         display: block;
       }
       p{text-align: center;
       }
-      div#articleDetail{
-       
-        margin:   2% ;
-        padding:  2% ;
-      }
+     
     }
     button#valider-button{
-      width: 60%;
+      width: 100%;
       display: block;
       margin: 5% auto;
     }
-  }
+      }
+    }
+  } 
+   @media screen and (min-width: 1025px) and (max-width: 1600px) {
+    main#userCart{
+     section{
+     
+      padding: 2%;
+      margin: 5%;
+  
+    article{
+      background-color: $light-color-secondary;
+      margin: 2%;
+      padding: 2%;
+      div.userCart{
+          display: flex;
+          flex-direction:row;
+          justify-content: center;
+          align-items:center;
+          gap:10px;
+          background-color: $light-color-secondary;
+          div#articleDetail{
+            margin: 0 ;
+            padding: 0;
+          
+            p{
+             text-align: center;
+             
+            }
+          }
+  
+        }
+        .container {
+          display: flex; 
+          width: 250px;
+          height: 250px; 
+          overflow: hidden; 
+          align-items: center; 
+          justify-content: center;
+          margin: 0;
+          padding: 0;
+        }
 
+      .container img {
+        max-width: 100%;
+        max-height: 100%;
+        text-align: center;
+        width: auto; 
+        height: auto; 
+      }
+      button{
+        width: 60%;
+        margin: 10% auto;
+        display: block;
+      }
+      p{text-align: center;
+      }
+     
+    }
+    button#valider-button{
+      width: 100%;
+      display: block;
+      margin: 5% auto;
+    }
+      }
+    }
   }
