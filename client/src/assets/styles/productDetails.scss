@@ -107,6 +107,10 @@
 }
 @media screen and (min-width: 1024px) and (max-width: 3000px){
     main#productDetail{
+        h2{
+            padding:0;
+            margin-top: 1%;
+        }
     section{
         display: flex;
         justify-content: center;
@@ -115,7 +119,7 @@
         padding: 2%;
          
         article{
-            background-color: $light-color-secondary;
+            background-color:$light-color;
  
             #productDetails{
                 display: flex;

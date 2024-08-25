@@ -2,6 +2,9 @@
 main#userCart{
 
   section{
+    p{
+      text-align: center;
+     }
       padding-bottom: 120%;
       margin: 0;
   
@@ -98,6 +101,9 @@ main#userCart{
     main#userCart{
       background-color: $light-color;
      section{
+      p{
+        text-align: center;
+       }
       background-color: $light-color;
       padding: 2%;
       margin: 5%;
@@ -164,7 +170,9 @@ main#userCart{
     main#userCart{
       background-color: $light-color;
      section{
-     
+     p{
+      text-align: center;
+     }
       padding: 0 2%;
       margin: 0 30%;
       background-color:  $light-color;
