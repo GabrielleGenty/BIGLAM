@@ -158,13 +158,14 @@ main#userCart{
       }
     }
   } 
-   @media screen and (min-width: 1025px) and (max-width: 1600px) {
+   @media screen and (min-width: 1025px) and (max-width: 3000px) {
     main#userCart{
+      background-color: $primary-color;
      section{
      
-      padding: 2%;
-      margin: 5%;
-  
+      padding: 0 2%;
+      margin: 0 30%;
+      background-color: $primary-color;
     article{
       background-color: $light-color-secondary;
       margin: 2%;
@@ -189,8 +190,8 @@ main#userCart{
         }
         .container {
           display: flex; 
-          width: 250px;
-          height: 250px; 
+          width: 200px;
+          height: 200px; 
           overflow: hidden; 
           align-items: center; 
           justify-content: center;
@@ -215,7 +216,7 @@ main#userCart{
      
     }
     button#valider-button{
-      width: 100%;
+      width: 60%;
       display: block;
       margin: 5% auto;
     }

@@ -12,6 +12,9 @@
 		border-bottom: 2px solid $background-color;
 		background-color:$light-color-secondary;
 		// text-transform: uppercase;
+		span{
+			font-size: 100px;
+		}
 
 		div#headerNav{
 		display: flex;
@@ -138,7 +141,6 @@
 				bottom: -20;
 			}
 	}
-	
 	svg {
 		font-size: 1.8rem;
 		margin: 0 10px ;
@@ -177,7 +179,6 @@
 
 	}
 }
-
 /* Media query pour les écrans entre 600px et 1024px */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
     header {
@@ -298,16 +299,27 @@
 
 
 }
-@media screen and (min-width: 1025px) and (max-width: 2000px) {
+@media screen and (min-width: 1025px) and (max-width: 3000px) {
 	header {
+		form input::placeholder {
+			font-size: 1.6rem;
+		}	
 		display: flex;
 		flex-wrap: nowrap;
-		height: 20%;
+		height: auto;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 2%;
+		padding: 1%;
 	
-	
+		svg {
+			font-size: 2rem;
+			margin: 0 10px ;
+			color: $header-background-color;
+			
+		}
+		a.bar-nav{
+			font-size: 1.4rem;
+		}
 		nav.burger-menu {
 
 			position: absolute;
@@ -403,11 +415,18 @@
         }
 
         form {
-            input {
-                width: 100%; 
-                font-size: 3rem; 
-            }
-        }	
+			
+			input {
+				width: 90%;
+				font-size: 3rem;
+			}
+			.suggestion-list li {
+				font-size: 1.6rem;
+			}
+        }
+		form input::placeholder {
+			font-size: 5rem;
+		}	
 }
 
 

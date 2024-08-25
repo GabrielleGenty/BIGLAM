@@ -137,7 +137,7 @@
   }
 
 } 
-@media screen and (min-width: 1025px) and (max-width: 2000px) {
+@media screen and (min-width: 1025px) and (max-width: 3000px) {
   main#new-collection,
   main#promotion
   {
@@ -148,6 +148,8 @@
     section{
       display: flex;
       flex-direction: column;
+      margin: 0;
+      padding: 0;
  
         .product-container {
          display: flex; 

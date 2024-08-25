@@ -105,8 +105,10 @@ function Home() {
               ))}
             </div>
           </section>
+          
         ) : null;
       })}
+        <hr />
         <section id="taille">
         <h2>Tableau de tailles des Bagues</h2>
        <TableauDeTailles/>
