@@ -2,18 +2,23 @@
 @media screen and (min-width: 320px) {
 	
 	#userHome {
-	  margin-bottom: 100px;
+	//   margin-bottom: 100px;
+	background-color: $light-color;
 	
 		section {
-
+			padding: 2%;
+			margin: 2%;
+ 
+			hr{
+				margin: 5% auto;
+			}
 		#categorysection {
 			display: flex; 
-			// flex-wrap: nowrap; 
+			flex-wrap: nowrap; 
 			overflow-x: auto; 
 			scroll-snap-type: x mandatory; 
-			gap: 10px;
-			padding: 10px;
-			// margin-left: 4% 2% 0 2%; 
+			gap: 20px;
+			padding-left: 5%;
 			background-color:$primary-color;
 
 			/* Customize scrollbar appearance */
@@ -31,27 +36,29 @@
 			/* Ensure that the scrollbar does not overlap content */
 			scroll-padding-inline-end: 16px; 
 			article {
-			flex:  0 0 80%; /* Each article takes 100% of the container width */
+			flex:  0 0 350px; /* Each article takes 100% of the container width */
 			box-sizing: border-box; 
 			background-color: $light-color-secondary;
 			display: flex;
 			gap:10px;
-			margin: 5% ;
+			margin: 5%;
+			
 			border: 1px solid #d3d3d3; 
 			flex-direction: column;
 			border-radius: 20px;
 			align-items: left; 
-			padding: 7% 2%; 
+			padding: 10% ; 
 			scroll-snap-align: start; 
 			}
 			.container {
 				display: flex;
 				margin: auto; 
-				width: 200px;
-				height: 200px; 
+				width: 250px;
+				height: 250px; 
 				overflow: hidden; 
 				align-items: center; 
 				justify-content: center;
+				padding:10px;
 		
 			}
 
@@ -61,7 +68,7 @@
 				text-align: center;
 				width: auto; 
 				height: auto; 
-				margin: 5%;
+			
 			}
 			img:hover {
 				transform: scale(1.1);
@@ -73,7 +80,7 @@
 			}
 	
 			button#addTopanier {
-			width: 80%;
+			width: 60%;
 			margin:0 auto;
 			font-size: 1.2rem;
 			background-color:$secondary-color;
@@ -89,18 +96,20 @@
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
 	#userHome {
-		margin-bottom: 50px;
+		// margin-bottom: 50px;
+		background-color:$light-color;
 	  
 		  section {
   
-		  #categorysection {
+		  div#categorysection {
 			  display: flex; 
 			  flex-wrap: nowrap; 
 			  overflow-x: auto; 
 			  scroll-snap-type: x mandatory; 
 			  gap: 0px;
 			  padding: 10px;
-			  margin-left: 4%; 
+			  margin-left: 2%; 
+			  padding-left: 5%;
 			  background-color:$primary-color;
   
 			  /* Customize scrollbar appearance */
@@ -118,19 +127,20 @@
 			  /* Ensure that the scrollbar does not overlap content */
 			  scroll-padding-inline-end: 16px; 
 			  article {
-			  flex: 0 0 45%; /* Each article takes 100% of the container width */
+			  flex: 0 1 250px; /* Each article takes 100% of the container width */
 			  box-sizing: border-box; 
 			  background-color: $light-color-secondary;
 			  display: flex;
 			  gap:5px;
-			//   margin: 5% ;
 			  border: 1px solid #d3d3d3; 
 			  flex-direction: column;
 			  border-radius: 20px;
-			  align-items: left; 
-			  padding: 5% 1%; 
+			  padding:   3% 2%; 
 			  scroll-snap-align: start; 
 			  }
+			  article:first-child {
+				margin-left: 20%; /* Adjust the value as needed */
+			}
 			  .container {
 				  display: flex;
 				  margin: auto; 
@@ -148,7 +158,7 @@
 				  text-align: center;
 				  width: auto; 
 				  height: auto; 
-				  margin: 5%;
+				 
 			  }
 			  img:hover {
 				  transform: scale(1.1);
@@ -175,19 +185,19 @@
 }
 @media screen and (min-width: 1025px) and (max-width: 3000px) {
 	#userHome {
+		background-color: $light-color;
 
 		  section {
 		
   
-		  #categorysection {
+		  div#categorysection {
 			  display: flex; 
 			  flex-wrap: nowrap; 
 			  overflow-x: auto; 
 			  scroll-snap-type: x mandatory; 
-			  gap: 0px;
-			  padding: 0px;
+			  padding-left:5%;
 			  margin-left: 1%; 
-			  background-color:$primary-color;
+			//   background-color:$primary-color;
   
 			  /* Customize scrollbar appearance */
 			  ::-webkit-scrollbar {
@@ -204,7 +214,7 @@
 			  /* Ensure that the scrollbar does not overlap content */
 			  scroll-padding-inline-end: 16px; 
 			  article {
-			  flex: 10%; /* Each article takes 100% of the container width */
+			  flex: 0 1 250px; /* Each article takes 100% of the container width */
 			  box-sizing: border-box; 
 			  background-color: $light-color-secondary;
 			  border: 1px solid #d3d3d3; 
@@ -213,8 +223,11 @@
 			  align-items: left; 
 			  scroll-snap-align: start;
 			  padding: 2%; 
-			  margin:  2% ;
+			  margin: 2% ;
 			  }
+			  article:first-child {
+				margin-left: 20px; /* Adjust the value as needed */
+			}
 			  .container {
 				  display: flex;
 				  margin: auto; 

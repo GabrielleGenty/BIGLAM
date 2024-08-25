@@ -1,6 +1,9 @@
 /* Media query pour les écrans d'au moins 320px de large */
 @media screen and (min-width: 320px) {
 	header {
+		nav.menu{
+			display: none;
+		}
 		position: fixed;
 		display: flex;
 		flex-direction: column;
@@ -303,7 +306,7 @@
 	header {
 		form input::placeholder {
 			font-size: 1.6rem;
-		}	
+		}
 		display: flex;
 		flex-wrap: nowrap;
 		height: auto;
@@ -313,120 +316,98 @@
 	
 		svg {
 			font-size: 2rem;
-			margin: 0 10px ;
+			margin: 0 10px;
 			color: $header-background-color;
-			
 		}
-		a.bar-nav{
-			font-size: 1.4rem;
+		
+		a.bar-nav {
+			font-size: 1.2rem;
+			padding: 2%;
+		
 		}
-		nav.burger-menu {
-
-			position: absolute;
+		
+		div.leftNav {
 			display: flex;
+			width: 100%;
+			
+			justify-content: center;
+		
 			align-items: center;
-			padding: 1%;
-			top: 0;
-			right: 0;
-			flex-direction: column;
-			background-color:$light-color-secondary;
-			width: 20vw;
-			height: 100vh;
-			padding: 1rem;
-			z-index: 10000;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.454);
-			border-bottom-right-radius: 1rem;
-			text-transform: uppercase;
-	
-			a{
-				text-align: center;
-				font-size: 1.6rem;
-				padding: 1%;
-			
-			}
-			div.account{
-				display: flex;
-				flex-direction: column;
-	
-			}
-			
-			button {
-				padding:  0.5rem;
-				color: $dark-color;
-				
-			}
-			a:hover{
-				background-color:$secondary-color;
-				color:$light-color ;
-			}
-			.category-menu{
-				background-color:$primary-color;
-				// text-align: center;
-				list-style: none;
-				
-			}
-	
-		.category-menu li {
-			padding: 5px;
-			margin: auto;
-			text-align: center;
-			border-bottom: 1px solid #f9f5f5; 
 		}
-		.category-menu li a {
-			text-decoration: none;
-			color: inherit; 
-			display: block; 
-		}
-	
-		.category-menu li a:hover {
-			background-color:$secondary-color;
-			color:$light-color; 
-		}
-	
+		
+		div#headerNav {
+			display: flex;
 		}
 		nav.iconNav{
-			width: auto;
-			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap:20px;
+		}
+		
+		nav.menu {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+			white-space: nowrap;
+			margin: 2% 10%;
+			
+			
+			button {
+				width: auto;
+				
+				padding:0.5%
+			}
+		}
+		
+		nav.burger-menu {
+			display: none; /* Cache complètement le menu burger */
+		}
+		
+		#burger-menu-button {
+			display: none; /* Cache complètement le bouton du menu burger */
 		}
 	}
-        div#headerNav {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			margin: 0px;
+	
+	div#headerNav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0px;
     
-			.container{
-				display: flex;
-				width: 80px;
-				height: 80px; 
-				overflow: hidden; 
-				align-items: center; 
-				justify-content: center;
-				 }
-				.container img {
-					max-width: 100%;
-					max-height: 100%;
-					text-align: center;
-					width: auto; 
-					height: auto;  
-			
-				}
-			
-        }
+		.container {
+			display: flex;
+			width: 80px;
+			height: 80px; 
+			overflow: hidden; 
+			align-items: center; 
+			justify-content: center;
+		}
+		
+		.container img {
+			max-width: 100%;
+			max-height: 100%;
+			text-align: center;
+			width: auto; 
+			height: auto;
+		}
+	}
 
-        form {
-			
-			input {
-				width: 90%;
-				font-size: 3rem;
-			}
-			.suggestion-list li {
-				font-size: 1.6rem;
-			}
-        }
-		form input::placeholder {
-			font-size: 5rem;
-		}	
+	form {
+		input {
+			width: 90%;
+			font-size: 3rem;
+		}
+		
+		.suggestion-list li {
+			font-size: 1.6rem;
+		}
+	}
+	
+	form input::placeholder {
+		font-size: 5rem;
+	}
 }
 
 

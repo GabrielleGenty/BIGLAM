@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'; // Import useLocation
 import Card from "./components/Card";
 import Carousel from "../user/components/Carousel.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
 import TableauDeTailles from "../user/TableauDeTailles.jsx";
-const API_URL =
-  import.meta.env.VITE_API_URL
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Home() {
   const { addToCart } = useCart();
@@ -15,7 +15,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate(); // Hook pour la navigation
+  const location = useLocation(); // Hook to get the current location
 
   useEffect(() => {
     async function fetchProducts() {
@@ -54,6 +54,14 @@ function Home() {
     fetchCategories();
   }, []);
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const categoryLabel = queryParams.get('category');
+    if (categoryLabel) {
+      scrollToCategory(categoryLabel);
+    }
+  }, [location.search]);
+
   function groupProductsByCategory(products) {
     return products.reduce((acc, product) => {
       if (!acc[product.categories_id]) {
@@ -64,8 +72,14 @@ function Home() {
     }, {});
   }
 
-  function handleProductClick(id) {
-    navigate(`/product/${id}`);
+  function scrollToCategory(categoryLabel) {
+    const section = document.querySelector(`h2[data-category-label="${categoryLabel}"]`);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   }
 
   if (isLoading) {
@@ -97,23 +111,21 @@ function Home() {
       {categories.map((category) => {
         const categoryProducts = productsByCategory[category.id] || [];
         return categoryProducts.length > 0 ? (
-          <section key={category.id} id={`category-${category.id}`}>
-            <h2>Notre Collection {category.label}</h2>
+          <section key={category.id}>
+            <h2 data-category-label={category.label}>Notre Collection {category.label}</h2>
             <div id="categorysection">
               {categoryProducts.map((product) => (
                 <Card key={product.id} product={product} />
               ))}
             </div>
+            <hr />
           </section>
-          
         ) : null;
       })}
-        <hr />
-        <section id="taille">
+      <section id="taille">
         <h2>Tableau de tailles des Bagues</h2>
-       <TableauDeTailles/>
+        <TableauDeTailles />
       </section>
-
       <hr />
     </main>
   );

@@ -1,5 +1,9 @@
 @media screen and (min-width: 320px) {
+    html{
+        background-color: $light-color;
+    }
     main#productDetail{
+        background-color:$light-color ;
      
         section{
          

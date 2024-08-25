@@ -98,7 +98,7 @@ main#userCart{
     main#userCart{
       background-color: $light-color;
      section{
-     
+      background-color: $light-color;
       padding: 2%;
       margin: 5%;
      
@@ -153,7 +153,7 @@ main#userCart{
      
     }
     button#valider-button{
-      width: 100%;
+      width: 60%;
       display: block;
       margin: 5% auto;
     }
@@ -162,12 +162,12 @@ main#userCart{
   } 
    @media screen and (min-width: 1025px) and (max-width: 3000px) {
     main#userCart{
-      background-color: $primary-color;
+      background-color: $light-color;
      section{
      
       padding: 0 2%;
       margin: 0 30%;
-      background-color: $primary-color;
+      background-color:  $light-color;
     article{
       background-color: $light-color-secondary;
       margin: 2%;

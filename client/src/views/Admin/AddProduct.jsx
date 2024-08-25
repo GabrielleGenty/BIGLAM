@@ -76,6 +76,7 @@ function AddProduct() {
   return (
     <main id="admin">
       <section id="addProduct">
+        <div className='addProduct'>
         <h1>Ajouter un produit</h1>
         <div id="buttonSet">
           <button>
@@ -168,6 +169,7 @@ function AddProduct() {
             <button type="submit">Register</button>
           </div>
         </form>
+        </div>
       </section>
     </main>
   );
