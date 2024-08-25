@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useCart } from "../../../hooks/useCart";
 import { Link } from "react-router-dom";
 import noPicture from "../../../../../api/public/images/no-picture.jpg";
+const API_URL = import.meta.env.VITE_API_URL
 
 
 function Card({ product }) {
@@ -12,7 +13,7 @@ function Card({ product }) {
       <div className="container">
         <Link to={`/product/${product.id}`}><img 
           src={
-            `http://localhost:9000/images/${product.picture}`
+            API_URL + `/images/${product.picture}`
           }
           alt={product.title}
           onError={(e) => { e.target.src = noPicture; }} // Fallback to noPicture if image fails to load

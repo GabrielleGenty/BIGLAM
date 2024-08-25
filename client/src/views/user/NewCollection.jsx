@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
+const API_URL = import.meta.env.VITE_API_URL
 
 function NewCollection() {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ function NewCollection() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch("http://localhost:9000/api/v1/products");
+        const response = await fetch(API_URL + "/api/v1/products");
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }

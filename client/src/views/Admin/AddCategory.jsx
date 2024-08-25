@@ -2,6 +2,7 @@ import React, {useState }from 'react';
 import {useUser} from "../../hooks/UseUser";
 import { useNavigate } from "react-router-dom";
 import {Link} from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL
 
 
 function AddCategory() {
@@ -18,7 +19,7 @@ function AddCategory() {
      // Envoyer les données au backend
 
      try{
-      const response = await fetch('http://localhost:9000/api/v1/categories', {
+      const response = await fetch(API_URL + '/api/v1/categories', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

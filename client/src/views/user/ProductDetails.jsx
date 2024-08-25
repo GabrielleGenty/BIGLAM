@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CardDetails from "./components/CardDetails.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
+const API_URL = import.meta.env.VITE_API_URL
 
 function ProductDetails() {
   const { addToCart } = useCart();
@@ -13,7 +14,7 @@ function ProductDetails() {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const response = await fetch(`http://localhost:9000/api/v1/products`);
+        const response = await fetch(API_URL + `/api/v1/products`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

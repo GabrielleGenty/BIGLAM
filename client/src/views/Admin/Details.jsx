@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import ConfirmationModal from "./ConfirmationModal"; // Assurez-vous que le chemin est correct
+const API_URL = import.meta.env.VITE_API_URL
 
 function Details() {
     const [product, setProduct] = useState(null);
@@ -20,7 +21,7 @@ function Details() {
                 return;
             }
             try {
-                const response = await fetch(`http://localhost:9000/api/v1/products/${id}`, {
+                const response = await fetch(API_URL + `/api/v1/products/${id}`, {
                     credentials: "include",
                 });
                 if (response.status === 401) {
@@ -41,7 +42,7 @@ function Details() {
 
         async function fetchCategories() {
             try {
-                const response = await fetch("http://localhost:9000/api/v1/categories", {
+                const response = await fetch(API_URL + "/api/v1/categories", {
                     credentials: "include",
                 });
                 if (response.ok) {
@@ -61,7 +62,7 @@ function Details() {
 
     async function deleteHandler() {
         try {
-            const response = await fetch(`http://localhost:9000/api/v1/products/${id}`, {
+            const response = await fetch(API_URL + `/api/v1/products/${id}`, {
                 method: "DELETE",
                 credentials: "include",
             });
@@ -92,7 +93,7 @@ function Details() {
         };
 
         try {
-            const response = await fetch(`http://localhost:9000/api/v1/products/${id}`, {
+            const response = await fetch(API_URL + `/api/v1/products/${id}`, {
                 method: "PATCH",
                 credentials: "include",
                 headers: {

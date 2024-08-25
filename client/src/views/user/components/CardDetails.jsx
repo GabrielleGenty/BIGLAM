@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useCart } from "../../../hooks/useCart";
 import noPicture from "../../../../../api/public/images/no-picture.jpg";
+const API_URL = import.meta.env.VITE_API_URL
 
 function CardDetails({ product }) {
   const { addToCart } = useCart();
@@ -11,7 +12,7 @@ function CardDetails({ product }) {
         <div id="productDetails">
        <div className="container">
             <img 
-                src={`http://localhost:9000/images/${product.picture}`}
+                src={API_URL + `/images/${product.picture}`}
                 alt={product.title}
                 onError={(e) => { e.target.src = noPicture; }} // Fallback to noPicture if image fails to load
             />

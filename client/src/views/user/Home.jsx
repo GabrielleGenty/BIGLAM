@@ -4,6 +4,8 @@ import Card from "./components/Card";
 import Carousel from "../user/components/Carousel.jsx";
 import { useCart } from "../../hooks/useCart.jsx";
 import TableauDeTailles from "../user/TableauDeTailles.jsx";
+const API_URL =
+  import.meta.env.VITE_API_URL
 
 function Home() {
   const { addToCart } = useCart();
@@ -18,29 +20,32 @@ function Home() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch('http://localhost:9000/api/v1/products');
+        const response = await fetch(API_URL + '/api/v1/products');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
         setProducts(data.response || []);
         setProductsByCategory(groupProductsByCategory(data.response));
-      } catch (error) {
+      }
+      catch (error) {
         setError(error.message);
-      } finally {
+      }
+      finally {
         setIsLoading(false);
       }
     }
 
     async function fetchCategories() {
       try {
-        const response = await fetch('http://localhost:9000/api/v1/categories');
+        const response = await fetch(API_URL + '/api/v1/categories');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
         setCategories(data.response || []);
-      } catch (error) {
+      }
+      catch (error) {
         setError(error.message);
       }
     }
@@ -77,7 +82,7 @@ function Home() {
 
   // Construct image URLs and IDs for the carousel
   const carouselImages = [
-    ...products.map(product => `http://localhost:9000/images/${product.picture}`)
+    ...products.map(product => API_URL + `/images/${product.picture}`)
   ];
 
   const productIds = products.map(product => product.id);

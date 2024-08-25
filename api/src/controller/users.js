@@ -69,6 +69,7 @@ const login = async (req, res) => {
         if (!passwordMatch) {
             return res.status(401).json({ message: "Informations 2 incorrectes" });
         }
+        console.log(user);
         const infoUser = {
             id: user.id,
             firstname: user.firstname,

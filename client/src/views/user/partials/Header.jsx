@@ -7,6 +7,8 @@ import { useUser } from "../../../hooks/UseUser";
 import useMenu from "../../../hooks/UseMenu";
 import { useCart } from "../../../hooks/useCart";
 import SearchInput from "../partials/SearchInput";
+const API_URL =
+    import.meta.env.VITE_API_URL
 
 function Header() {
     const { user, logout } = useUser();
@@ -22,26 +24,28 @@ function Header() {
     useEffect(() => {
         async function fetchCategories() {
             try {
-                const response = await fetch('http://localhost:9000/api/v1/categories');
+                const response = await fetch(API_URL + '/api/v1/categories');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
                 setCategories(data.response || []);
-            } catch (error) {
+            }
+            catch (error) {
                 console.error('Failed to fetch categories:', error);
             }
         }
 
         async function fetchProducts() {
             try {
-                const response = await fetch('http://localhost:9000/api/v1/products');
+                const response = await fetch(API_URL + '/api/v1/products');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
                 setProducts(data.response || []);
-            } catch (error) {
+            }
+            catch (error) {
                 console.error('Failed to fetch products:', error);
             }
         }
