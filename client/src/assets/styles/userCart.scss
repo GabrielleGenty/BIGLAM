@@ -96,10 +96,12 @@ main#userCart{
   }
   @media screen and (min-width: 600px) and (max-width: 1024px) {
     main#userCart{
+      background-color: $light-color;
      section{
      
       padding: 2%;
       margin: 5%;
+     
   
     article{
       background-color: $light-color-secondary;

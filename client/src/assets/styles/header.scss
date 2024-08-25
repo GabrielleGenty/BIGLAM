@@ -7,8 +7,8 @@
 		gap: 2%;
 		width: 100%;
 		z-index: 10000;
-		height:120px;
-		padding: 1%;
+		height:auto;
+		padding: 2%;
 		border-bottom: 2px solid $background-color;
 		background-color:$light-color-secondary;
 		// text-transform: uppercase;
@@ -184,10 +184,10 @@
     header {
 		display: flex;
 		flex-wrap: nowrap;
-		height: 14%;
+		height: auto;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 2%;
+		padding: 1%;
 	
 	
 		nav.burger-menu {

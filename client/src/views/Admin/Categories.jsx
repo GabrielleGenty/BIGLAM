@@ -141,14 +141,16 @@ function Categories() {
                         value={editLabel}
                         onChange={(e) => setEditLabel(e.target.value)}
                       />
+                      <div className="buttongroup">
                       <button className="categorybutton" type="submit">Save</button>
                       <button className="categorybutton" type="button" onClick={() => setEditingCategory(null)}>Cancel</button>
+                      </div>
                     </form>
                   ) : (
                     category.label
                   )}
                 </td>
-                <td>
+                <td className="tdbutton">
                   {editingCategory && editingCategory.id === category.id ? (
                     <></>
                   ) : (
