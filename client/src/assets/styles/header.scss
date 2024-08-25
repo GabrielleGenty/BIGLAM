@@ -298,11 +298,11 @@
 
 
 }
-@media screen and (min-width: 1025px) and (max-width: 1600px) {
+@media screen and (min-width: 1025px) and (max-width: 2000px) {
 	header {
 		display: flex;
 		flex-wrap: nowrap;
-		height: 14%;
+		height: 20%;
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 2%;
@@ -318,7 +318,7 @@
 			right: 0;
 			flex-direction: column;
 			background-color:$light-color-secondary;
-			width: 40vw;
+			width: 20vw;
 			height: 100vh;
 			padding: 1rem;
 			z-index: 10000;
@@ -328,7 +328,7 @@
 	
 			a{
 				text-align: center;
-				font-size: 1.4rem;
+				font-size: 1.6rem;
 				padding: 1%;
 			
 			}
@@ -405,7 +405,7 @@
         form {
             input {
                 width: 100%; 
-                font-size: 2rem; 
+                font-size: 3rem; 
             }
         }	
 }

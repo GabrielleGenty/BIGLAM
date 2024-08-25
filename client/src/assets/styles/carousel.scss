@@ -118,17 +118,17 @@
 	}
 
 }
-@media screen and (min-width: 1025px) and (max-width: 1500px) {
+@media screen and (min-width: 1025px) and (max-width: 2000px) {
 
 	section#carousel{
-		margin: 1%;
-		padding: 1%;
+	
+		padding: 5% 2% 0;
 		   .carousel {
 			   display: flex;
 			   flex-direction: row;
 			   align-items: center;
 			   position: relative;
-			   width: 40%;
+			   width: 30%;
 			   height: auto;
 			   overflow: hidden;
 			   // display: block;
@@ -165,7 +165,7 @@
 			   color: $font-color;
 			   border: none;
 			   cursor: pointer;
-			   padding: 1rem;
+			   padding: 1.2rem;
 			 }
 			 
 			 .carousel button:first-of-type {
