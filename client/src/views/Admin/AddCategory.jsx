@@ -54,7 +54,6 @@ function AddCategory() {
                   
                     <button><Link to="/categories">Retour a la Page De Categories</Link></button>
                     </div>
-            {error && <p>{error}</p>}
             <form onSubmit={submitHandler}>
                 
                   <input
