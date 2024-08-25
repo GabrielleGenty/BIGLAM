@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../hooks/UseUser";
+const API_URL =
+  import.meta.env.VITE_API_URL
 
 function Register() {
-  const { login,setUser } = useUser();
+  const { login, setUser } = useUser();
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -16,8 +18,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "http://localhost:9000/api/v1/users/register",
-        {
+        API_URL + "/api/v1/users/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -37,9 +38,10 @@ function Register() {
       }
       const responseParsed = await response.json();
       form.reset();
-     login(responseParsed.user);
+      login(responseParsed.user);
       navigate("/");
-    } catch (error) {
+    }
+    catch (error) {
       // Log the error for debugging purposes
       console.log('Fetch error:', error);
       setError("An unexpected error occurred. Please try again later.");

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL
 
 function OrderDetails() {
     const { id } = useParams();
@@ -8,7 +9,7 @@ function OrderDetails() {
     useEffect(() => {
         document.title = `Order Details | ${id}`;
         async function fetchOrderDetails() {
-            const response = await fetch(`http://localhost:9000/api/v1/orderDetails/${id}`, {
+            const response = await fetch(API_URL + `/api/v1/orderDetails/${id}`, {
                 credentials: "include",
             });
             if (response.status === 401) {

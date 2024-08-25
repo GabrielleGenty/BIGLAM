@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {useUser} from "./UseUser";
+const API_URL = import.meta.env.VITE_API_URL
 
 function UseCheckUser() {
     const { user,login } = useUser();
@@ -9,7 +10,7 @@ function UseCheckUser() {
         async function fetchUsers(){
             try {
               const response = await fetch(
-                "http://localhost:9000/api/v1/users",
+                API_URL + "/api/v1/users",
                 {
                   // dans la requete on envoie les cookies pour que le serveur
                   // puisse s'en servir afin de vérifier l'état de connexion 

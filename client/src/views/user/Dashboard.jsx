@@ -4,6 +4,7 @@ import { useUser } from "../../hooks/UseUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import {faGear }from "@fortawesome/free-solid-svg-icons";
+const API_URL = import.meta.env.VITE_API_URL
 
 function Dashboard() {
     useMenu();
@@ -21,7 +22,7 @@ function Dashboard() {
             }
 
             try {
-                const response = await fetch(`http://localhost:9000/api/v1/orders/user/${user.email}`, {
+                const response = await fetch(API_URL + `/api/v1/orders/user/${user.email}`, {
                     credentials: 'include' // Inclure les cookies de session
                 });
                 if (!response.ok) {
@@ -95,7 +96,7 @@ function Dashboard() {
                                                 <tr key={`${order.id}-${detail.product_id}`}>
                                                     <td>
                                                         <img 
-                                                            src={`http://localhost:9000/images/${detail.product_img}`}
+                                                            src={API_URL + `/images/${detail.product_img}`}
                                                             alt={detail.product_name || 'Product Image'} 
                                                             style={{ maxWidth: '60px', maxHeight: '60px' }}
                                                         />

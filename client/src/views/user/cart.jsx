@@ -4,6 +4,7 @@ import { useUser } from "../../hooks/UseUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceFrownOpen } from "@fortawesome/free-solid-svg-icons";
 import ConfirmationModal from "../Admin/ConfirmationModal"; // Assurez-vous que le chemin est correct
+const API_URL = import.meta.env.VITE_API_URL
 
 function Cart() {
     const { cart, removeFromCart, clearCart } = useCart();
@@ -17,10 +18,10 @@ function Cart() {
         logout(); // Puis déconnecter l'utilisateur
     };
 
-    const handleSubmitOrder = async () => {
+    const handleSubmitOrder = async() => {
         try {
             setIsSubmitting(true);
-            const response = await fetch('http://localhost:9000/api/v1/orders', {
+            const response = await fetch(API_URL + '/api/v1/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,11 +46,13 @@ function Cart() {
             clearCart();
             setConfirmationMessage('Votre commande a été passée avec succès');
             setIsModalOpen(true);
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Erreur lors de la soumission de la commande:', error);
             setConfirmationMessage('Erreur lors de la soumission de la commande');
             setIsModalOpen(true);
-        } finally {
+        }
+        finally {
             setIsSubmitting(false);
         }
     };
@@ -86,7 +89,7 @@ function Cart() {
                         <div className="container">
                             {item.picture ? (
                                 <img
-                                    src={`http://localhost:9000/images/${item.picture}`}
+                                    src={API_URL + `/images/${item.picture}`}
                                     alt={item.title}
                                    
                                 />

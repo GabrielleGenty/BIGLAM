@@ -8,7 +8,10 @@ import orderDetails_router from "./orderDetails.routes.js"
 
 const router = Router();
 const BASE_API = "/api/v1";
-
+router.use((req, res, next) => {
+    console.log(`In router: ${req.method}:${req.originalUrl}`);
+    next();
+});
 
 // http://localhost:9000/
 router.get("/",(req,res)=>{

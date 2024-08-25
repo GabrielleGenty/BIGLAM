@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ConfirmationModal from "./ConfirmationModal"; // Import the modal
+const API_URL = import.meta.env.VITE_API_URL
 
 function Orders() {
     const [orders, setOrders] = useState(null);
@@ -13,7 +14,7 @@ function Orders() {
     useEffect(() => {
         document.title = "Back Office | Commandes";
         async function fetchOrders() {
-            const response = await fetch("http://localhost:9000/api/v1/orders", {
+            const response = await fetch(API_URL + "/api/v1/orders", {
                 credentials: "include",
             });
             if (response.status === 401) {
@@ -36,7 +37,7 @@ function Orders() {
 
     async function deleteHandler() {
         try {
-            const response = await fetch(`http://localhost:9000/api/v1/orders/${orderToDelete}`, {
+            const response = await fetch(API_URL + `/api/v1/orders/${orderToDelete}`, {
                 method: "DELETE",
                 credentials: "include",
             });
@@ -53,7 +54,7 @@ function Orders() {
 
     async function updateStatus(orderId, newStatus) {
         try {
-            const response = await fetch(`http://localhost:9000/api/v1/orders/${orderId}`, {
+            const response = await fetch(API_URL + `/api/v1/orders/${orderId}`, {
                 method: "PATCH",
                 credentials: "include",
                 headers: {

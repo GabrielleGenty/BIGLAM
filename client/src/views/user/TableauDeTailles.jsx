@@ -1,4 +1,5 @@
 import React from 'react';
+const API_URL = import.meta.env.VITE_API_URL
 
 function TableauDeTailles() {
   return (
@@ -13,7 +14,7 @@ function TableauDeTailles() {
         </div>
         <div className='container'>
         <img 
-          src={`http://localhost:9000/images/guide-des-tailles.png`}
+          src={API_URL + `/images/guide-des-tailles.png`}
           alt="guide de taille de bague"
         />
      </div>

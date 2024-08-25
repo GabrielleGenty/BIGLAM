@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import ConfirmationModal from "./ConfirmationModal"; // Import the modal
+const API_URL =
+  import.meta.env.VITE_API_URL
 
 function Categories() {
   const [categories, setCategories] = useState(null);
@@ -17,7 +19,7 @@ function Categories() {
     document.title = "Back Office | Categories";
     async function fetchCategories() {
       try {
-        const response = await fetch("http://localhost:9000/api/v1/categories", {
+        const response = await fetch(API_URL + "/api/v1/categories", {
           credentials: "include",
         });
         if (response.status === 401) {
@@ -27,10 +29,12 @@ function Categories() {
         if (response.ok) {
           const data = await response.json();
           setCategories(data.response);
-        } else {
+        }
+        else {
           console.error("Failed to fetch categories:", response.statusText);
         }
-      } catch (error) {
+      }
+      catch (error) {
         console.error("Error fetching categories:", error);
       }
     }
@@ -39,17 +43,19 @@ function Categories() {
 
   async function deleteHandler() {
     try {
-      const response = await fetch(`http://localhost:9000/api/v1/categories/${categoryToDelete}`, {
+      const response = await fetch(API_URL + `/api/v1/categories/${categoryToDelete}`, {
         method: "DELETE",
         credentials: "include",
       });
       if (response.ok) {
         setCategoriesList(!refreshCategoriesList);
         setShowModal(false);
-      } else {
+      }
+      else {
         console.error("Failed to delete category:", response.statusText);
       }
-    } catch (error) {
+    }
+    catch (error) {
       console.error("Error deleting category:", error);
     }
   }
@@ -57,7 +63,7 @@ function Categories() {
   async function updateCategoryHandler(e) {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:9000/api/v1/categories/${editingCategory.id}`, {
+      const response = await fetch(API_URL + `/api/v1/categories/${editingCategory.id}`, {
         method: "PATCH",
         credentials: "include",
         headers: {
@@ -69,10 +75,12 @@ function Categories() {
         setCategoriesList(!refreshCategoriesList);
         setEditingCategory(null);
         setEditLabel("");
-      } else {
+      }
+      else {
         console.error("Failed to update category:", response.statusText);
       }
-    } catch (error) {
+    }
+    catch (error) {
       console.error("Error updating category:", error);
     }
   }

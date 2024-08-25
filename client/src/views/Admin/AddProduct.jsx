@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useUser } from "../../hooks/UseUser";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL
 
 function AddProduct() {
   // const { setUser } = useUser();
@@ -14,7 +15,7 @@ function AddProduct() {
     
     async function fetchCategories() {
       try {
-        const response = await fetch("http://localhost:9000/api/v1/categories", {
+        const response = await fetch(API_URL + "/api/v1/categories", {
           credentials: "include",
         });
         
@@ -48,7 +49,7 @@ function AddProduct() {
   }
    
     try {
-      const response = await fetch('http://localhost:9000/api/v1/products',
+      const response = await fetch(API_URL + '/api/v1/products',
         {
         method: 'POST',
         body: formData,

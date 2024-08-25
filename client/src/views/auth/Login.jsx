@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link} from "react-router-dom";
 import { useUser } from "../../hooks/UseUser";
+const API_URL = import.meta.env.VITE_API_URL
 
 
 function Login() {
@@ -18,7 +19,7 @@ function Login() {
 
         try {
             const response = await fetch(
-              "http://localhost:9000/api/v1/users/login",
+              API_URL + "/api/v1/users/login",
                {
               method: 'POST',
               headers: {

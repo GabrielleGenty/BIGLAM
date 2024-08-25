@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL
 
 function Users() {
     const [users, setUsers] = useState(0);
@@ -10,7 +11,7 @@ function Users() {
         async function fetchUsers() {
             try{ 
             const response = await fetch(
-                "http://localhost:9000/api/v1/users/getAll",
+                API_URL + "/api/v1/users/getAll",
                 {
                     credentials: "include",
                 }

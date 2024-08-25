@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import noPicture from "../../../../api/public/images/no-picture.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+const API_URL = import.meta.env.VITE_API_URL
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ function Products() {
     document.title = "Back Office | Produits";
     async function fetchProducts() {
       try {
-        const response = await fetch("http://localhost:9000/api/v1/products", {
+        const response = await fetch(API_URL + "/api/v1/products", {
           credentials: "include",
         });
         if (response.status === 401) {
@@ -98,7 +99,7 @@ function Products() {
                 <td>
                   <div className="container">
                   <img
-                    src={`http://localhost:9000/images/${product.picture}`}
+                    src={API_URL + `/images/${product.picture}`}
                     alt={product.title || 'Product Image'}
                     style={{ maxWidth: '60px', maxHeight: '60px' }}
                     onError={(e) => e.target.src = noPicture} // Image par défaut en cas d'erreur
