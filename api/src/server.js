@@ -14,6 +14,7 @@ const corsOptions = {
     credentials: true, // autorise la réception de cookies depuis "l'origin"
 };
 
+app.enable('trust proxy')
 app.use(cors(corsOptions));
 app.use(newSession);
 app.use(express.json());
@@ -26,8 +27,9 @@ app.use(router);
 // permets d'avoir le retour dans le terminal pertinent
 const domain =
     process.env.NODE_ENV === "production" ?
-    `gabriellegenty.sites.3wa.io:${PORT}` :
+    `biglam-api.alwaysdata.net:${PORT}` :
     `localhost:${PORT}`;
+console.log(`Starting server at http://${domain}`)
 app.listen(PORT, () => {
     console.log(`Server is running at http://${domain}`);
 });

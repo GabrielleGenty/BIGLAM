@@ -21,11 +21,10 @@ const newSession = session({
 	saveUninitialized: false,
 	store: sessionStore, // nous utilisons notre store personnalisé
 	cookie: {
-		secure: false,
+		secure: true,
 		httpOnly: true,
-		sameSite: "lax",
+		sameSite: "none",
 		maxAge: 3600000, //la session valider pour une heure only
-		domain: "localhost",
 	},
 	rolling: true,
 });
