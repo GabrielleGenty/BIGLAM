@@ -3,37 +3,51 @@
 
 
 main#userCart{
-  background-color: $primary-color;
+  background-color: $light-color;
   
   section#emptyCart{
-    padding-bottom: 100%;
+    margin:20% 0 60%;
+    padding: 5% 0 30%;
+  
   }
 
   
  
   section{
+    padding: 10%;
     p{
       text-align: center;
      }
-      padding-bottom: 120%;
+      padding-bottom: 150%;
       margin: 0;
   
     article{
+      display: flex;
+      flex-direction: column;
+    
+      p{
+        font-size: 1.2rem;
+        margin: 10px;
+      }
+      
       background-color: $light-color-secondary;
       margin: 5% 0;
       div.userCart{
           display: flex;
           flex-direction:row;
           align-items: center;
+          justify-content: center;
           gap:10px;
-          padding: 0 3% ;
+          padding: auto;
           background-color: $light-color-secondary;
           p{
-            padding: 0;
-            margin: 0;
+            padding: 2%;
+            margin: 2%;
+            font-size: 1.2rem;
           }
+          
         }
-        .container {
+        div.container {
           display: flex;
          
           width: 150px;
@@ -44,16 +58,17 @@ main#userCart{
         }
 
       .container img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 80%;
+        max-height: 80%;
         text-align: center;
         width: auto; 
         height: auto; 
       }
       button{
-        width: 60%;
-        margin: 2% auto;
+        width: 100%;
+        margin: 1% auto;
         display: block;
+        padding: 1rem;
       }
       p{text-align: center;
       }
@@ -109,7 +124,13 @@ main#userCart{
   }
   @media screen and (min-width: 600px) and (max-width: 1024px) {
     main#userCart{
+     
       background-color: $light-color;
+      section#emptyCart{
+        margin:5% 0 30%;
+        padding: 10% 20%;
+      
+      }
      section{
       p{
         text-align: center;
@@ -121,8 +142,10 @@ main#userCart{
   
     article{
       background-color: $light-color-secondary;
-      margin: 2%;
-      padding: 2%;
+      margin: 0% 20%;
+      padding: 2% 0;
+
+  
       div.userCart{
           display: flex;
           flex-direction:row;
@@ -160,7 +183,7 @@ main#userCart{
         height: auto; 
       }
       button{
-        width: 60%;
+        width: 100%;
         margin: 10% auto;
         display: block;
       }
@@ -179,6 +202,11 @@ main#userCart{
    @media screen and (min-width: 1025px) and (max-width: 3000px) {
     main#userCart{
       background-color: $light-color;
+      section#emptyCart{
+        margin:5% 0 20%;
+        padding:  0 20% 10%;
+      
+      }
      section{
      p{
       text-align: center;
@@ -188,14 +216,16 @@ main#userCart{
       background-color:  $light-color;
     article{
       background-color: $light-color-secondary;
-      margin: 2%;
-      padding: 2%;
+      margin: 0 10%;
+    
+      
       div.userCart{
           display: flex;
           flex-direction:row;
           justify-content: center;
           align-items:center;
           gap:10px;
+          margin: 5%;
           background-color: $light-color-secondary;
           div#articleDetail{
             margin: 0 ;
@@ -227,7 +257,7 @@ main#userCart{
         height: auto; 
       }
       button{
-        width: 60%;
+        width: 100%;
         margin: 10% auto;
         display: block;
       }

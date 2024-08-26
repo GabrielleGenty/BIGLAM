@@ -612,7 +612,15 @@
 			
 
 		
-    }	 /****ConfiramtionModalDelete***/
+    }		
+	.successMessage {
+		color: green;
+		font-weight: bold;
+		margin-top: 10px;
+		text-align: center;
+	}
+	
+	/****ConfiramtionModalDelete***/
 	.modal-overlay {
 		position: fixed;
 		top: 0;

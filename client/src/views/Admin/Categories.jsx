@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import ConfirmationModal from "./ConfirmationModal"; // Import the modal
-const API_URL =
-  import.meta.env.VITE_API_URL
+import ConfirmationModal from "./ConfirmationModal";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Categories() {
   const [categories, setCategories] = useState(null);
@@ -14,6 +13,8 @@ function Categories() {
   const [editingCategory, setEditingCategory] = useState(null);
   const [editLabel, setEditLabel] = useState("");
   const [deleteMessage, setDeleteMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [showSuccessMessageOnly, setShowSuccessMessageOnly] = useState(false);
 
   useEffect(() => {
     document.title = "Back Office | Categories";
@@ -29,12 +30,10 @@ function Categories() {
         if (response.ok) {
           const data = await response.json();
           setCategories(data.response);
-        }
-        else {
+        } else {
           console.error("Failed to fetch categories:", response.statusText);
         }
-      }
-      catch (error) {
+      } catch (error) {
         console.error("Error fetching categories:", error);
       }
     }
@@ -48,14 +47,15 @@ function Categories() {
         credentials: "include",
       });
       if (response.ok) {
+        setSuccessMessage(`Category with ID "${categoryToDelete}" deleted successfully!`);
+        setShowSuccessMessageOnly(true);
         setCategoriesList(!refreshCategoriesList);
         setShowModal(false);
-      }
-      else {
+        hideSuccessMessage();
+      } else {
         console.error("Failed to delete category:", response.statusText);
       }
-    }
-    catch (error) {
+    } catch (error) {
       console.error("Error deleting category:", error);
     }
   }
@@ -72,17 +72,25 @@ function Categories() {
         body: JSON.stringify({ label: editLabel }),
       });
       if (response.ok) {
+        setSuccessMessage(`Category "${editLabel}" updated successfully!`);
+        setShowSuccessMessageOnly(true);
         setCategoriesList(!refreshCategoriesList);
         setEditingCategory(null);
         setEditLabel("");
-      }
-      else {
+        hideSuccessMessage();
+      } else {
         console.error("Failed to update category:", response.statusText);
       }
-    }
-    catch (error) {
+    } catch (error) {
       console.error("Error updating category:", error);
     }
+  }
+
+  function hideSuccessMessage() {
+    setTimeout(() => {
+      setShowSuccessMessageOnly(false);
+      setSuccessMessage("");
+    }, 3000); // Hide success message after 3 seconds
   }
 
   function openModal(id, label) {
@@ -108,15 +116,16 @@ function Categories() {
     <main id="admin">
       <section>
         <h1>Liste de Categories</h1>
+        {showSuccessMessageOnly && <div className="success-message">{successMessage}</div>}
         <div id="buttonSet">
           <button id="addButton">
             <Link to="/category/add">
-           Ajouter un Category <FontAwesomeIcon icon={faPlus} />
+              Ajouter un Category <FontAwesomeIcon icon={faPlus} />
             </Link>
           </button>
           <button id="retourButton">
             <Link to="/">
-             Retour To Home
+              Retour To Home
             </Link>
           </button>
         </div>
@@ -126,7 +135,7 @@ function Categories() {
             <tr>
               <th><h2>Id</h2></th>
               <th><h2>Label</h2></th>
-              <th ><h2>Actions</h2></th>
+              <th><h2>Actions</h2></th>
             </tr>
           </thead>
           <tbody>
@@ -142,8 +151,8 @@ function Categories() {
                         onChange={(e) => setEditLabel(e.target.value)}
                       />
                       <div className="buttongroup">
-                      <button className="categorybutton" type="submit">Save</button>
-                      <button className="categorybutton" type="button" onClick={() => setEditingCategory(null)}>Cancel</button>
+                        <button className="categorybutton" type="submit">Save</button>
+                        <button className="categorybutton" type="button" onClick={() => setEditingCategory(null)}>Cancel</button>
                       </div>
                     </form>
                   ) : (

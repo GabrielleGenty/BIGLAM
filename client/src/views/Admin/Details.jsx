@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import ConfirmationModal from "./ConfirmationModal"; // Assurez-vous que le chemin est correct
+import ConfirmationModal from "./ConfirmationModal";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Details() {
@@ -68,7 +68,13 @@ function Details() {
         credentials: "include",
       });
       if (response.ok) {
-        navigate("/products"); // Redirect to products page
+        setSuccessMessage(`Le produit "${product.title}" a été supprimé avec succès!`);
+        setShowSuccessMessageOnly(true);
+
+        // Afficher le message de succès pendant quelques secondes
+        setTimeout(() => {
+          navigate("/products"); // Redirect to products page after a short delay
+        }, 2000); // Délai pour que l'utilisateur puisse lire le message
       } else {
         console.error("Failed to delete product:", response.statusText);
       }

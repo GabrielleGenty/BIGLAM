@@ -100,7 +100,8 @@
 				}
 				input::placeholder {
 					font-size: 1.2rem; /* Changez cette valeur selon vos besoins */
-					color:$background-color-dark;     /* Vous pouvez aussi modifier la couleur si nécessaire */
+					color:$light-color;
+					color: $background-color-dark;     /* Vous pouvez aussi modifier la couleur si nécessaire */
 				  }
 			}
 		nav.iconNav{	
@@ -199,6 +200,7 @@
 			display: flex;
 			align-items: center;
 			padding: 1%;
+			gap: 10px;
 			top: 0;
 			right: 0;
 			flex-direction: column;
@@ -328,12 +330,10 @@
 		
 		div.leftNav {
 			display: flex;
-			width: 80%;
-			
+			width: 100%;
 			justify-content: center;
-		
 			align-items: center;
-			padding: 0;
+		
 		}
 		
 		div#headerNav {
@@ -350,7 +350,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			gap: 20px;
+			gap: 10px;
 			white-space: nowrap;
 			margin: 2% 10%;
 			
@@ -358,7 +358,7 @@
 			button {
 				width: auto;
 				
-				padding:0.5%
+				padding:1.5%
 			}
 		}
 		

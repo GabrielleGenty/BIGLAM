@@ -12,8 +12,8 @@ class Categories{
        
     };
     static async add(req){
-    
-        return await Query.runWithParams(`INSERT INTO categories(label) VALUES (?)`,req.body);
+        const { label } = req.body; 
+        return await Query.runWithParams(`INSERT INTO categories(label) VALUES (?)`, [label]);
     
     };
     static async update(req){
