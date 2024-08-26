@@ -6,6 +6,7 @@ import { reducer, initialState } from "./reducer";
 
 import UseMenu from "../../hooks/UseMenu";
 import { useCart } from "../../hooks/useCart";
+const API_URL = import.meta.env.VITE_API_URL
 
 const Context = createContext();
 
@@ -17,6 +18,8 @@ function UserProvider({children}){
     const navigate = useNavigate();
 
     async function login(data){
+        console.log("data login")
+        console.log(data)
         if (data && data.email && data.isAdmin !== undefined){
             console.log("Login data:", data); // Ajoute ceci pour voir ce qui est passé
             dispatch({type: 'LOGIN', payload: data});
@@ -28,7 +31,7 @@ function UserProvider({children}){
     }
     async function logout(){
         const response = await fetch(
-            "http://localhost:9000/api/v1/users/logout",
+            API_URL + "/api/v1/users/logout",
 			{
                 credentials: "include",
 			}
