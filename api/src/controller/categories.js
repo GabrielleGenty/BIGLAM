@@ -26,13 +26,17 @@ const getById = async(req,res)=>{
 };
 const add =async (req,res)=>{
 
-    try{
-    const {id}=req.params;
-    const response =await Categories.add(req);
-    res.json({message:"les données ont bien insérrées !",response});
-
-    } catch (error){
-        res.status(500).json({message:"Erreur de serveur", error: error.message });
+    try {
+        const response = await Categories.add(req);
+        res.status(201).json({
+            message: "La catégorie a été ajoutée avec succès.",
+            response
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Erreur de serveur lors de l'ajout de la catégorie.",
+            error: error.message
+        });
     }
 };
 const update = async (req,res) =>{

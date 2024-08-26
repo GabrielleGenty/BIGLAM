@@ -99,12 +99,14 @@ function Cart() {
                            </div>
                         <div id="articleDetail">
                             
-                            <p>Description : {item.description}</p>
+                            
                             <p>Quantité : {item.quantity}</p>
                             <p>Total : {item.price * item.quantity}€</p>
                             <button onClick={() => removeFromCart(item.id)}>Supprimer</button>
                         </div>
+                        
                         </div>
+                       
                     </article>
                 ))}
                 <h2><strong>Prix Total :</strong> {totalPrice} €</h2>

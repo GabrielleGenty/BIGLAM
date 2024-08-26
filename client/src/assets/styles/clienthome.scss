@@ -36,7 +36,7 @@
 			/* Ensure that the scrollbar does not overlap content */
 			scroll-padding-inline-end: 16px; 
 			article {
-			flex:  0 0 350px; /* Each article takes 100% of the container width */
+			flex:  0 0 250px; /* Each article takes 100% of the container width */
 			box-sizing: border-box; 
 			background-color: $light-color-secondary;
 			display: flex;
@@ -80,7 +80,7 @@
 			}
 	
 			button#addTopanier {
-			width: 60%;
+			width: 80%;
 			margin:0 auto;
 			font-size: 1.2rem;
 			background-color:$secondary-color;

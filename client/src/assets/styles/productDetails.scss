@@ -1,14 +1,16 @@
 @media screen and (min-width: 320px) {
-    html{
-        background-color: $light-color;
-    }
+
     main#productDetail{
         background-color:$light-color ;
+
      
         section{
          
+         div.details{
+            padding: 0 10%;
+         }
             article{
-                background-color: $light-color-secondary;
+            
                 #productDetails{
                     display: flex;
                     gap: 20px;
@@ -58,16 +60,16 @@
         display: flex;
         justify-content: center;
         margin: 5% auto;
-         padding: 5%;
+         padding: 2%;
         article{
-            background-color: $light-color-secondary;
+           
             // padding: 2%;
             #productDetails{
                 display: flex;
                 gap: 20px;
                 flex-direction: row;
                 align-items: center;
-                padding:  5% ;
+                padding:  2% ;
             
                 .container {
                     display: flex;
@@ -90,7 +92,7 @@
                     
                 }
                 button#addTopanier {
-                    width: 60%;
+                    width: 80%;
                     margin: 10% auto;
                     display: block;
                     font-size: 1.2rem;
