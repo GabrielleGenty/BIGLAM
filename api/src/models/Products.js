@@ -24,20 +24,6 @@ class Products{
           );
     
 };
-    // static async add(req){
-       
-    //     return await Query.runWithParams(`INSERT INTO products 
-    //         (title,
-    //          subTitle,
-    //          status,
-    //          picture,
-    //          alt,
-    //           description, 
-    //           price, 
-    //           ref,
-    //            quantityInStock, 
-    //            categories_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, req.body);
-    // };
     
     static async update(req){
       
