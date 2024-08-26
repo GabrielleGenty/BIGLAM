@@ -1,7 +1,16 @@
 @media screen and (min-width: 320px) {
-main#userCart{
 
+
+
+main#userCart{
   background-color: $primary-color;
+  
+  section#emptyCart{
+    padding-bottom: 100%;
+  }
+
+  
+ 
   section{
     p{
       text-align: center;
