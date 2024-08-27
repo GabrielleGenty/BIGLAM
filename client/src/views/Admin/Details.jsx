@@ -294,4 +294,3 @@ function Details() {
 }
 
 export default Details;
->>>>>>> refs/remotes/origin/main

@@ -132,6 +132,7 @@ main#userCart{
       
       }
      section{
+      margin: 0 20%;
       p{
         text-align: center;
        }
@@ -142,7 +143,7 @@ main#userCart{
   
     article{
       background-color: $light-color-secondary;
-      margin: 0% 20%;
+      margin: 2% 20%;
       padding: 2% 0;
 
   
@@ -151,7 +152,7 @@ main#userCart{
           flex-direction:row;
           justify-content: center;
           align-items:center;
-          gap:10px;
+          gap:20px;
           background-color: $light-color-secondary;
           div#articleDetail{
             margin: 0 ;
@@ -208,6 +209,8 @@ main#userCart{
       
       }
      section{
+    
+      background-color:$light-color-secondary;
      p{
       text-align: center;
      }
@@ -216,7 +219,7 @@ main#userCart{
       background-color:  $light-color;
     article{
       background-color: $light-color-secondary;
-      margin: 0 10%;
+      margin: 2% 5%;
     
       
       div.userCart{
@@ -224,12 +227,13 @@ main#userCart{
           flex-direction:row;
           justify-content: center;
           align-items:center;
-          gap:10px;
+          gap:20px;
           margin: 5%;
           background-color: $light-color-secondary;
           div#articleDetail{
-            margin: 0 ;
-            padding: 0;
+            margin: 2% ;
+            padding: 2%;
+            // background-color: $light-color-secondary;
           
             p{
              text-align: center;
@@ -258,7 +262,7 @@ main#userCart{
       }
       button{
         width: 100%;
-        margin: 10% auto;
+        margin: 20% auto;
         display: block;
       }
       p{text-align: center;
